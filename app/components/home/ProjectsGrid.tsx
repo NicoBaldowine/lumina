@@ -4,51 +4,43 @@ export default function ProjectsGrid() {
   const projects = [
     {
       imageUrl: "/project1.png",
-      title: "Brand Identity Design",
-      description: "Creating a cohesive visual language that reflects the brand's core values and resonates with its audience.",
-      layout: "third"
+      title: "The Outworld App",
+      description: "We collaborated to create a tool that connects parents with fun activities for kids. This web app identifies parents' locations and filters activities to keep their calendars full of exciting options to enjoy with their children.",
     },
     {
       imageUrl: "/project2.png",
-      title: "Digital Product Design",
-      description: "Crafting intuitive digital experiences that prioritize user needs and business objectives.",
-      layout: "third"
+      title: "Aspire App",
+      description: "A visually impactful project aimed at creating an app for building routines through 21-day challenges on various topics. The idea was to use vibrant iconography to inspire anyone striving for self-improvement.",
     },
     {
       imageUrl: "/project3.png",
-      title: "Web Design System",
-      description: "Building scalable design systems that ensure consistency across digital platforms.",
-      layout: "third"
+      title: "Shinkai Branding",
+      description: "Shinkai is a powerful product offering interconnected AI agents, all in one place and open-source. This was an exciting project to craft an identity that resonates with its audience.",
     },
     {
       imageUrl: "/project4.png",
-      title: "Mobile App Design",
-      description: "Designing engaging mobile experiences that delight users and drive engagement.",
-      layout: "half"
+      title: "Shinkai Website",
+      description: "A landing page for the Shinkai product designed to showcase use cases and features, highlighting the value proposition. It enables users to subscribe to different plans and access the tool effortlessly.",
     },
     {
       imageUrl: "/project5.png",
-      title: "E-commerce Platform",
-      description: "Creating seamless shopping experiences that convert visitors into customers.",
-      layout: "half"
+      title: "Scala Web Application",
+      description: "An innovative platform connecting talent with hiring managers, bridging gaps to streamline and accelerate the hiring process. It's ideal for talent looking to build portfolio cases with real-world projects.",
     },
     {
       imageUrl: "/project6.png",
-      title: "Marketing Website",
-      description: "Developing compelling websites that tell brand stories and generate leads.",
-      layout: "third"
+      title: "Travel Wallet",
+      description: "A travel wallet project featuring multi-currency support, currency exchange, and a digital wallet card for payments worldwide. It also integrates AI for generating illustrations, making it a unique product.",
     },
     {
       imageUrl: "/project7.png",
-      title: "Brand Strategy",
-      description: "Developing effective brand strategies that connect with target audiences.",
-      layout: "third"
+      title: "Scala Branding",
+      description: "Scala's concept bridges companies with talent, visually embodying the connection of these two worlds. The mission was to craft a recognizable identity emphasizing growth, connection, and scalability.",
     },
     {
       imageUrl: "/project8.png",
-      title: "UI Design",
-      description: "Creating beautiful and functional user interfaces for digital products.",
-      layout: "third"
+      title: "Quizland App",
+      description: "An innovative product leveraging AI to generate quizzes on any topic users can imagine. With a simple interface and robust integration with OpenAI, this app provides a compelling blend of endless entertainment and education.",
     }
   ];
 
@@ -60,14 +52,13 @@ export default function ProjectsGrid() {
             <div 
               key={index}
               className={`
-                ${project.layout === 'third' ? 'md:col-span-2' : 'md:col-span-3'}
+                ${(index === 3 || index === 4) ? 'md:col-span-3' : 'md:col-span-2'}
               `}
             >
               <ProjectCard 
                 title={project.title}
                 description={project.description}
                 imageUrl={project.imageUrl}
-                layout={project.layout}
               />
             </div>
           ))}
