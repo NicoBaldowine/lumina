@@ -1,12 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../ThemeProvider';
-import { Inter_Tight } from 'next/font/google';
-
-const interTight = Inter_Tight({ subsets: ['latin'] });
 
 export default function Header() {
   const pathname = usePathname();
@@ -15,78 +13,54 @@ export default function Header() {
 
   const isActive = (path: string) => pathname === path;
 
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/about-us', label: 'About us' },
+    { href: '/services', label: 'Services' },
+    { href: '/blog', label: 'Blog' },
+  ];
+
   return (
     <>
       <header className={`fixed w-full top-0 z-50 backdrop-blur-xl transition-colors duration-300 ${
-        isDarkMode 
-          ? 'bg-[#070606]/60' 
-          : 'bg-white/60'
+        isDarkMode ? 'bg-[#070606]/60' : 'bg-white/60'
       }`}>
-        <nav className={`container mx-auto px-6 py-4 ${interTight.className}`}>
+        <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center">
-            {/* Logo - Left */}
-            <Link 
-              href="/" 
-              className="hover:opacity-80 transition-opacity"
-            >
-              <img 
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <Image
                 src={isDarkMode ? "/luminalogo.svg" : "/luminalogo-dark.svg"}
-                alt="LUMINA" 
+                alt="LUMINA"
+                width={160}
+                height={40}
                 className="h-10 w-auto"
+                priority
               />
             </Link>
 
-            {/* Navigation - Right aligned with flex-end */}
             <div className="hidden md:flex items-center justify-end flex-1 space-x-16 mr-16">
-              <Link 
-                href="/" 
-                className={`text-[14px] leading-[1.6] tracking-[-0.01em] transition-colors ${
-                  isActive('/') 
-                    ? (isDarkMode ? 'text-white' : 'text-black') 
-                    : (isDarkMode ? 'text-[#999999] hover:text-white' : 'text-[#666666] hover:text-black')
-                }`}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about-us" 
-                className={`text-[14px] leading-[1.6] tracking-[-0.01em] transition-colors ${
-                  isActive('/about-us') 
-                    ? (isDarkMode ? 'text-white' : 'text-black') 
-                    : (isDarkMode ? 'text-[#999999] hover:text-white' : 'text-[#666666] hover:text-black')
-                }`}
-              >
-                About us
-              </Link>
-              <Link 
-                href="/services" 
-                className={`text-[14px] leading-[1.6] tracking-[-0.01em] transition-colors ${
-                  isActive('/services') 
-                    ? (isDarkMode ? 'text-white' : 'text-black') 
-                    : (isDarkMode ? 'text-[#999999] hover:text-white' : 'text-[#666666] hover:text-black')
-                }`}
-              >
-                Services
-              </Link>
-              <Link 
-                href="/blog" 
-                className={`text-[14px] leading-[1.6] tracking-[-0.01em] transition-colors ${
-                  isActive('/blog') 
-                    ? (isDarkMode ? 'text-white' : 'text-black') 
-                    : (isDarkMode ? 'text-[#999999] hover:text-white' : 'text-[#666666] hover:text-black')
-                }`}
-              >
-                Blog
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm leading-relaxed tracking-[-0.01em] transition-colors ${
+                    isActive(link.href)
+                      ? (isDarkMode ? 'text-white' : 'text-black')
+                      : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Right side buttons */}
             <div className="hidden md:flex items-center space-x-4">
               <button
                 onClick={toggleTheme}
+                aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
                 className={`p-2 rounded-full border transition-colors ${
-                  isDarkMode 
-                    ? 'border-white/20 hover:bg-white/10' 
+                  isDarkMode
+                    ? 'border-white/20 hover:bg-white/10'
                     : 'border-black/20 hover:bg-black/10'
                 }`}
               >
@@ -100,24 +74,24 @@ export default function Header() {
                   </svg>
                 )}
               </button>
-              <Link 
-                href="/contact" 
-                className={`px-4 py-2 rounded-full text-[14px] leading-[1.6] tracking-[-0.01em] transition-all duration-300 ${
-                  isActive('/contact') 
+              <Link
+                href="/contact"
+                className={`px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
+                  isActive('/contact')
                     ? (isDarkMode ? 'bg-white text-[#070606]' : 'bg-black text-white')
-                    : isDarkMode 
-                      ? 'text-[#999999] border border-white/20 hover:bg-white hover:text-[#070606]'
-                      : 'text-[#666666] border border-black/20 hover:bg-black hover:text-white'
+                    : isDarkMode
+                      ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
+                      : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
                 }`}
               >
                 Let&apos;s talk
               </Link>
             </div>
 
-            {/* Mobile menu button */}
-            <button 
+            <button
               className={`md:hidden ml-auto ${isDarkMode ? 'text-white' : 'text-black'}`}
               onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -127,57 +101,34 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-50 transition-transform duration-500 ${
+      <div className={`fixed inset-0 z-50 transition-transform duration-500 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      } ${isDarkMode ? 'bg-[#070606]/95' : 'bg-white/95'} backdrop-blur-xl`}>
         <div className="container mx-auto px-6 py-8">
           <div className="flex justify-end mb-8">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-white p-2"
+              className={`p-2 ${isDarkMode ? 'text-white' : 'text-black'}`}
+              aria-label="Close menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          <nav className={`flex flex-col space-y-6 ${interTight.className}`}>
-            <Link 
-              href="/" 
-              className="text-[24px] text-white hover:text-white/80"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              href="/about-us" 
-              className="text-[24px] text-white hover:text-white/80"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About us
-            </Link>
-            <Link 
-              href="/services" 
-              className="text-[24px] text-white hover:text-white/80"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link 
-              href="/blog" 
-              className="text-[24px] text-white hover:text-white/80"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-[24px] text-white hover:text-white/80"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+          <nav className="flex flex-col space-y-6">
+            {[...navLinks, { href: '/contact', label: 'Contact' }].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-2xl transition-colors ${
+                  isDarkMode ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>

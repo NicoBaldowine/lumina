@@ -1,8 +1,13 @@
+'use client';
+
 import ServiceCard from './ServiceCard';
 import Link from 'next/link';
-import { GeistSans } from 'geist/font/sans';
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeProvider';
 
 export default function ServicesSection() {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const services = [
     {
       title: "Product Design",
@@ -25,12 +30,18 @@ export default function ServicesSection() {
     <section className="py-32">
       <div className="px-6">
         <div className="flex justify-between items-center mb-12">
-          <h2 className={`${GeistSans.className} font-light text-[40px] leading-[1.1] tracking-[-0.03em] text-white/90`}>
+          <h2 className={`font-light text-4xl leading-tight tracking-tight ${
+            isDarkMode ? 'text-white/90' : 'text-neutral-800'
+          }`}>
             Services
           </h2>
-          <Link 
+          <Link
             href="/services"
-            className="px-4 py-2 rounded-full text-[14px] leading-[1.6] tracking-[-0.01em] text-[#999999] border border-white/20 hover:bg-white hover:text-[#070606] transition-all duration-300"
+            className={`px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
+              isDarkMode
+                ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
+                : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
+            }`}
           >
             All Services
           </Link>

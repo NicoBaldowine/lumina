@@ -5,7 +5,11 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import ThemeProvider from './components/ThemeProvider'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: 'Lumina Studio',
@@ -18,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className} style={{ letterSpacing: '-1px' }}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="font-sans antialiased tracking-tight">
         <ThemeProvider>
           <Header />
           <main>

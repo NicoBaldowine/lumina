@@ -1,4 +1,11 @@
+'use client';
+
+import { useContext } from 'react';
+import { ThemeContext } from '../components/ThemeProvider';
+
 export default function BlogPage() {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const posts = [
     {
       title: "The Future of Web Development in 2024",
@@ -32,45 +39,54 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen pt-[72px]">
-      {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] mb-6 font-cabinet-grotesk">
+            <h1 className={`text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight mb-6 font-medium ${
+              isDarkMode ? 'text-white' : 'text-neutral-800'
+            }`}>
               Our Blog
             </h1>
-            <p className="text-[18px] leading-[1.6] text-[#999999] max-w-2xl">
+            <p className={`text-lg leading-relaxed max-w-2xl ${
+              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+            }`}>
               Insights and thoughts on design, development, and digital innovation.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-20 bg-[#111]">
+      <section className={`py-20 ${isDarkMode ? 'bg-[#111]' : 'bg-neutral-50'}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {posts.map((post, index) => (
               <article key={index} className="space-y-4">
-                <div className="aspect-[16/9] relative bg-[#2a2626] rounded-lg overflow-hidden">
-                  {/* Placeholder for post image */}
+                <div className={`aspect-[16/9] relative rounded-lg overflow-hidden ${
+                  isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-200'
+                }`}>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-[12px] text-[#999999]">
+                  <div className={`flex items-center gap-4 text-xs ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}>
                     <span>{post.category}</span>
                     <span>•</span>
                     <span>{post.date}</span>
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className="text-[24px] leading-[1.2] tracking-[-0.02em] text-white/90 font-cabinet-grotesk">
+                  <h2 className={`text-2xl leading-tight tracking-tight ${
+                    isDarkMode ? 'text-white/90' : 'text-neutral-800'
+                  }`}>
                     {post.title}
                   </h2>
-                  <p className="text-[14px] leading-[1.6] text-[#999999]">
+                  <p className={`text-sm leading-relaxed ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}>
                     {post.excerpt}
                   </p>
-                  <button className="text-[14px] text-[#43D4A9] hover:text-[#43D4A9]/80">
+                  <button className="text-sm text-[#43D4A9] hover:text-[#43D4A9]/80 transition-colors">
                     Read More →
                   </button>
                 </div>
@@ -81,4 +97,4 @@ export default function BlogPage() {
       </section>
     </main>
   );
-} 
+}

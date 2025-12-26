@@ -13,7 +13,7 @@
 }
 
 html {
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: 16px;
 }
 
 body {
@@ -28,101 +28,10 @@ body {
   margin: 0 auto;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@layer utilities {
+  .tracking-tight {
+    letter-spacing: -0.025em;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 16s ease infinite;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('/fonts/ClashDisplay-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clash Display';
-  src: url('/fonts/ClashDisplay-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cabinet Grotesk';
-  src: url('/fonts/CabinetGrotesk-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@keyframes line-shine {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: 1850;
-  }
-}
-
-.animate-line-shine {
-  animation: line-shine 8s linear infinite;
-}
-
-@keyframes gradient-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-gradient-rotate {
-  animation: gradient-rotate 8s linear infinite;
-}
-
-@keyframes shine {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-
-.animate-shine {
-  animation: shine 3s linear infinite;
-}
-
-@keyframes circle-shine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.animate-circle-shine {
-  animation: circle-shine 8s linear infinite;
-}
-
-@keyframes rotate-gradient {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-rotate-gradient {
-  transform-origin: center;
-  animation: rotate-gradient 8s linear infinite;
 }
 
 @keyframes scanner {
@@ -147,4 +56,20 @@ body {
 .animate-scanner-fast {
   transform-origin: center;
   animation: scanner 12s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 16s ease infinite;
 }

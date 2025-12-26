@@ -1,4 +1,11 @@
+'use client';
+
+import { useContext } from 'react';
+import { ThemeContext } from '../components/ThemeProvider';
+
 export default function ServicesPage() {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const services = [
     {
       title: "Web Development",
@@ -24,35 +31,45 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen pt-[72px]">
-      {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] mb-6 font-cabinet-grotesk">
+            <h1 className={`text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight mb-6 font-medium ${
+              isDarkMode ? 'text-white' : 'text-neutral-800'
+            }`}>
               Our Services
             </h1>
-            <p className="text-[18px] leading-[1.6] text-[#999999] max-w-2xl">
+            <p className={`text-lg leading-relaxed max-w-2xl ${
+              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+            }`}>
               We offer a comprehensive range of digital services to help your business succeed online.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-[#111]">
+      <section className={`py-20 ${isDarkMode ? 'bg-[#111]' : 'bg-neutral-50'}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div key={index} className="p-8 border border-white/10 rounded-lg space-y-4">
-                <h3 className="text-[24px] leading-[1.2] tracking-[-0.02em] text-white/90 font-cabinet-grotesk">
+              <div key={index} className={`p-8 border rounded-lg space-y-4 ${
+                isDarkMode ? 'border-white/10' : 'border-black/10'
+              }`}>
+                <h3 className={`text-2xl leading-tight tracking-tight ${
+                  isDarkMode ? 'text-white/90' : 'text-neutral-800'
+                }`}>
                   {service.title}
                 </h3>
-                <p className="text-[14px] leading-[1.6] text-[#999999]">
+                <p className={`text-sm leading-relaxed ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                }`}>
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="text-[14px] leading-[1.6] text-[#999999] flex items-center gap-2">
+                    <li key={featureIndex} className={`text-sm leading-relaxed flex items-center gap-2 ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}>
                       <span className="w-1 h-1 bg-[#43D4A9] rounded-full"></span>
                       {feature}
                     </li>
@@ -65,4 +82,4 @@ export default function ServicesPage() {
       </section>
     </main>
   );
-} 
+}
