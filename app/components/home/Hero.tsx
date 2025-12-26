@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className={`relative min-h-[80vh] flex items-start justify-center overflow-hidden pt-[200px] pb-[200px] ${
-      isDarkMode ? 'bg-[#070606]' : 'bg-white'
+      isDarkMode ? 'bg-[#222222]' : 'bg-white'
     }`}>
       <div className="container relative z-10 mx-auto px-6">
         <h1 className="text-left text-[clamp(40px,6.5vw,82px)] font-medium leading-[0.95] tracking-[-0.02em] mb-6 max-w-[1200px]">

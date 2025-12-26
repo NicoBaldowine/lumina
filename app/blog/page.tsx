@@ -56,13 +56,13 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className={`py-20 ${isDarkMode ? 'bg-[#111]' : 'bg-neutral-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-50'}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {posts.map((post, index) => (
               <article key={index} className="space-y-4">
-                <div className={`aspect-[16/9] relative rounded-lg overflow-hidden ${
-                  isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-200'
+                <div className={`aspect-[16/9] relative overflow-hidden ${
+                  isDarkMode ? 'bg-[#2a2a2a]' : 'bg-neutral-200'
                 }`}>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
                 </div>

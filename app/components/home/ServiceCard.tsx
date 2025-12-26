@@ -12,8 +12,8 @@ interface ServiceCardProps {
 export default function ServiceCard({ title, description, variant }: ServiceCardProps) {
   const { isDarkMode } = useContext(ThemeContext);
 
-  const strokeColor = isDarkMode ? '#222222' : '#e5e5e5';
-  const bgColor = isDarkMode ? '#0c0c0c' : '#f5f5f5';
+  const strokeColor = isDarkMode ? '#333333' : '#e5e5e5';
+  const bgColor = isDarkMode ? '#1a1a1a' : '#f5f5f5';
 
   const illustrations = {
     ovals: (

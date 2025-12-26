@@ -25,7 +25,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className={`py-20 ${isDarkMode ? 'bg-[#111]' : 'bg-neutral-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-50'}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">

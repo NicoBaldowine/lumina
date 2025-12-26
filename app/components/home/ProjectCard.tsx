@@ -16,7 +16,7 @@ export default function ProjectCard({ title, description, imageUrl }: ProjectCar
 
   return (
     <div>
-      <div className={`relative overflow-hidden rounded-[32px] mb-6 ${
+      <div className={`relative overflow-hidden mb-6 ${
         isWiderCard ? 'aspect-[790/590]' : 'aspect-[544/704]'
       }`}>
         <Image

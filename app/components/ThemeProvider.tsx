@@ -51,7 +51,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
   if (!mounted) {
     return (
-      <div className="bg-[#070606] text-white min-h-screen">
+      <div className="bg-[#222222] text-white min-h-screen">
         {children}
       </div>
     );
@@ -60,7 +60,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <div className={`min-h-screen transition-colors duration-300 ${
-        isDarkMode ? 'bg-[#070606] text-white' : 'bg-white text-[#070606]'
+        isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-[#070606]'
       }`}>
         {children}
       </div>

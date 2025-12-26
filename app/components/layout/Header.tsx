@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <>
       <header className={`fixed w-full top-0 z-50 backdrop-blur-xl transition-colors duration-300 ${
-        isDarkMode ? 'bg-[#070606]/60' : 'bg-white/60'
+        isDarkMode ? 'bg-[#222222]/60' : 'bg-white/60'
       }`}>
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center">
@@ -103,7 +103,7 @@ export default function Header() {
 
       <div className={`fixed inset-0 z-50 transition-transform duration-500 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } ${isDarkMode ? 'bg-[#070606]/95' : 'bg-white/95'} backdrop-blur-xl`}>
+      } ${isDarkMode ? 'bg-[#222222]/95' : 'bg-white/95'} backdrop-blur-xl`}>
         <div className="container mx-auto px-6 py-8">
           <div className="flex justify-end mb-8">
             <button

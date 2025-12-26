@@ -17,7 +17,7 @@ export default function BlogCard({ imageUrl, title, description, slug }: BlogCar
 
   return (
     <Link href={`/blog/${slug}`} className="block group">
-      <div className="relative aspect-[16/9] mb-4 overflow-hidden rounded-lg">
+      <div className="relative aspect-[16/9] mb-4 overflow-hidden">
         <Image
           src={imageUrl}
           alt={title}

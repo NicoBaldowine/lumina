@@ -48,11 +48,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className={`py-20 ${isDarkMode ? 'bg-[#111]' : 'bg-neutral-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-50'}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div key={index} className={`p-8 border rounded-lg space-y-4 ${
+              <div key={index} className={`p-8 border space-y-4 ${
                 isDarkMode ? 'border-white/10' : 'border-black/10'
               }`}>
                 <h3 className={`text-2xl leading-tight tracking-tight ${

@@ -9,8 +9,8 @@ export default function Footer() {
 
   return (
     <footer className={`border-t transition-colors duration-300 ${
-      isDarkMode 
-        ? 'border-white/10 bg-[#070606]' 
+      isDarkMode
+        ? 'border-white/10 bg-[#222222]'
         : 'border-black/10 bg-white'
     }`}>
       <nav className="container mx-auto px-6">
