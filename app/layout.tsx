@@ -1,9 +1,8 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import type { Metadata } from 'next'
-import Header from './components/layout/Header'
-import Footer from './components/layout/Footer'
 import ThemeProvider from './components/ThemeProvider'
+import LayoutWrapper from './components/layout/LayoutWrapper'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,11 +24,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans antialiased tracking-tight">
         <ThemeProvider>
-          <Header />
-          <main>
+          <LayoutWrapper>
             {children}
-          </main>
-          <Footer />
+          </LayoutWrapper>
         </ThemeProvider>
       </body>
     </html>

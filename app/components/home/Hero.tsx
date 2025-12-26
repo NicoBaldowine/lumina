@@ -8,7 +8,7 @@ export default function Hero() {
   const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <section className={`relative min-h-[80vh] flex items-start justify-center overflow-hidden pt-[200px] pb-[200px] ${
+    <section className={`relative min-h-[60vh] md:min-h-[80vh] flex items-start justify-center overflow-hidden pt-[100px] pb-[80px] md:pt-[200px] md:pb-[200px] ${
       isDarkMode ? 'bg-[#222222]' : 'bg-white'
     }`}>
       <div className="container relative z-10 mx-auto px-6">

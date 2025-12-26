@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
 
 interface BlogCardProps {
-  imageUrl: string;
+  imageUrl?: string;
   title: string;
   description: string;
   slug: string;
@@ -18,13 +18,18 @@ export default function BlogCard({ imageUrl, title, description, slug }: BlogCar
   return (
     <Link href={`/blog/${slug}`} className="block group">
       <div className="relative aspect-[16/9] mb-4 overflow-hidden">
-        <Image
-          src={imageUrl}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className={`w-full h-full ${isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'}`} />
+        )}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
       </div>
       <div className="space-y-2">
         <h3 className={`text-card-title transition-colors ${

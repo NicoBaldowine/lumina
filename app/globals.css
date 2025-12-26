@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/CabinetGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #222222;
   --foreground: #ffffff;
@@ -69,42 +77,80 @@ body {
   animation: gradient 16s ease infinite;
 }
 
-/* Typography System */
-/* big-title: 60px medium -4% letter-spacing 140% line-height */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+/* Typography System - Cabinet Grotesk */
+/* huge-title: 120px regular -4% letter-spacing 100% line-height */
+.text-huge-title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* big-title: 60px regular -4% letter-spacing 100% line-height */
 .text-big-title {
-  font-size: 60px;
-  font-weight: 500;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(32px, 6vw, 60px);
+  font-weight: 400;
   letter-spacing: -0.04em;
-  line-height: 1.4;
+  line-height: 1;
 }
 
-/* medium-title: 36px medium -4% letter-spacing 140% line-height */
+/* medium-title: 36px regular -4% letter-spacing 110% line-height */
 .text-medium-title {
-  font-size: 36px;
-  font-weight: 500;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 400;
   letter-spacing: -0.04em;
-  line-height: 1.4;
+  line-height: 1.1;
 }
 
-/* card-title: 20px medium -4% letter-spacing 140% line-height */
+/* medium-title-mobile: 28px for mobile menu */
+.text-medium-title-mobile {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+/* card-title: 20px Inter medium -4% letter-spacing 140% line-height */
 .text-card-title {
-  font-size: 20px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(18px, 2vw, 20px);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.4;
 }
 
-/* big-description: 16px medium -4% letter-spacing 140% line-height */
+/* big-description: 16px Inter medium -4% letter-spacing 140% line-height */
 .text-big-description {
-  font-size: 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.4;
 }
 
-/* small-description: 13px medium -4% letter-spacing 140% line-height */
+/* small-description: 14px Inter medium -4% letter-spacing 140% line-height */
 .text-small-description {
-  font-size: 13px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(12px, 1.2vw, 14px);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.4;

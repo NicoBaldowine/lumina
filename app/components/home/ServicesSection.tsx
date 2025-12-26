@@ -1,6 +1,5 @@
 'use client';
 
-import ServiceCard from './ServiceCard';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
@@ -12,24 +11,25 @@ export default function ServicesSection() {
     {
       title: "Product Design",
       description: "Crafting intuitive and visually appealing designs that enhance brand identity and deliver exceptional user experiences.",
-      variant: 'ovals' as const
     },
     {
       title: "Web Design",
       description: "Strategic web designs to boost site visibility and enhance user engagement through modern, responsive solutions.",
-      variant: 'circles' as const
     },
     {
       title: "Brand Design",
       description: "Building distinctive brand identities that forge strong connections and leave lasting impressions on your audience.",
-      variant: 'flower' as const
+    },
+    {
+      title: "Development",
+      description: "Transforming designs into functional, performant applications with clean code and modern technologies.",
     }
   ];
 
   return (
-    <section className="py-32">
+    <section className="py-16 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-8 md:mb-12">
           <h2 className={`text-medium-title ${
             isDarkMode ? 'text-white/90' : 'text-neutral-800'
           }`}>
@@ -46,14 +46,27 @@ export default function ServicesSection() {
             All Services
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              variant={service.variant}
-            />
+            <div key={index}>
+              <div
+                className={`aspect-[16/9] mb-4 ${
+                  isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+                }`}
+              />
+              <div className="space-y-2">
+                <h3 className={`text-card-title ${
+                  isDarkMode ? 'text-white/90' : 'text-neutral-800'
+                }`}>
+                  {service.title}
+                </h3>
+                <p className={`text-small-description ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                }`}>
+                  {service.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

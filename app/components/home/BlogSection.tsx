@@ -13,7 +13,7 @@ export default function BlogSection() {
       imageUrl: "/post1.png",
       title: "The Future of Web Design",
       description: "Exploring emerging trends and technologies shaping the future of web design and user experiences.",
-      slug: "future-of-web-design"
+      slug: "the-future-of-web-design"
     },
     {
       imageUrl: "/post2.png",
@@ -30,9 +30,9 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="py-32">
+    <section className="py-16 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-8 md:mb-12">
           <h2 className={`text-medium-title ${
             isDarkMode ? 'text-white/90' : 'text-neutral-800'
           }`}>
@@ -40,7 +40,7 @@ export default function BlogSection() {
           </h2>
           <Link
             href="/blog"
-            className={`px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
               isDarkMode
                 ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
                 : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
@@ -49,7 +49,7 @@ export default function BlogSection() {
             All Posts
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {posts.map((post, index) => (
             <BlogCard
               key={index}

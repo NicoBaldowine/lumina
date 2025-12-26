@@ -1,96 +1,75 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../components/ThemeProvider';
+import BlogCard from '../components/home/BlogCard';
+import Link from 'next/link';
+
+const posts = [
+  {
+    imageUrl: "/post1.png",
+    title: "The Future of Web Design",
+    description: "Exploring emerging trends and technologies shaping the future of web design and user experiences.",
+    slug: "the-future-of-web-design"
+  },
+  {
+    imageUrl: "/post2.png",
+    title: "Mastering Design Systems",
+    description: "A comprehensive guide to creating and maintaining scalable design systems for modern applications.",
+    slug: "mastering-design-systems"
+  },
+  {
+    imageUrl: "/post3.png",
+    title: "UX Research Methods",
+    description: "Essential research methods and techniques for understanding user needs and behaviors.",
+    slug: "ux-research-methods"
+  },
+  {
+    title: "Building Accessible Interfaces",
+    description: "How to create inclusive digital experiences that work for everyone, regardless of ability.",
+    slug: "building-accessible-interfaces"
+  },
+  {
+    title: "The Psychology of Color in Design",
+    description: "Understanding how color choices impact user perception and behavior in digital products.",
+    slug: "psychology-of-color-in-design"
+  },
+  {
+    title: "Mobile-First Design Principles",
+    description: "Why starting with mobile leads to better experiences across all devices and screen sizes.",
+    slug: "mobile-first-design-principles"
+  }
+];
 
 export default function BlogPage() {
   const { isDarkMode } = useContext(ThemeContext);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const posts = [
-    {
-      title: "The Future of Web Development in 2024",
-      excerpt: "Exploring the latest trends and technologies shaping the web development landscape.",
-      category: "Development",
-      date: "Nov 15, 2023",
-      readTime: "5 min read"
-    },
-    {
-      title: "Designing for Accessibility: A Complete Guide",
-      excerpt: "Learn how to create inclusive digital experiences that work for everyone.",
-      category: "Design",
-      date: "Nov 10, 2023",
-      readTime: "8 min read"
-    },
-    {
-      title: "Mobile-First Design: Best Practices",
-      excerpt: "Why mobile-first design is crucial for modern web development.",
-      category: "Design",
-      date: "Nov 5, 2023",
-      readTime: "6 min read"
-    },
-    {
-      title: "Understanding Design Systems",
-      excerpt: "A comprehensive guide to creating and maintaining design systems.",
-      category: "Design",
-      date: "Nov 1, 2023",
-      readTime: "7 min read"
-    }
-  ];
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen pt-[72px]">
-      <section className="py-20">
+      <section className="py-12 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl">
-            <h1 className={`text-big-title mb-6 ${
-              isDarkMode ? 'text-white' : 'text-neutral-800'
-            }`}>
-              Our Blog
-            </h1>
-            <p className={`text-big-description max-w-2xl ${
-              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
-              Insights and thoughts on design, development, and digital innovation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className={`py-20 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-50'}`}>
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {posts.map((post, index) => (
-              <article key={index} className="space-y-4">
-                <div className={`aspect-[16/9] relative overflow-hidden ${
-                  isDarkMode ? 'bg-[#2a2a2a]' : 'bg-neutral-200'
-                }`}>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
-                </div>
-                <div className="space-y-4">
-                  <div className={`flex items-center gap-4 text-small-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}>
-                    <span>{post.category}</span>
-                    <span>•</span>
-                    <span>{post.date}</span>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h2 className={`text-card-title ${
-                    isDarkMode ? 'text-white/90' : 'text-neutral-800'
-                  }`}>
-                    {post.title}
-                  </h2>
-                  <p className={`text-small-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}>
-                    {post.excerpt}
-                  </p>
-                  <button className="text-small-description text-[#43D4A9] hover:text-[#43D4A9]/80 transition-colors">
-                    Read More →
-                  </button>
-                </div>
-              </article>
+              <div
+                key={post.slug}
+                className={`transition-all duration-1000 ease-out ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${200 + index * 100}ms` }}
+              >
+                <BlogCard
+                  imageUrl={post.imageUrl}
+                  title={post.title}
+                  description={post.description}
+                  slug={post.slug}
+                />
+              </div>
             ))}
           </div>
         </div>

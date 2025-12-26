@@ -1,72 +1,82 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../components/ThemeProvider';
 
 export default function AboutUsPage() {
   const { isDarkMode } = useContext(ThemeContext);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen pt-[72px]">
-      <section className="relative py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl">
-            <h1 className={`text-big-title mb-6 ${
-              isDarkMode ? 'text-white' : 'text-neutral-800'
-            }`}>
-              We create digital experiences that matter
+      <div className="max-w-[1200px] mx-auto px-6 py-8 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Left side */}
+          <div>
+            <h1
+              className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
+                isDarkMode ? 'text-white' : 'text-black'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              We're Lumina. We help Businesses find clarity, direction, and growth.
             </h1>
-            <p className={`text-big-description max-w-2xl ${
-              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
-              Our team of designers and developers work together to create innovative solutions that help businesses grow and succeed in the digital world.
+            <p
+              className={`text-big-description mb-12 transition-all duration-1000 delay-200 ease-out ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              We're a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we turn vision into reality.
+            </p>
+
+            {/* Placeholder image */}
+            <div
+              className={`aspect-[4/3] transition-all duration-1000 delay-400 ease-out ${
+                isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            />
+          </div>
+
+          {/* Right side */}
+          <div>
+            <p
+              className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              We help businesses and startups bring their ideas to life, from first sketches to real, working digital products. At Lumina, we design interfaces, build brands, and code websites and apps that actually ship.
+            </p>
+
+            <h2
+              className={`text-medium-title mb-8 transition-all duration-1000 delay-300 ease-out ${
+                isDarkMode ? 'text-white' : 'text-black'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              To illuminate is to guide. To design is to shape. To build is to grow.
+            </h2>
+
+            <p
+              className={`text-big-description mb-8 transition-all duration-1000 delay-500 ease-out ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Our foundation is built on three simple principles: clarity, to simplify the complex; direction, to align vision with execution; and growth, to create things that evolve and scale. At Lumina, we exist to bring light to the path forward — whether you're launching something new or evolving what's already working.
+            </p>
+
+            <p
+              className={`text-big-description transition-all duration-1000 delay-700 ease-out ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              We're a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we bring vision into reality.
             </p>
           </div>
         </div>
-      </section>
-
-      <section className={`py-20 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-neutral-50'}`}>
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4">
-              <h3 className={`text-card-title ${
-                isDarkMode ? 'text-white/90' : 'text-neutral-800'
-              }`}>
-                Our Mission
-              </h3>
-              <p className={`text-small-description ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}>
-                To deliver exceptional digital solutions that transform businesses and enhance user experiences.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className={`text-card-title ${
-                isDarkMode ? 'text-white/90' : 'text-neutral-800'
-              }`}>
-                Our Vision
-              </h3>
-              <p className={`text-small-description ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}>
-                To be the leading creative force in digital innovation and design excellence.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className={`text-card-title ${
-                isDarkMode ? 'text-white/90' : 'text-neutral-800'
-              }`}>
-                Our Values
-              </h3>
-              <p className={`text-small-description ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}>
-                Innovation, collaboration, and unwavering commitment to quality in everything we do.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
   );
 }
