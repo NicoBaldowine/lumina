@@ -49,14 +49,14 @@ export default function ContactForm() {
             isDarkMode ? 'text-white' : 'text-black'
           } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          Let's build something together.
+          Let&apos;s build something together.
         </h1>
         <p
           className={`text-big-description mb-6 transition-all duration-1000 delay-200 ease-out ${
             isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
           } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          If you're working on something or want to connect, share a bit about yourself and what you're looking to create. We'll get back to you as soon as possible.
+          If you&apos;re working on something or want to connect, share a bit about yourself and what you&apos;re looking to create. We&apos;ll get back to you as soon as possible.
         </p>
         <p
           className={`text-big-description transition-all duration-1000 delay-300 ease-out ${

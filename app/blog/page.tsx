@@ -1,9 +1,7 @@
 'use client';
 
-import { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../components/ThemeProvider';
+import { useEffect, useState } from 'react';
 import BlogCard from '../components/home/BlogCard';
-import Link from 'next/link';
 
 const posts = [
   {
@@ -42,7 +40,6 @@ const posts = [
 ];
 
 export default function BlogPage() {
-  const { isDarkMode } = useContext(ThemeContext);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

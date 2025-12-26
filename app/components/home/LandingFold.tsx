@@ -61,7 +61,7 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
               isDarkMode ? 'text-white/60' : 'text-neutral-500'
             } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}
           >
-            We're a digital studio focused on illuminating ideas — helping startups and businesses define who they are,
+            We&apos;re a digital studio focused on illuminating ideas — helping startups and businesses define who they are,
             what they build, and how they show up in the world. From brand to product, we turn vision into reality.
           </p>
         </div>

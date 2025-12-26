@@ -23,14 +23,14 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-white' : 'text-black'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We're Lumina. We help Businesses find clarity, direction, and growth.
+              We&apos;re Lumina. We help Businesses find clarity, direction, and growth.
             </h1>
             <p
               className={`text-big-description mb-12 transition-all duration-1000 delay-200 ease-out ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We're a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we turn vision into reality.
+              We&apos;re a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we turn vision into reality.
             </p>
 
             {/* Placeholder image */}
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              Our foundation is built on three simple principles: clarity, to simplify the complex; direction, to align vision with execution; and growth, to create things that evolve and scale. At Lumina, we exist to bring light to the path forward — whether you're launching something new or evolving what's already working.
+              Our foundation is built on three simple principles: clarity, to simplify the complex; direction, to align vision with execution; and growth, to create things that evolve and scale. At Lumina, we exist to bring light to the path forward — whether you&apos;re launching something new or evolving what&apos;s already working.
             </p>
 
             <p
@@ -72,7 +72,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We're a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we bring vision into reality.
+              We&apos;re a digital studio focused on illuminating ideas — helping startups and businesses define who they are, what they build, and how they show up in the world. From brand to product, we bring vision into reality.
             </p>
           </div>
         </div>
