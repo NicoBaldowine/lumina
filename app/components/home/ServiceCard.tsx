@@ -87,12 +87,12 @@ export default function ServiceCard({ title, description, variant }: ServiceCard
         </div>
       </div>
       <div className="space-y-2">
-        <h3 className={`text-xl leading-relaxed tracking-tight ${
+        <h3 className={`text-card-title ${
           isDarkMode ? 'text-white/90' : 'text-neutral-800'
         }`}>
           {title}
         </h3>
-        <p className={`text-sm leading-relaxed ${
+        <p className={`text-small-description ${
           isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
         }`}>
           {description}

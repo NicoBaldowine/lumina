@@ -27,14 +27,14 @@ export default function BlogCard({ imageUrl, title, description, slug }: BlogCar
         />
       </div>
       <div className="space-y-2">
-        <h3 className={`text-xl leading-relaxed tracking-tight transition-colors ${
+        <h3 className={`text-card-title transition-colors ${
           isDarkMode
             ? 'text-white/90 group-hover:text-white'
             : 'text-neutral-800 group-hover:text-black'
         }`}>
           {title}
         </h3>
-        <p className={`text-sm leading-relaxed ${
+        <p className={`text-small-description ${
           isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
         }`}>
           {description}

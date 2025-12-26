@@ -42,12 +42,12 @@ export default function BlogPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className={`text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight mb-6 font-medium ${
+            <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-neutral-800'
             }`}>
               Our Blog
             </h1>
-            <p className={`text-lg leading-relaxed max-w-2xl ${
+            <p className={`text-big-description max-w-2xl ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
             }`}>
               Insights and thoughts on design, development, and digital innovation.
@@ -67,7 +67,7 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
                 </div>
                 <div className="space-y-4">
-                  <div className={`flex items-center gap-4 text-xs ${
+                  <div className={`flex items-center gap-4 text-small-description ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   }`}>
                     <span>{post.category}</span>
@@ -76,17 +76,17 @@ export default function BlogPage() {
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className={`text-2xl leading-tight tracking-tight ${
+                  <h2 className={`text-card-title ${
                     isDarkMode ? 'text-white/90' : 'text-neutral-800'
                   }`}>
                     {post.title}
                   </h2>
-                  <p className={`text-sm leading-relaxed ${
+                  <p className={`text-small-description ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   }`}>
                     {post.excerpt}
                   </p>
-                  <button className="text-sm text-[#43D4A9] hover:text-[#43D4A9]/80 transition-colors">
+                  <button className="text-small-description text-[#43D4A9] hover:text-[#43D4A9]/80 transition-colors">
                     Read More →
                   </button>
                 </div>

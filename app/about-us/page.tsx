@@ -11,12 +11,12 @@ export default function AboutUsPage() {
       <section className="relative py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className={`text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight mb-6 font-medium ${
+            <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-neutral-800'
             }`}>
               We create digital experiences that matter
             </h1>
-            <p className={`text-lg leading-relaxed max-w-2xl ${
+            <p className={`text-big-description max-w-2xl ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
             }`}>
               Our team of designers and developers work together to create innovative solutions that help businesses grow and succeed in the digital world.
@@ -29,36 +29,36 @@ export default function AboutUsPage() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
-              <h3 className={`text-2xl leading-tight tracking-tight ${
+              <h3 className={`text-card-title ${
                 isDarkMode ? 'text-white/90' : 'text-neutral-800'
               }`}>
                 Our Mission
               </h3>
-              <p className={`text-sm leading-relaxed ${
+              <p className={`text-small-description ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               }`}>
                 To deliver exceptional digital solutions that transform businesses and enhance user experiences.
               </p>
             </div>
             <div className="space-y-4">
-              <h3 className={`text-2xl leading-tight tracking-tight ${
+              <h3 className={`text-card-title ${
                 isDarkMode ? 'text-white/90' : 'text-neutral-800'
               }`}>
                 Our Vision
               </h3>
-              <p className={`text-sm leading-relaxed ${
+              <p className={`text-small-description ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               }`}>
                 To be the leading creative force in digital innovation and design excellence.
               </p>
             </div>
             <div className="space-y-4">
-              <h3 className={`text-2xl leading-tight tracking-tight ${
+              <h3 className={`text-card-title ${
                 isDarkMode ? 'text-white/90' : 'text-neutral-800'
               }`}>
                 Our Values
               </h3>
-              <p className={`text-sm leading-relaxed ${
+              <p className={`text-small-description ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               }`}>
                 Innovation, collaboration, and unwavering commitment to quality in everything we do.

@@ -12,7 +12,7 @@ export default function Hero() {
       isDarkMode ? 'bg-[#222222]' : 'bg-white'
     }`}>
       <div className="container relative z-10 mx-auto px-6">
-        <h1 className="text-left text-[clamp(40px,6.5vw,82px)] font-medium leading-[0.95] tracking-[-0.02em] mb-6 max-w-[1200px]">
+        <h1 className="text-big-title text-left mb-6 max-w-[1200px]">
           <span className={`bg-clip-text text-transparent ${
             isDarkMode
               ? 'bg-gradient-to-r from-white to-[#666666]'
@@ -22,7 +22,7 @@ export default function Hero() {
             innovative & effective design.
           </span>
         </h1>
-        <p className={`text-left text-base leading-relaxed tracking-[-0.01em] ${
+        <p className={`text-big-description text-left ${
           isDarkMode ? 'text-white/40' : 'text-neutral-500'
         } mb-8 max-w-[600px]`}>
           Describe how you use data analysis to inform website design and marketing strategies,

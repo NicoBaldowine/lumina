@@ -34,12 +34,12 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className={`text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight mb-6 font-medium ${
+            <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-neutral-800'
             }`}>
               Our Services
             </h1>
-            <p className={`text-lg leading-relaxed max-w-2xl ${
+            <p className={`text-big-description max-w-2xl ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
             }`}>
               We offer a comprehensive range of digital services to help your business succeed online.
@@ -55,19 +55,19 @@ export default function ServicesPage() {
               <div key={index} className={`p-8 border space-y-4 ${
                 isDarkMode ? 'border-white/10' : 'border-black/10'
               }`}>
-                <h3 className={`text-2xl leading-tight tracking-tight ${
+                <h3 className={`text-card-title ${
                   isDarkMode ? 'text-white/90' : 'text-neutral-800'
                 }`}>
                   {service.title}
                 </h3>
-                <p className={`text-sm leading-relaxed ${
+                <p className={`text-small-description ${
                   isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                 }`}>
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className={`text-sm leading-relaxed flex items-center gap-2 ${
+                    <li key={featureIndex} className={`text-small-description flex items-center gap-2 ${
                       isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                     }`}>
                       <span className="w-1 h-1 bg-[#43D4A9] rounded-full"></span>

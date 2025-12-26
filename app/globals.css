@@ -68,3 +68,44 @@ body {
 .animate-gradient {
   animation: gradient 16s ease infinite;
 }
+
+/* Typography System */
+/* big-title: 60px medium -4% letter-spacing 140% line-height */
+.text-big-title {
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+/* medium-title: 36px medium -4% letter-spacing 140% line-height */
+.text-medium-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+/* card-title: 20px medium -4% letter-spacing 140% line-height */
+.text-card-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+/* big-description: 16px medium -4% letter-spacing 140% line-height */
+.text-big-description {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+/* small-description: 13px medium -4% letter-spacing 140% line-height */
+.text-small-description {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}

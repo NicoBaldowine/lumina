@@ -28,12 +28,12 @@ export default function ProjectCard({ title, description, imageUrl }: ProjectCar
         />
       </div>
       <div className="space-y-2">
-        <h3 className={`text-lg md:text-xl tracking-tight ${
+        <h3 className={`text-card-title ${
           isDarkMode ? 'text-white' : 'text-[#070606]'
         }`}>
           {title}
         </h3>
-        <p className={`text-base leading-relaxed ${
+        <p className={`text-small-description ${
           isDarkMode ? 'text-white/40' : 'text-neutral-500'
         }`}>
           {description}
