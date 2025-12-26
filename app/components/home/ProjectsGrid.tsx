@@ -46,7 +46,7 @@ export default function ProjectsGrid() {
 
   return (
     <section className="relative -mt-[100px]">
-      <div className="px-6">
+      <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
           {projects.map((project, index) => (
             <div 

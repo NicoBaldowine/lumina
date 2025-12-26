@@ -31,7 +31,7 @@ export default function BlogSection() {
 
   return (
     <section className="py-32">
-      <div className="px-6">
+      <div className="container mx-auto px-6">
         <div className="flex justify-between items-center mb-12">
           <h2 className={`font-light text-4xl leading-tight tracking-tight ${
             isDarkMode ? 'text-white/90' : 'text-neutral-800'
