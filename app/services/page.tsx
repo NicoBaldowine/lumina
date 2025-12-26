@@ -43,7 +43,7 @@ export default function ServicesPage() {
             <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
-              We're a digital studio that turns ideas into digital products.
+              We&apos;re a digital studio that turns ideas into digital products.
             </h1>
             <p className={`text-big-description mb-12 ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
