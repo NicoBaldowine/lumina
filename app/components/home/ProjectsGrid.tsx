@@ -4,51 +4,59 @@ export default function ProjectsGrid() {
   const projects = [
     {
       imageUrl: "/project1.png",
-      title: "The Outworld App",
+      title: "Outworld",
       slug: "the-outworld-app",
       description: "We collaborated to create a tool that connects parents with fun activities for kids. This web app identifies parents' locations and filters activities to keep their calendars full of exciting options to enjoy with their children.",
+      badges: ["APP", "BRANDING", "DEV"],
     },
     {
       imageUrl: "/project2.png",
-      title: "Aspire App",
+      title: "Aspire",
       slug: "aspire-app",
       description: "A visually impactful project aimed at creating an app for building routines through 21-day challenges on various topics. The idea was to use vibrant iconography to inspire anyone striving for self-improvement.",
+      badges: ["APP", "BRANDING", "LANDING", "DEV"],
     },
     {
       imageUrl: "/project3.png",
-      title: "Shinkai Branding",
+      title: "Shinkai",
       slug: "shinkai-branding",
-      description: "Shinkai is a powerful product offering interconnected AI agents, all in one place and open-source. This was an exciting project to craft an identity that resonates with its audience.",
+      description: "We partnered with Shinkai to craft a brand identity and product guidelines for their decentralized AI platform — where users build, run, and monetize autonomous AI agents while maintaining complete control over their data.",
+      badges: ["BRANDING", "PRODUCT"],
     },
     {
       imageUrl: "/project4.png",
-      title: "Shinkai Website",
-      slug: "shinkai-website",
-      description: "A landing page for the Shinkai product designed to showcase use cases and features, highlighting the value proposition. It enables users to subscribe to different plans and access the tool effortlessly.",
+      title: "Zuma",
+      slug: "zuma",
+      description: "We partnered with Zuma to design a fintech web app that helps young adults take control of their finances through unlimited savings buckets — turning one account into a powerful system for achieving financial goals.",
+      badges: ["WEBAPP", "PRODUCT"],
     },
     {
       imageUrl: "/project5.png",
-      title: "Scala Web Application",
-      slug: "scala-web-application",
-      description: "An innovative platform connecting talent with hiring managers, bridging gaps to streamline and accelerate the hiring process. It's ideal for talent looking to build portfolio cases with real-world projects.",
+      title: "Cinco",
+      slug: "cinco",
+      description: "We partnered with Cinco to design a complete hotel operations ecosystem — a dashboard for managers, a mobile app for staff, and a guest portal — all working together to earn five-star reviews.",
+      badges: ["BRANDING", "WEBAPP", "APP", "PRODUCT"],
     },
     {
       imageUrl: "/project6.png",
-      title: "Travel Wallet",
-      slug: "travel-wallet",
-      description: "A travel wallet project featuring multi-currency support, currency exchange, and a digital wallet card for payments worldwide. It also integrates AI for generating illustrations, making it a unique product.",
+      title: "Quizland App",
+      slug: "quizland-app",
+      description: "We designed and developed Quizland — an AI-powered mobile app that generates custom quizzes on any topic imaginable. From history to pop culture, users simply type a topic and let AI create personalized learning experiences.",
+      badges: ["APP", "LANDING", "DEV"],
     },
     {
       imageUrl: "/project7.png",
-      title: "Scala Branding",
-      slug: "scala-branding",
-      description: "Scala's concept bridges companies with talent, visually embodying the connection of these two worlds. The mission was to craft a recognizable identity emphasizing growth, connection, and scalability.",
+      title: "Yester.ai",
+      slug: "yester-ai",
+      description: "Brand identity and product design for an AI-powered platform that helps users capture, organize, and relive their most meaningful memories through intelligent storytelling.",
+      badges: ["APP", "LANDING", "DEV"],
     },
     {
       imageUrl: "/project8.png",
-      title: "Quizland App",
-      slug: "quizland-app",
-      description: "An innovative product leveraging AI to generate quizzes on any topic users can imagine. With a simple interface and robust integration with OpenAI, this app provides a compelling blend of endless entertainment and education.",
+      title: "Versus",
+      slug: "versus",
+      description: "A bold brand identity for a competitive gaming platform that brings players together through head-to-head challenges and community-driven tournaments.",
+      badges: ["APP", "LANDING", "DEV"],
     }
   ];
 
@@ -68,6 +76,7 @@ export default function ProjectsGrid() {
                 description={project.description}
                 imageUrl={project.imageUrl}
                 slug={project.slug}
+                badges={project.badges}
               />
             </div>
           ))}

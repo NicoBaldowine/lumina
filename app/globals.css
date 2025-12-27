@@ -155,3 +155,9 @@ body {
   letter-spacing: -0.04em;
   line-height: 1.4;
 }
+
+/* Safe area for mobile devices with notches */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
