@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
@@ -9,20 +10,24 @@ export default function ServicesSection() {
 
   const services = [
     {
-      title: "Product Design",
-      description: "Crafting intuitive and visually appealing designs that enhance brand identity and deliver exceptional user experiences.",
-    },
-    {
-      title: "Web Design",
-      description: "Strategic web designs to boost site visibility and enhance user engagement through modern, responsive solutions.",
-    },
-    {
       title: "Brand Design",
-      description: "Building distinctive brand identities that forge strong connections and leave lasting impressions on your audience.",
+      description: "Building clear, credible brand foundations for early-stage startups.",
+      image: "/Brand.png",
     },
     {
-      title: "Development",
-      description: "Transforming designs into functional, performant applications with clean code and modern technologies.",
+      title: "Web & Landing Pages",
+      description: "High-quality landing pages designed to convert and build trust.",
+      image: "/Web.png",
+    },
+    {
+      title: "Product Design",
+      description: "Designing usable, web or app products that are ready to ship.",
+      image: "/Product.png",
+    },
+    {
+      title: "MVP Development",
+      description: "Building real, production-ready MVPs, not throwaway demos.",
+      image: "/Development.png",
     }
   ];
 
@@ -46,14 +51,58 @@ export default function ServicesSection() {
             All Services
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        {/* Mobile layout - horizontal list items */}
+        <div className="flex flex-col gap-6 md:hidden">
+          {services.map((service, index) => (
+            <div key={index} className="flex items-start gap-4">
+              <div
+                className={`w-[70px] h-[70px] flex-shrink-0 flex items-center justify-center ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className="w-[50px] h-[50px] relative">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <div className="space-y-1">
+                <h3 className={`text-card-title ${
+                  isDarkMode ? 'text-white/90' : 'text-neutral-800'
+                }`}>
+                  {service.title}
+                </h3>
+                <p className={`text-small-description ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                }`}>
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop layout - grid with images in containers */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {services.map((service, index) => (
             <div key={index}>
               <div
-                className={`aspect-[16/9] mb-4 ${
-                  isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+                className={`aspect-[16/9] mb-4 flex items-center justify-center ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
                 }`}
-              />
+              >
+                <div className="w-[113px] h-[113px] relative">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
               <div className="space-y-2">
                 <h3 className={`text-card-title ${
                   isDarkMode ? 'text-white/90' : 'text-neutral-800'

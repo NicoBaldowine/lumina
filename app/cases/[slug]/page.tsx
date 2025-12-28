@@ -21,7 +21,7 @@ const casesData: Record<string, CaseStudy> = {
   'the-outworld-app': {
     title: 'Bringing Families Closer to Adventure',
     subtitle: 'Outworld',
-    description: 'We collaborated to create a tool that connects parents with fun activities for kids. This web app identifies parents\' locations and filters activities to keep their calendars full of exciting options to enjoy with their children.',
+    description: 'A web app that connects parents with fun activities for kids. Using location-based filtering, it helps families discover exciting options to keep their calendars full of memorable experiences.',
     imageUrl: '/project1.png',
     headerImage: '/cases/Outworld1.png',
     year: '2024',
@@ -32,7 +32,7 @@ const casesData: Record<string, CaseStudy> = {
   'aspire-app': {
     title: 'Building Better Habits, One Day at a Time',
     subtitle: 'Aspire',
-    description: 'We partnered to create a motivational app that helps users build positive habits or break negative ones through structured 21-day challenges. The app combines psychology-backed methodology with vibrant design to make self-improvement feel achievable.',
+    description: 'A motivational app that helps users build positive habits or break negative ones through structured 21-day challenges. Psychology-backed methodology meets vibrant design to make self-improvement feel achievable.',
     imageUrl: '/project2.png',
     headerImage: '/cases/Aspire1.png',
     year: '2024',
@@ -43,7 +43,7 @@ const casesData: Record<string, CaseStudy> = {
   'shinkai-branding': {
     title: 'AI on Your Terms',
     subtitle: 'Shinkai',
-    description: 'We partnered with Shinkai to craft a brand identity and product guidelines for their decentralized AI platform — where users build, run, and monetize autonomous AI agents while maintaining complete control over their data, identity, and payments.',
+    description: 'Brand identity and product guidelines for a decentralized AI platform. Shinkai enables users to build, run, and monetize autonomous AI agents while maintaining complete control over their data, identity, and payments.',
     imageUrl: '/project3.png',
     headerImage: '/cases/Shinkai1.png',
     year: '2024',
@@ -54,7 +54,7 @@ const casesData: Record<string, CaseStudy> = {
   'zuma': {
     title: 'Save Smarter, Live Better',
     subtitle: 'Zuma',
-    description: 'We partnered with Zuma to design a fintech web app that helps young adults take control of their finances. By connecting to bank accounts through Plaid, Zuma lets users create unlimited savings buckets — turning one account into a powerful system for achieving financial goals.',
+    description: 'A fintech web app helping young adults take control of their finances. By connecting to bank accounts through Plaid, Zuma enables unlimited savings buckets, turning one account into a powerful system for achieving financial goals.',
     imageUrl: '/project4.png',
     headerImage: '/cases/Zuma1.png',
     year: '2024',
@@ -65,7 +65,7 @@ const casesData: Record<string, CaseStudy> = {
   'cinco': {
     title: 'The Staff Operations Platform for Modern Hotels',
     subtitle: 'Cinco',
-    description: 'We partnered with Cinco to design a complete hotel operations ecosystem — a dashboard for managers, a mobile app for staff, and a guest portal — all working together to transform service quality and earn those five-star reviews.',
+    description: 'A complete hotel operations ecosystem: a dashboard for managers, a mobile app for staff, and a guest portal. All components work together to transform service quality and earn five-star reviews.',
     imageUrl: '/project5.png',
     headerImage: '/cases/Cinco1.png',
     year: '2024',
@@ -76,7 +76,7 @@ const casesData: Record<string, CaseStudy> = {
   'quizland-app': {
     title: 'Learn Anything, Quiz Everything',
     subtitle: 'Quizland App',
-    description: 'We designed and developed Quizland — an AI-powered mobile app that generates custom quizzes on any topic imaginable. From history to pop culture to complex sciences, users simply type a topic and let AI create personalized learning experiences.',
+    description: 'An AI-powered mobile app that generates custom quizzes on any topic. From history to pop culture to complex sciences, users simply type a topic and get personalized learning experiences instantly.',
     imageUrl: '/project6.png',
     headerImage: '/cases/Quizland1.png',
     year: '2024',
@@ -98,7 +98,7 @@ const casesData: Record<string, CaseStudy> = {
   'versus': {
     title: 'Your Next Pickleball Match, One Tap Away',
     subtitle: 'Versus',
-    description: 'We designed and developed Versus — a mobile app connecting pickleball players based on location and skill level. Create or join matches, find players near you, and never miss a game. Like Tinder for pickleball — swipe, match, play.',
+    description: 'A mobile app connecting pickleball players based on location and skill level. Create or join matches, find nearby players, and never miss a game. Like Tinder for pickleball: swipe, match, play.',
     imageUrl: '/project8.png',
     headerImage: '/cases/Versus1.png',
     year: '2024',
@@ -112,21 +112,21 @@ const casesData: Record<string, CaseStudy> = {
 const outworldContent = {
   intro: {
     headline: 'Every weekend shouldn\'t feel like a research project',
-    description: '73% of parents spend over 2 hours per week searching for family activities. 68% give up and repeat the same outings. The Outworld reduced activity discovery time by 85%, helping families reclaim their weekends and discover 3x more new experiences.'
+    description: '73% of parents spend over 2 hours per week searching for family activities. 68% give up and repeat the same outings. The Outworld reduces activity discovery time by 85%, helping families reclaim their weekends and discover 3x more new experiences.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'The founders of The Outworld came to us with a clear vision but needed help bringing it to life. They had validated the problem through extensive user research — parents were frustrated with fragmented information about family activities.',
+    content: 'The founders had validated the problem through extensive user research: parents were frustrated with fragmented information about family activities.',
     content2: 'Some relied on Facebook groups, others on outdated websites, and many just gave up and stayed home. The challenge was threefold: create a brand that resonates with modern parents, design an intuitive mobile experience, and build a scalable technical foundation.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We started where we always start — with the people who would use it. Through interviews with parents across different demographics, we understood their mental models, frustrations, and desires. Parents didn\'t just want a list of activities; they wanted curated experiences that matched their family\'s unique needs.'
+    title: 'The Approach',
+    content: 'The process started with the people who would use it. Through interviews with parents across different demographics, the goal was to understand their mental models, frustrations, and desires. Parents didn\'t just want a list of activities; they wanted curated experiences that matched their family\'s unique needs.'
   },
   deliverables: [
     {
       title: 'Brand Identity',
-      description: 'We crafted a brand that speaks to the adventurous spirit within every family. The name "Outworld" evokes exploration and discovery, while the visual identity balances playfulness with sophistication — appealing to parents who want quality experiences for their children.'
+      description: 'A brand that speaks to the adventurous spirit within every family. The name "Outworld" evokes exploration and discovery, while the visual identity balances playfulness with sophistication, appealing to parents who want quality experiences for their children.'
     },
     {
       title: 'Mobile Application',
@@ -134,7 +134,7 @@ const outworldContent = {
     },
     {
       title: 'Landing Page',
-      description: 'We designed and developed a marketing website that communicates the value proposition clearly and drives app downloads. The landing page showcases key features, testimonials, and provides a seamless path to the app stores.'
+      description: 'A marketing website that communicates the value proposition clearly and drives app downloads. The landing page showcases key features, testimonials, and provides a seamless path to the app stores.'
     },
     {
       title: 'Technical Foundation',
@@ -146,19 +146,19 @@ const outworldContent = {
     phases: [
       {
         name: 'Discovery & Strategy',
-        description: 'We immersed ourselves in the problem space. User interviews, competitor analysis, and market research helped us understand not just what to build, but why it would matter. We defined user personas, mapped out user journeys, and established success metrics.'
+        description: 'Deep immersion in the problem space. User interviews, competitor analysis, and market research helped understand not just what to build, but why it would matter. User personas, user journeys, and success metrics were defined.'
       },
       {
         name: 'Brand Development',
-        description: 'The brand needed to feel trustworthy yet exciting. We explored multiple directions before landing on a visual system that combines warm, inviting colors with clean typography. The logo symbolizes the connection between families and the world of experiences waiting for them.'
+        description: 'The brand needed to feel trustworthy yet exciting. Multiple directions were explored before landing on a visual system that combines warm, inviting colors with clean typography. The logo symbolizes the connection between families and the world of experiences waiting for them.'
       },
       {
         name: 'Product Design',
-        description: 'We designed the app with a mobile-first mindset. Every interaction was optimized for one-handed use — because parents often have their hands full. The information architecture prioritized quick discovery, with filters and search always accessible. We prototyped extensively, testing with real users at every stage.'
+        description: 'The app was designed with a mobile-first mindset. Every interaction was optimized for one-handed use, because parents often have their hands full. The information architecture prioritized quick discovery, with filters and search always accessible. Extensive prototyping and user testing at every stage.'
       },
       {
         name: 'Development',
-        description: 'Our development approach emphasized clean architecture and maintainability. We implemented the design system as reusable components, set up CI/CD pipelines for rapid deployment, and built comprehensive analytics to understand user behavior post-launch.'
+        description: 'The development approach emphasized clean architecture and maintainability. The design system was implemented as reusable components, CI/CD pipelines set up for rapid deployment, and comprehensive analytics built to understand user behavior post-launch.'
       }
     ]
   },
@@ -171,11 +171,11 @@ const outworldContent = {
       },
       {
         name: 'Location-Based Search',
-        description: 'Find activities near you or explore options in areas you\'re planning to visit.'
+        description: 'Find activities nearby or explore options in areas you\'re planning to visit.'
       },
       {
         name: 'Curated Content',
-        description: 'Every activity is vetted and enriched with helpful details — what to expect, tips for visiting, and honest reviews from other parents.'
+        description: 'Every activity is vetted and enriched with helpful details: what to expect, tips for visiting, and honest reviews from other parents.'
       },
       {
         name: 'Flexible Filtering',
@@ -192,7 +192,7 @@ const outworldContent = {
     content: 'The Outworld launched to an enthusiastic response from the parent community. The app has been praised for its intuitive design and the quality of its curated content. More importantly, it\'s helping families spend less time planning and more time experiencing.'
   },
   testimonial: {
-    quote: 'Lumina didn\'t just build an app — they helped us realize our vision. Their attention to detail and understanding of our users made all the difference.',
+    quote: 'The team didn\'t just build an app. They helped realize the vision. Their attention to detail and understanding of users made all the difference.',
     author: 'Founder, The Outworld'
   }
 };
@@ -200,22 +200,22 @@ const outworldContent = {
 // Full case study content for Shinkai
 const shinkaiContent = {
   intro: {
-    headline: 'AI should work for you — not the other way around',
-    description: 'In a world where AI tools demand your data in exchange for intelligence, Shinkai takes a different approach. We crafted an identity that embodies this philosophy: powerful AI that respects your privacy, autonomy, and ownership.'
+    headline: 'AI should work for you, not the other way around',
+    description: 'In a world where AI tools demand your data in exchange for intelligence, Shinkai takes a different approach. The identity embodies this philosophy: powerful AI that respects your privacy, autonomy, and ownership.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'Shinkai is building something fundamentally different — a decentralized AI platform where users maintain control over their data, identity, and payments. The technology is groundbreaking: interconnected AI agents, local model execution, and blockchain-based micropayments.',
-    content2: 'The challenge was translating this technical complexity into a brand that feels approachable yet sophisticated. How do you visually represent decentralization? Privacy? Agent autonomy? We needed to create a system that communicates trust and innovation in equal measure.'
+    content: 'Shinkai is building something fundamentally different: a decentralized AI platform where users maintain control over their data, identity, and payments. The technology is groundbreaking: interconnected AI agents, local model execution, and blockchain-based micropayments.',
+    content2: 'The challenge was translating this technical complexity into a brand that feels approachable yet sophisticated. How to visually represent decentralization? Privacy? Agent autonomy? The solution needed to communicate trust and innovation in equal measure.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We started by understanding the core philosophy: AI on your terms. This became our north star. Every design decision was filtered through this lens — does it feel like the user is in control? Does it communicate empowerment over dependency? The result is a brand that feels both cutting-edge and human-centered.'
+    title: 'The Approach',
+    content: 'The process started by understanding the core philosophy: AI on your terms. This became the north star. Every design decision was filtered through this lens: does it feel like the user is in control? Does it communicate empowerment over dependency? The result is a brand that feels both cutting-edge and human-centered.'
   },
   brandPillars: [
     {
       title: 'Privacy by Design',
-      description: 'Your data stays local. We visualized this through contained, self-sufficient design elements that suggest security without feeling restrictive.'
+      description: 'Your data stays local. Contained, self-sufficient design elements suggest security without feeling restrictive.'
     },
     {
       title: 'Decentralized Power',
@@ -223,13 +223,13 @@ const shinkaiContent = {
     },
     {
       title: 'Agent Autonomy',
-      description: 'AI that works independently. We created a visual language for autonomous agents — distinct personalities that operate within a cohesive system.'
+      description: 'AI that works independently. A visual language for autonomous agents: distinct personalities that operate within a cohesive system.'
     }
   ],
   deliverables: [
     {
       title: 'Brand Strategy',
-      description: 'We developed a comprehensive brand strategy rooted in the concept of "AI liberation" — freeing users from the data-for-service model that dominates the industry. This positioning differentiates Shinkai in a crowded AI market.'
+      description: 'A comprehensive brand strategy rooted in the concept of "AI liberation," freeing users from the data-for-service model that dominates the industry. This positioning differentiates Shinkai in a crowded AI market.'
     },
     {
       title: 'Visual Identity',
@@ -237,7 +237,7 @@ const shinkaiContent = {
     },
     {
       title: 'Product Guidelines',
-      description: 'Detailed guidelines for applying the brand across digital products — from the desktop app to web interfaces. This includes component styling, interaction patterns, and voice guidelines for AI agent personas.'
+      description: 'Detailed guidelines for applying the brand across digital products, from the desktop app to web interfaces. This includes component styling, interaction patterns, and voice guidelines for AI agent personas.'
     }
   ],
   visualSystem: {
@@ -245,7 +245,7 @@ const shinkaiContent = {
     elements: [
       {
         name: 'Logo',
-        description: 'The Shinkai mark represents interconnected intelligence — nodes working in harmony while maintaining individual autonomy. It scales from favicon to billboard without losing meaning.'
+        description: 'The Shinkai mark represents interconnected intelligence: nodes working in harmony while maintaining individual autonomy. It scales from favicon to billboard without losing meaning.'
       },
       {
         name: 'Color Palette',
@@ -257,7 +257,7 @@ const shinkaiContent = {
       },
       {
         name: 'Iconography',
-        description: 'A custom icon set designed for AI concepts — agents, nodes, connections, privacy shields. Each icon works at multiple sizes and maintains clarity even at small scales.'
+        description: 'A custom icon set designed for AI concepts: agents, nodes, connections, privacy shields. Each icon works at multiple sizes and maintains clarity even at small scales.'
       }
     ]
   },
@@ -266,28 +266,28 @@ const shinkaiContent = {
     sections: [
       {
         name: 'Interface Principles',
-        description: 'We established core principles for all Shinkai interfaces: clarity over cleverness, progressive disclosure of complexity, and consistent visual feedback for AI operations.'
+        description: 'Core principles for all Shinkai interfaces: clarity over cleverness, progressive disclosure of complexity, and consistent visual feedback for AI operations.'
       },
       {
         name: 'Agent Visualization',
-        description: 'Guidelines for how autonomous agents appear and behave in the interface — their visual presence, status indicators, and interaction patterns.'
+        description: 'Guidelines for how autonomous agents appear and behave in the interface: their visual presence, status indicators, and interaction patterns.'
       },
       {
         name: 'Dark Mode First',
-        description: 'Given the technical audience and extended usage patterns, we designed dark mode as the primary experience with light mode as an accessible alternative.'
+        description: 'Given the technical audience and extended usage patterns, dark mode was designed as the primary experience with light mode as an accessible alternative.'
       },
       {
         name: 'Voice & Tone',
-        description: 'Guidelines for how Shinkai communicates — technical but not jargon-heavy, confident but not arrogant, helpful without being patronizing.'
+        description: 'Guidelines for how Shinkai communicates: technical but not jargon-heavy, confident but not arrogant, helpful without being patronizing.'
       }
     ]
   },
   results: {
     title: 'The Impact',
-    content: 'The new brand identity has given Shinkai a distinct presence in the AI space. The visual system successfully communicates the platform\'s unique value proposition — powerful AI that respects user autonomy. The product guidelines ensure consistency as the platform grows, while allowing flexibility for future features.'
+    content: 'The new brand identity has given Shinkai a distinct presence in the AI space. The visual system successfully communicates the platform\'s unique value proposition: powerful AI that respects user autonomy. The product guidelines ensure consistency as the platform grows, while allowing flexibility for future features.'
   },
   testimonial: {
-    quote: 'Lumina understood that our brand needed to communicate something radical — that AI can be powerful AND private. They created an identity that makes this vision tangible.',
+    quote: 'The brand needed to communicate something radical: that AI can be powerful AND private. This identity makes that vision tangible.',
     author: 'Founder, Shinkai'
   }
 };
@@ -295,30 +295,30 @@ const shinkaiContent = {
 // Full case study content for Aspire App
 const aspireContent = {
   intro: {
-    headline: 'It takes 21 days to form a habit — but most people quit by day 3',
-    description: '92% of New Year\'s resolutions fail. The average person attempts the same habit change 7 times before succeeding. Aspire users complete 21-day challenges at a 67% rate — 4x the industry average — by turning habit formation into a visual, rewarding journey.'
+    headline: 'It takes 21 days to form a habit, but most people quit by day 3',
+    description: '92% of New Year\'s resolutions fail. The average person attempts the same habit change 7 times before succeeding. Aspire users complete 21-day challenges at a 67% rate, 4x the industry average, by turning habit formation into a visual, rewarding journey.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'The Aspire team approached us with research showing that habit-building apps had a fundamental problem: they treated all habits the same way and relied on willpower alone. Users would start strong but lose motivation when progress felt invisible.',
-    content2: 'They needed a product that understood the psychology of behavior change — that 21 days is the scientifically-backed threshold for habit formation, and that visual progress is essential for motivation. The challenge was to create something that felt personal, not generic.'
+    content: 'Research showed that habit-building apps had a fundamental problem: they treated all habits the same way and relied on willpower alone. Users would start strong but lose motivation when progress felt invisible.',
+    content2: 'The product needed to understand the psychology of behavior change: that 21 days is the scientifically-backed threshold for habit formation, and that visual progress is essential for motivation. The challenge was creating something that felt personal, not generic.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We immersed ourselves in behavioral psychology research and interviewed people who had both succeeded and failed at building habits. The insight was clear: people don\'t just need tracking, they need transformation to feel tangible. We designed every element to make the 21-day journey feel like an adventure, not a chore.'
+    title: 'The Approach',
+    content: 'Deep immersion in behavioral psychology research and interviews with people who had both succeeded and failed at building habits. The insight was clear: people don\'t just need tracking, they need transformation to feel tangible. Every element was designed to make the 21-day journey feel like an adventure, not a chore.'
   },
   deliverables: [
     {
       title: 'Brand Identity',
-      description: 'We created a brand that embodies aspiration and achievement. The vibrant iconography system uses color psychology to evoke energy and positivity, while the name "Aspire" speaks to the universal human desire for self-improvement.'
+      description: 'A brand that embodies aspiration and achievement. The vibrant iconography system uses color psychology to evoke energy and positivity, while the name "Aspire" speaks to the universal human desire for self-improvement.'
     },
     {
       title: 'Mobile Application',
-      description: 'The app features curated 21-day challenges across categories — from fitness and mindfulness to productivity and creativity. Each day presents a specific task, with visual progress indicators and motivational content to keep users engaged through the critical early days.'
+      description: 'The app features curated 21-day challenges across categories, from fitness and mindfulness to productivity and creativity. Each day presents a specific task, with visual progress indicators and motivational content to keep users engaged through the critical early days.'
     },
     {
       title: 'Landing Page',
-      description: 'We designed a conversion-focused landing page that communicates the science behind 21-day habit formation and showcases the app\'s unique visual approach. The page drives app downloads while building trust in the methodology.'
+      description: 'A conversion-focused landing page that communicates the science behind 21-day habit formation and showcases the app\'s unique visual approach. The page drives app downloads while building trust in the methodology.'
     }
   ],
   process: {
@@ -326,19 +326,19 @@ const aspireContent = {
     phases: [
       {
         name: 'Research & Psychology',
-        description: 'We dove deep into habit formation science — studying the work of researchers on neuroplasticity and behavior change. We conducted user interviews with people who had successfully built lasting habits and those who had struggled, identifying the key differences in their approaches.'
+        description: 'Deep dive into habit formation science, studying the work of researchers on neuroplasticity and behavior change. User interviews with people who had successfully built lasting habits and those who had struggled, identifying the key differences in their approaches.'
       },
       {
         name: 'Brand Strategy',
-        description: 'The brand needed to feel aspirational yet achievable. We developed a visual system centered on vibrant, energetic colors that evolve as users progress. Each challenge category has its own color identity, making the experience feel personal and organized.'
+        description: 'The brand needed to feel aspirational yet achievable. A visual system centered on vibrant, energetic colors that evolve as users progress. Each challenge category has its own color identity, making the experience feel personal and organized.'
       },
       {
         name: 'Product Design',
-        description: 'We designed the app around daily micro-interactions that build momentum. Each day\'s task is revealed fresh, creating anticipation. Visual progress — like filling in a 21-day grid — provides the tangible sense of achievement that keeps users coming back.'
+        description: 'The app was designed around daily micro-interactions that build momentum. Each day\'s task is revealed fresh, creating anticipation. Visual progress, like filling in a 21-day grid, provides the tangible sense of achievement that keeps users coming back.'
       },
       {
         name: 'Launch Strategy',
-        description: 'We created a landing page optimized for conversion, with clear messaging about the 21-day methodology and social proof from beta users. The launch strategy focused on the new year resolution crowd, capitalizing on peak motivation periods.'
+        description: 'A landing page optimized for conversion, with clear messaging about the 21-day methodology and social proof from beta users. The launch strategy focused on the new year resolution crowd, capitalizing on peak motivation periods.'
       }
     ]
   },
@@ -355,7 +355,7 @@ const aspireContent = {
       },
       {
         name: 'Diverse Challenge Categories',
-        description: 'From meditation and exercise to reading and digital detox — users can choose challenges that align with their personal growth goals.'
+        description: 'From meditation and exercise to reading and digital detox, users can choose challenges that align with their personal growth goals.'
       },
       {
         name: 'Daily Motivation',
@@ -372,7 +372,7 @@ const aspireContent = {
     content: 'Aspire launched to strong user engagement, with completion rates significantly higher than industry benchmarks for habit apps. The vibrant visual design has been praised by users as a key motivator, with many reporting that "seeing the progress" was what kept them going through difficult days.'
   },
   testimonial: {
-    quote: 'Lumina understood that we weren\'t just building an app — we were building a system for personal transformation. The design makes every day feel like an achievement.',
+    quote: 'This wasn\'t just building an app. It was building a system for personal transformation. The design makes every day feel like an achievement.',
     author: 'Founder, Aspire'
   }
 };
@@ -381,16 +381,16 @@ const aspireContent = {
 const zumaContent = {
   intro: {
     headline: 'Credit card debt is the silent killer of financial dreams',
-    description: 'The average American under 35 carries $3,700 in credit card debt. 45% of Gen Z has already accumulated credit card debt before age 25. Zuma users save 3x more than traditional banking users by making every dollar intentional — no debt, no overdrafts, just progress toward real goals.'
+    description: 'The average American under 35 carries $3,700 in credit card debt. 45% of Gen Z has already accumulated credit card debt before age 25. Zuma users save 3x more than traditional banking users by making every dollar intentional: no debt, no overdrafts, just progress toward real goals.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'Young adults are entering the financial world with a dangerous default: credit cards. Banks push credit as the answer to everything — from coffee to emergencies — creating a cycle of debt that can take decades to escape. The average credit card APR is now over 20%, turning small purchases into long-term burdens.',
-    content2: 'Zuma\'s founders saw a different path. What if instead of borrowing against your future, you could allocate your present? They needed a product that would make intentional saving as easy as swiping a credit card — and more rewarding than the instant gratification of debt.'
+    content: 'Young adults are entering the financial world with a dangerous default: credit cards. Banks push credit as the answer to everything, from coffee to emergencies, creating a cycle of debt that can take decades to escape. The average credit card APR is now over 20%, turning small purchases into long-term burdens.',
+    content2: 'Zuma\'s founders saw a different path. What if instead of borrowing against your future, you could allocate your present? The product needed to make intentional saving as easy as swiping a credit card, and more rewarding than the instant gratification of debt.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We approached this challenge by understanding the psychology of young savers. Through user research, we discovered that the problem wasn\'t motivation — young people want to save. The problem was visibility. Traditional bank accounts show one number. That number hides everything: rent money, emergency funds, vacation savings, and spending money all look the same. Zuma makes the invisible visible.'
+    title: 'The Approach',
+    content: 'The challenge was approached by understanding the psychology of young savers. Through user research, it became clear that the problem wasn\'t motivation: young people want to save. The problem was visibility. Traditional bank accounts show one number. That number hides everything: rent money, emergency funds, vacation savings, and spending money all look the same. Zuma makes the invisible visible.'
   },
   stats: [
     {
@@ -413,15 +413,15 @@ const zumaContent = {
   deliverables: [
     {
       title: 'Product Strategy',
-      description: 'We defined the core product vision: your bank account, but organized. Zuma connects via Plaid to mirror your existing checking or savings account, then lets you create unlimited "buckets" — virtual allocations that give every dollar a purpose without moving money between accounts.'
+      description: 'The core product vision: your bank account, but organized. Zuma connects via Plaid to mirror your existing checking or savings account, then lets you create unlimited "buckets," virtual allocations that give every dollar a purpose without moving money between accounts.'
     },
     {
       title: 'Web Application Design',
-      description: 'We designed a responsive web app that makes bucket management intuitive. Users can create buckets for any goal — from "New iPhone" to "Emergency Fund" to "House Down Payment" — set targets, and watch their progress in real-time. The interface prioritizes clarity and motivation.'
+      description: 'A responsive web app that makes bucket management intuitive. Users can create buckets for any goal, from "New iPhone" to "Emergency Fund" to "House Down Payment," set targets, and watch their progress in real-time. The interface prioritizes clarity and motivation.'
     },
     {
       title: 'Banking Integration',
-      description: 'Through Plaid integration, Zuma securely connects to users\' existing bank accounts. The app acts as a smart mirror — it doesn\'t hold money, it organizes it. This approach removes friction (no new accounts needed) while providing powerful visibility.'
+      description: 'Through Plaid integration, Zuma securely connects to users\' existing bank accounts. The app acts as a smart mirror: it doesn\'t hold money, it organizes it. This approach removes friction (no new accounts needed) while providing powerful visibility.'
     }
   ],
   features: {
@@ -429,7 +429,7 @@ const zumaContent = {
     list: [
       {
         name: 'Unlimited Buckets',
-        description: 'Create as many savings buckets as you need — from short-term goals like concert tickets to long-term dreams like a house down payment.'
+        description: 'Create as many savings buckets as needed, from short-term goals like concert tickets to long-term dreams like a house down payment.'
       },
       {
         name: 'Smart Allocation',
@@ -454,11 +454,11 @@ const zumaContent = {
     phases: [
       {
         name: 'User Research',
-        description: 'We interviewed young adults about their relationship with money. The patterns were clear: they felt out of control, overwhelmed by complexity, and pressured into credit. They wanted simplicity and progress they could see.'
+        description: 'Interviews with young adults about their relationship with money. The patterns were clear: they felt out of control, overwhelmed by complexity, and pressured into credit. They wanted simplicity and progress they could see.'
       },
       {
         name: 'Product Architecture',
-        description: 'We designed the bucket system to be infinitely flexible. Whether someone wants 3 buckets or 30, the interface scales elegantly. We prioritized the most common actions: checking progress, adding money, and creating new goals.'
+        description: 'The bucket system was designed to be infinitely flexible. Whether someone wants 3 buckets or 30, the interface scales elegantly. The most common actions were prioritized: checking progress, adding money, and creating new goals.'
       },
       {
         name: 'Visual Design',
@@ -466,13 +466,13 @@ const zumaContent = {
       },
       {
         name: 'Technical Integration',
-        description: 'We designed the Plaid integration flow to be trustworthy and transparent. Users understand exactly what Zuma can and can\'t do with their bank connection, building confidence in the security model.'
+        description: 'The Plaid integration flow was designed to be trustworthy and transparent. Users understand exactly what Zuma can and can\'t do with their bank connection, building confidence in the security model.'
       }
     ]
   },
   philosophy: {
     title: 'The Anti-Credit Philosophy',
-    content: 'Zuma exists because we believe debt shouldn\'t be the default. Every purchase made on credit is a bet against your future self. Every purchase made with savings is an investment in your present peace of mind. Zuma makes the second choice as easy as the first.',
+    content: 'Zuma exists because debt shouldn\'t be the default. Every purchase made on credit is a bet against your future self. Every purchase made with savings is an investment in your present peace of mind. Zuma makes the second choice as easy as the first.',
     principles: [
       {
         title: 'Visibility Over Complexity',
@@ -484,7 +484,7 @@ const zumaContent = {
       },
       {
         title: 'Ownership Over Owing',
-        description: 'The goal isn\'t financial sophistication — it\'s financial freedom. Own your purchases. Own your goals. Own your future.'
+        description: 'The goal isn\'t financial sophistication, it\'s financial freedom. Own your purchases. Own your goals. Own your future.'
       }
     ]
   },
@@ -493,7 +493,7 @@ const zumaContent = {
     content: 'Zuma launched as a tool for financial clarity in a world of financial confusion. Early users report feeling "in control of money for the first time" and "actually excited to check their savings." The bucket system has proven especially powerful for goal-oriented saving, with users achieving purchase goals 3x faster than with traditional savings accounts.'
   },
   testimonial: {
-    quote: 'Lumina didn\'t just design an app — they designed a new relationship with money. The product feels like it understands how young people actually think about finances.',
+    quote: 'This wasn\'t just designing an app. It was designing a new relationship with money. The product feels like it understands how young people actually think about finances.',
     author: 'Founder, Zuma'
   }
 };
@@ -502,16 +502,16 @@ const zumaContent = {
 const cincoContent = {
   intro: {
     headline: 'Five-star service starts behind the scenes',
-    description: 'Hotels live and die by their reviews. Yet 68% of negative hotel reviews mention service issues — slow housekeeping, unresponsive staff, maintenance delays. Cinco helps hotels coordinate their entire staff operation in real-time, turning operational chaos into the seamless service guests remember.'
+    description: 'Hotels live and die by their reviews. Yet 68% of negative hotel reviews mention service issues: slow housekeeping, unresponsive staff, maintenance delays. Cinco helps hotels coordinate their entire staff operation in real-time, turning operational chaos into the seamless service guests remember.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'The hospitality industry runs on paper clipboards, walkie-talkies, and WhatsApp groups. Managers don\'t know which rooms are ready. Staff don\'t know their priorities. Guests wait too long for everything. In Latin America and Spain, where tourism is a massive industry, hotels are competing for the same guests — but operating like it\'s 1995.',
-    content2: 'Cinco\'s founders saw an opportunity to modernize hotel operations from the inside out. They needed three products that work as one: a command center for managers, a task system for staff, and a service portal for guests. The name "Cinco" comes from the Spanish word for five — as in five-star service.'
+    content: 'The hospitality industry runs on paper clipboards, walkie-talkies, and WhatsApp groups. Managers don\'t know which rooms are ready. Staff don\'t know their priorities. Guests wait too long for everything. In Latin America and Spain, where tourism is a massive industry, hotels are competing for the same guests but operating like it\'s 1995.',
+    content2: 'Cinco\'s founders saw an opportunity to modernize hotel operations from the inside out. They needed three products that work as one: a command center for managers, a task system for staff, and a service portal for guests. The name "Cinco" comes from the Spanish word for five, as in five-star service.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We approached this as an ecosystem design challenge. Each user type — manager, staff, guest — has different needs, contexts, and devices. But they all share one goal: excellent service delivered efficiently. We designed three products that feel like one unified system, with real-time synchronization and clear role-based experiences.'
+    title: 'The Approach',
+    content: 'This was an ecosystem design challenge. Each user type (manager, staff, guest) has different needs, contexts, and devices. But they all share one goal: excellent service delivered efficiently. Three products were designed to feel like one unified system, with real-time synchronization and clear role-based experiences.'
   },
   stats: [
     {
@@ -537,7 +537,7 @@ const cincoContent = {
       {
         name: 'Manager Dashboard',
         platform: 'Web Application',
-        description: 'The command center for hotel operations. Managers see real-time room status, track housekeeping progress, monitor check-in/check-out timing, manage tickets and incidents, and analyze staff performance. Everything they need to run the hotel — in one view.'
+        description: 'The command center for hotel operations. Managers see real-time room status, track housekeeping progress, monitor check-in/check-out timing, manage tickets and incidents, and analyze staff performance. Everything needed to run the hotel, in one view.'
       },
       {
         name: 'Staff App',
@@ -547,7 +547,7 @@ const cincoContent = {
       {
         name: 'Guest Portal',
         platform: 'Web Application',
-        description: 'The modern hotel experience for guests. Request room service, set do-not-disturb status, order amenities, and access hotel information — all from their phone. No more waiting on hold or walking to the front desk.'
+        description: 'The modern hotel experience for guests. Request room service, set do-not-disturb status, order amenities, and access hotel information, all from their phone. No more waiting on hold or walking to the front desk.'
       }
     ]
   },
@@ -556,7 +556,7 @@ const cincoContent = {
     list: [
       {
         name: 'Real-Time Room Status',
-        description: 'See every room\'s status at a glance — occupied, vacant, being cleaned, ready for check-in, or maintenance needed.'
+        description: 'See every room\'s status at a glance: occupied, vacant, being cleaned, ready for check-in, or maintenance needed.'
       },
       {
         name: 'Smart Task Assignment',
@@ -585,11 +585,11 @@ const cincoContent = {
     phases: [
       {
         name: 'Industry Research',
-        description: 'We spent time in hotels — watching operations, interviewing managers, shadowing housekeeping staff, and understanding guest pain points. The gap between how hotels think they operate and how they actually operate was eye-opening.'
+        description: 'Time spent in hotels: watching operations, interviewing managers, shadowing housekeeping staff, and understanding guest pain points. The gap between how hotels think they operate and how they actually operate was eye-opening.'
       },
       {
         name: 'Ecosystem Architecture',
-        description: 'We mapped every interaction between managers, staff, and guests. The key insight: information flows in all directions, but each role needs it presented differently. We designed a unified data model with role-specific interfaces.'
+        description: 'Every interaction between managers, staff, and guests was mapped. The key insight: information flows in all directions, but each role needs it presented differently. A unified data model with role-specific interfaces.'
       },
       {
         name: 'Multi-Platform Design',
@@ -597,13 +597,13 @@ const cincoContent = {
       },
       {
         name: 'Bilingual Implementation',
-        description: 'With Latin America and Spain as primary markets, the entire ecosystem was designed for English and Spanish from day one. Not just translated — culturally adapted for hospitality contexts in both languages.'
+        description: 'With Latin America and Spain as primary markets, the entire ecosystem was designed for English and Spanish from day one. Not just translated, but culturally adapted for hospitality contexts in both languages.'
       }
     ]
   },
   philosophy: {
     title: 'The Five-Star Philosophy',
-    content: 'Great hotel service isn\'t about grand gestures — it\'s about consistency. The room is ready on time. The request is handled quickly. The problem is fixed before it escalates. Cinco makes the invisible work of hospitality visible, measurable, and manageable.',
+    content: 'Great hotel service isn\'t about grand gestures, it\'s about consistency. The room is ready on time. The request is handled quickly. The problem is fixed before it escalates. Cinco makes the invisible work of hospitality visible, measurable, and manageable.',
     principles: [
       {
         title: 'Visibility Creates Accountability',
@@ -624,7 +624,7 @@ const cincoContent = {
     content: 'Cinco launched with pilot hotels in Mexico and Colombia, with expansion planned across Latin America and Spain. Early results show 40% reduction in guest complaint response times, 25% improvement in room turnover efficiency, and measurable increases in review scores. Hotels using Cinco report that staff feel more organized and guests notice the difference.'
   },
   testimonial: {
-    quote: 'Lumina understood that we weren\'t just building software — we were redesigning how hotels operate. They delivered three products that work as one, and our pilot hotels are already seeing the results in their reviews.',
+    quote: 'This wasn\'t just building software. It was redesigning how hotels operate. Three products that work as one, and pilot hotels are already seeing the results in their reviews.',
     author: 'Founder, Cinco'
   }
 };
@@ -633,16 +633,16 @@ const cincoContent = {
 const quizlandContent = {
   intro: {
     headline: 'What if you could learn about literally anything?',
-    description: 'Traditional learning apps force you into their curriculum. Quizland flips the script — you choose the topic, AI creates the quiz, and you learn exactly what you want to know. From ancient history to modern memes, no subject is off-limits.'
+    description: 'Traditional learning apps force you into their curriculum. Quizland flips the script: you choose the topic, AI creates the quiz, and you learn exactly what you want to know. From ancient history to modern memes, no subject is off-limits.'
   },
   challenge: {
     title: 'The Challenge',
     content: 'Education apps are everywhere, but they all share the same limitation: pre-made content. Users are stuck learning what the app decides is important. For curious minds who want to explore niche topics or test themselves on specific subjects, existing solutions fall short.',
-    content2: 'Quizland\'s founder wanted to build something different — an app where the user\'s curiosity drives the experience. The challenge was making AI-generated content feel polished, educational, and fun, while keeping the interface simple enough that anyone could use it instantly.'
+    content2: 'Quizland\'s founder wanted to build something different: an app where the user\'s curiosity drives the experience. The challenge was making AI-generated content feel polished, educational, and fun, while keeping the interface simple enough that anyone could use it instantly.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We designed Quizland with one principle: get out of the user\'s way. The core interaction is beautifully simple — type a topic, tap generate, start quizzing. Behind that simplicity, we built a robust system that leverages OpenAI\'s API to create intelligent, contextual questions that actually teach while they test.'
+    title: 'The Approach',
+    content: 'Quizland was designed with one principle: get out of the user\'s way. The core interaction is beautifully simple: type a topic, tap generate, start quizzing. Behind that simplicity, a robust system leverages OpenAI\'s API to create intelligent, contextual questions that actually teach while they test.'
   },
   stats: [
     {
@@ -669,7 +669,7 @@ const quizlandContent = {
     },
     {
       title: 'AI Integration',
-      description: 'Deep integration with OpenAI\'s API to generate contextually relevant questions. We engineered prompts that produce consistent, educational content across difficulty levels — from beginner-friendly to expert-challenging.'
+      description: 'Deep integration with OpenAI\'s API to generate contextually relevant questions. Prompts engineered to produce consistent, educational content across difficulty levels, from beginner-friendly to expert-challenging.'
     },
     {
       title: 'Landing Page',
@@ -681,7 +681,7 @@ const quizlandContent = {
     list: [
       {
         name: 'Infinite Topics',
-        description: 'Type any topic you can imagine — history, science, pop culture, sports, niche hobbies — and get a custom quiz in seconds.'
+        description: 'Type any topic you can imagine: history, science, pop culture, sports, niche hobbies. Get a custom quiz in seconds.'
       },
       {
         name: 'Adaptive Difficulty',
@@ -701,7 +701,7 @@ const quizlandContent = {
       },
       {
         name: 'Offline Mode',
-        description: 'Save generated quizzes to play offline — perfect for commutes, flights, or anywhere without connection.'
+        description: 'Save generated quizzes to play offline. Perfect for commutes, flights, or anywhere without connection.'
       }
     ]
   },
@@ -710,11 +710,11 @@ const quizlandContent = {
     phases: [
       {
         name: 'Product Strategy',
-        description: 'We mapped the user journey from curiosity to knowledge. The key insight: the moment between "I wonder about X" and "let me learn about X" needs to be frictionless. Every design decision optimized for that moment.'
+        description: 'The user journey from curiosity to knowledge was mapped. The key insight: the moment between "I wonder about X" and "let me learn about X" needs to be frictionless. Every design decision optimized for that moment.'
       },
       {
         name: 'AI Engineering',
-        description: 'We spent significant time crafting prompts that generate high-quality educational content. The AI needed to understand context, calibrate difficulty, and create questions that test understanding — not just memory.'
+        description: 'Significant time was spent crafting prompts that generate high-quality educational content. The AI needed to understand context, calibrate difficulty, and create questions that test understanding, not just memory.'
       },
       {
         name: 'Interface Design',
@@ -736,7 +736,7 @@ const quizlandContent = {
       },
       {
         title: 'Learn by Testing',
-        description: 'Active recall — testing yourself — is proven to be more effective than passive reading. Quizland makes testing fun.'
+        description: 'Active recall (testing yourself) is proven to be more effective than passive reading. Quizland makes testing fun.'
       },
       {
         title: 'No Limits',
@@ -749,7 +749,7 @@ const quizlandContent = {
     content: 'Quizland launched on the App Store to enthusiastic reception. Users love the freedom to explore any topic and the instant gratification of AI-generated quizzes. The app has been particularly popular with lifelong learners, trivia enthusiasts, and students looking to make studying more engaging.'
   },
   testimonial: {
-    quote: 'Lumina brought our vision to life perfectly. They understood that we weren\'t just building a quiz app — we were building a tool for infinite curiosity. The result feels magical.',
+    quote: 'This wasn\'t just a quiz app. It was a tool for infinite curiosity. The result feels magical.',
     author: 'Founder, Quizland'
   }
 };
@@ -762,12 +762,12 @@ const yesteraiContent = {
   },
   challenge: {
     title: 'The Challenge',
-    content: 'History education is often dry, disconnected, and hard to navigate. Traditional resources either overwhelm with academic depth or oversimplify to the point of uselessness. People want to explore the past on their own terms — by year, by topic, by region — but no tool existed that made this both possible and enjoyable.',
+    content: 'History education is often dry, disconnected, and hard to navigate. Traditional resources either overwhelm with academic depth or oversimplify to the point of uselessness. People want to explore the past on their own terms, by year, by topic, by region, but no tool existed that made this both possible and enjoyable.',
     content2: 'Yester.ai\'s founder envisioned an app where anyone could travel through time, exploring historical events with the same ease as scrolling through a social feed. The challenge was making vast amounts of historical data accessible, accurate, and genuinely engaging.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We designed Yester.ai as a time machine for the curious. The interface centers around a simple but powerful concept: pick a year, choose a category, select a region, and dive in. AI generates contextual, well-researched content that brings each era to life, while the clean design keeps the focus on discovery.'
+    title: 'The Approach',
+    content: 'Yester.ai was designed as a time machine for the curious. The interface centers around a simple but powerful concept: pick a year, choose a category, select a region, and dive in. AI generates contextual, well-researched content that brings each era to life, while the clean design keeps the focus on discovery.'
   },
   stats: [
     {
@@ -800,7 +800,7 @@ const yesteraiContent = {
       },
       {
         name: 'Science',
-        description: 'Discoveries, inventions, and the brilliant minds behind them. The breakthroughs that changed how we understand the world.'
+        description: 'Discoveries, inventions, and the brilliant minds behind them. The breakthroughs that changed how humanity understands the world.'
       },
       {
         name: 'Sports',
@@ -839,7 +839,7 @@ const yesteraiContent = {
       },
       {
         name: 'Category Filters',
-        description: 'Focus on what interests you — history, art, science, sports, politics, or culture. Mix and match to find surprising connections.'
+        description: 'Focus on what interests you: history, art, science, sports, politics, or culture. Mix and match to find surprising connections.'
       },
       {
         name: 'Regional Focus',
@@ -864,15 +864,15 @@ const yesteraiContent = {
     phases: [
       {
         name: 'Research & Discovery',
-        description: 'We studied how people naturally explore history — by date, by topic, by connection. The timeline concept emerged as the most intuitive navigation model, mimicking how we mentally organize time.'
+        description: 'Studying how people naturally explore history: by date, by topic, by connection. The timeline concept emerged as the most intuitive navigation model, mimicking how time is mentally organized.'
       },
       {
         name: 'Information Architecture',
-        description: 'Organizing 2000+ years of world history across multiple categories required careful planning. We created a flexible system that scales infinitely while remaining navigable and coherent.'
+        description: 'Organizing 2000+ years of world history across multiple categories required careful planning. A flexible system that scales infinitely while remaining navigable and coherent.'
       },
       {
         name: 'AI Engineering',
-        description: 'We developed prompts and systems that generate historically accurate content while maintaining engaging, readable prose. The AI needed to be both scholarly and accessible.'
+        description: 'Developing prompts and systems that generate historically accurate content while maintaining engaging, readable prose. The AI needed to be both scholarly and accessible.'
       },
       {
         name: 'Visual Design',
@@ -882,11 +882,11 @@ const yesteraiContent = {
   },
   philosophy: {
     title: 'The Discovery Philosophy',
-    content: 'Yester.ai believes that understanding the past enriches the present. History isn\'t just names and dates — it\'s the story of humanity\'s journey. By making that story accessible and explorable, we help people connect with the world\'s shared heritage.',
+    content: 'Yester.ai believes that understanding the past enriches the present. History isn\'t just names and dates, it\'s the story of humanity\'s journey. Making that story accessible and explorable helps people connect with the world\'s shared heritage.',
     principles: [
       {
         title: 'Curiosity-Driven Exploration',
-        description: 'Follow your interests wherever they lead. There\'s no curriculum, no tests — just pure discovery at your own pace.'
+        description: 'Follow your interests wherever they lead. There\'s no curriculum, no tests, just pure discovery at your own pace.'
       },
       {
         title: 'Context Over Isolation',
@@ -894,7 +894,7 @@ const yesteraiContent = {
       },
       {
         title: 'Accuracy Matters',
-        description: 'History deserves respect. Our AI is trained to deliver factually accurate content, not speculation or myth.'
+        description: 'History deserves respect. The AI is trained to deliver factually accurate content, not speculation or myth.'
       }
     ]
   },
@@ -903,7 +903,7 @@ const yesteraiContent = {
     content: 'Yester.ai launched to enthusiastic reception from history enthusiasts, students, and curious minds alike. Users love the freedom to explore any era and the serendipitous discoveries that come from browsing through time. Teachers have found it valuable for sparking student interest in historical topics.'
   },
   testimonial: {
-    quote: 'Lumina designed an app that makes history feel alive and accessible. They understood our vision of democratizing historical knowledge and created an experience that\'s both educational and genuinely delightful to use.',
+    quote: 'An app that makes history feel alive and accessible. The vision of democratizing historical knowledge became an experience that\'s both educational and genuinely delightful to use.',
     author: 'Founder, Yester.ai'
   }
 };
@@ -912,16 +912,16 @@ const yesteraiContent = {
 const versusContent = {
   intro: {
     headline: 'Pickleball is booming. Finding players shouldn\'t be hard.',
-    description: 'Pickleball is the fastest-growing sport in America — 36.5 million players and counting. Yet most games still happen through group texts, Facebook posts, and hoping someone shows up at the courts. Versus changes that. One app. Endless matches.'
+    description: 'Pickleball is the fastest-growing sport in America: 36.5 million players and counting. Yet most games still happen through group texts, Facebook posts, and hoping someone shows up at the courts. Versus changes that. One app. Endless matches.'
   },
   challenge: {
     title: 'The Challenge',
     content: 'Pickleball has exploded from a niche backyard game to a mainstream phenomenon. In 2023, participation grew 223% over three years, with courts popping up in parks, gyms, and community centers across the country. But the infrastructure for connecting players hasn\'t kept pace.',
-    content2: 'Players face a fragmented landscape: some rely on local Facebook groups, others use outdated reservation systems, and many simply show up at courts hoping to find a match. For newcomers, finding players at their skill level — or any players at all — feels impossible. Versus saw an opportunity to bring the matchmaking revolution to the courts.'
+    content2: 'Players face a fragmented landscape: some rely on local Facebook groups, others use outdated reservation systems, and many simply show up at courts hoping to find a match. For newcomers, finding players at their skill level, or any players at all, feels impossible. Versus saw an opportunity to bring the matchmaking revolution to the courts.'
   },
   approach: {
-    title: 'Our Approach',
-    content: 'We designed Versus as "Tinder for pickleball" — but better. The core experience is simple: create or join a match, specify your skill level, and let the app handle the rest. Behind that simplicity, we built a sophisticated matching algorithm that considers location, skill rating, play style preferences, and availability to create the best possible games.'
+    title: 'The Approach',
+    content: 'Versus was designed as "Tinder for pickleball," but better. The core experience is simple: create or join a match, specify your skill level, and let the app handle the rest. Behind that simplicity, a sophisticated matching algorithm considers location, skill rating, play style preferences, and availability to create the best possible games.'
   },
   stats: [
     {
@@ -969,7 +969,7 @@ const versusContent = {
     },
     {
       title: 'Matching Algorithm',
-      description: 'Our proprietary matching system considers skill level (using a standardized rating system), geographic proximity, preferred play times, and historical match quality to suggest the best possible games.'
+      description: 'A proprietary matching system that considers skill level (using a standardized rating system), geographic proximity, preferred play times, and historical match quality to suggest the best possible games.'
     },
     {
       title: 'Landing Page',
@@ -1010,11 +1010,11 @@ const versusContent = {
     phases: [
       {
         name: 'Player Research',
-        description: 'We spent time at courts talking to players of all levels. The insight: skill mismatch is the biggest friction. Games are either too easy or too hard. The rating system became central to our design.'
+        description: 'Time spent at courts talking to players of all levels. The insight: skill mismatch is the biggest friction. Games are either too easy or too hard. The rating system became central to the design.'
       },
       {
         name: 'Matchmaking Design',
-        description: 'We studied dating apps, gaming matchmaking systems, and sports league software. The best experiences minimize decision fatigue while maximizing match quality. We applied these principles to court sports.'
+        description: 'Studying dating apps, gaming matchmaking systems, and sports league software. The best experiences minimize decision fatigue while maximizing match quality. These principles were applied to court sports.'
       },
       {
         name: 'Mobile-First UX',
@@ -1022,21 +1022,21 @@ const versusContent = {
       },
       {
         name: 'Community Building',
-        description: 'Beyond individual matches, we designed features that help local pickleball communities grow. Regular play groups, court ambassadors, and social features that turn strangers into regular partners.'
+        description: 'Beyond individual matches, features were designed to help local pickleball communities grow. Regular play groups, court ambassadors, and social features that turn strangers into regular partners.'
       }
     ]
   },
   philosophy: {
     title: 'The Versus Philosophy',
-    content: 'Great games happen when players are evenly matched, courts are convenient, and showing up is easy. Versus removes every barrier between "I want to play" and "I\'m on the court." We\'re not just an app — we\'re growing the sport.',
+    content: 'Great games happen when players are evenly matched, courts are convenient, and showing up is easy. Versus removes every barrier between "I want to play" and "I\'m on the court." Not just an app, but a way to grow the sport.',
     principles: [
       {
         title: 'Skill Matters',
-        description: 'Honest ratings make better games. We encourage accurate self-assessment and use match outcomes to refine ratings over time.'
+        description: 'Honest ratings make better games. Accurate self-assessment and match outcomes refine ratings over time.'
       },
       {
         title: 'Location is Everything',
-        description: 'The best match in the world means nothing if it\'s an hour away. We prioritize proximity so players actually show up.'
+        description: 'The best match in the world means nothing if it\'s an hour away. Proximity is prioritized so players actually show up.'
       },
       {
         title: 'Community First',
@@ -1046,10 +1046,10 @@ const versusContent = {
   },
   results: {
     title: 'The Impact',
-    content: 'Versus launched in select US markets to immediate traction. Players love the simplicity of finding games and the quality of skill-matched play. Courts report higher utilization as players coordinate through the app. Most importantly, we\'re hearing stories of strangers becoming regular playing partners — exactly what pickleball is all about.'
+    content: 'Versus launched in select US markets to immediate traction. Players love the simplicity of finding games and the quality of skill-matched play. Courts report higher utilization as players coordinate through the app. Most importantly, stories of strangers becoming regular playing partners: exactly what pickleball is all about.'
   },
   testimonial: {
-    quote: 'Lumina understood that we weren\'t just building an app — we were building a community tool. They captured the spirit of pickleball culture while solving a real problem. The matching system is exactly what the sport needed.',
+    quote: 'This wasn\'t just building an app. It was building a community tool. Capturing the spirit of pickleball culture while solving a real problem. The matching system is exactly what the sport needed.',
     author: 'Founder, Versus'
   }
 };
@@ -1261,7 +1261,7 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Delivered
+              Deliverables
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {outworldContent.deliverables.map((item, index) => {
@@ -1796,7 +1796,7 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Built
+              Deliverables
             </h2>
             <div className="space-y-6">
               {aspireContent.deliverables.map((item, index) => (
@@ -2294,7 +2294,7 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Delivered
+              Deliverables
             </h2>
             <div className="space-y-10">
               {shinkaiContent.deliverables.map((item, index) => (
@@ -2751,7 +2751,7 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Delivered
+              Deliverables
             </h2>
             <div className="space-y-10">
               {zumaContent.deliverables.map((item, index) => (
@@ -3733,7 +3733,7 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Delivered
+              Deliverables
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {quizlandContent.deliverables.map((item, index) => (
@@ -4055,7 +4055,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -4070,41 +4070,21 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Intro & Challenge Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {yesteraiContent.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p className={`text-huge-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {stat.number}
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {yesteraiContent.intro.description}
-            </h2>
-          </div>
-        </section>
-
-        {/* Challenge Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+              {/* Intro */}
+              <div>
+                <h2
+                  className={`text-medium-title ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  What happened in 1969? Who was the greatest artist of the Renaissance? What scientific breakthroughs occurred in your grandmother's birth year? Yester.ai transforms these questions into an immersive journey through time, powered by AI and designed for curious minds.
+                </h2>
+              </div>
+              {/* Challenge */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -4128,59 +4108,11 @@ export default function CasePage() {
                   {yesteraiContent.challenge.content2}
                 </p>
               </div>
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Timeline Navigation Concept</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Approach Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl order-2 lg:order-1 ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">App Interface Design</span>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {yesteraiContent.approach.title}
-                </h2>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {yesteraiContent.approach.content}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Categories Section */}
+        {/* Deliverables Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
@@ -4188,43 +4120,56 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              {yesteraiContent.categories.title}
+              Deliverables
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {yesteraiContent.categories.list.map((category, index) => (
-                <div key={index}>
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {category.name}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {category.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* App Mockups - Full Width */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[21/9] rounded-2xl ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Full App Experience — Year Navigator & Content Cards</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3
+                  className={`text-card-title mb-3 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  Mobile Application
+                </h3>
+                <p
+                  className={`text-small-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  A native iOS app designed for exploration and discovery. The timeline-based interface makes navigating thousands of years intuitive, while the card-based content layout makes complex history digestible and engaging.
+                </p>
+              </div>
+              <div>
+                <h3
+                  className={`text-card-title mb-3 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  AI Integration
+                </h3>
+                <p
+                  className={`text-small-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  Deep integration with AI to generate historically accurate, well-contextualized content on demand. The system understands the intersection of time, place, and category to deliver relevant, interesting facts.
+                </p>
+              </div>
+              <div>
+                <h3
+                  className={`text-card-title mb-3 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  Landing Page
+                </h3>
+                <p
+                  className={`text-small-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  A marketing website that captures the magic of time travel. The elegant design and clear messaging communicate the app's unique value proposition and drive downloads.
+                </p>
               </div>
             </div>
           </div>
@@ -4263,29 +4208,59 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Mobile App Mockups - Three Column */}
+        {/* App Screenshots Section - All images with 12px gap */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {['Year Selection Screen', 'Category Filters', 'Historical Event Detail'].map((label, index) => (
-                <div
-                  key={index}
-                  className={`aspect-[9/16] rounded-2xl ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description text-center px-4">{label}</span>
-                  </div>
+            <div className="flex flex-col gap-3">
+              {/* Two small images side by side */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="aspect-square relative overflow-hidden">
+                  <Image
+                    src="/cases/Yester5_lil.png"
+                    alt="Yester.ai App Icon"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <div className="aspect-square relative overflow-hidden">
+                  <Image
+                    src="/cases/Yester6_lil.png"
+                    alt="Yester.ai App on iPhone"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              {/* Full width images */}
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester2.png"
+                  alt="Yester.ai App Screen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester3.png"
+                  alt="Yester.ai App Screen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester4.png"
+                  alt="Yester.ai App Screen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Deliverables Section */}
+        {/* Categories Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
@@ -4293,24 +4268,24 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              What We Delivered
+              {yesteraiContent.categories.title}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {yesteraiContent.deliverables.map((deliverable, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {yesteraiContent.categories.list.map((category, index) => (
                 <div key={index}>
                   <h3
                     className={`text-card-title mb-3 ${
                       isDarkMode ? 'text-white' : 'text-black'
                     }`}
                   >
-                    {deliverable.title}
+                    {category.name}
                   </h3>
                   <p
                     className={`text-small-description ${
                       isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                     }`}
                   >
-                    {deliverable.description}
+                    {category.description}
                   </p>
                 </div>
               ))}
@@ -4318,25 +4293,40 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Landing Page Mockup */}
+        {/* Landing Page Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
-              className={`text-medium-title mb-8 ${
+              className={`text-big-title mb-12 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
               Landing Page
             </h2>
-            <div
-              className={`aspect-[16/9] rounded-2xl ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Landing Page — Hero & Features</span>
+            <div className="flex flex-col gap-3">
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester7.png"
+                  alt="Yester.ai Landing Page"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester8.png"
+                  alt="Yester.ai Landing Page"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Yester9.png"
+                  alt="Yester.ai Landing Page"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>

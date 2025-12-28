@@ -26,7 +26,7 @@ export default function ProjectCard({ title, description, imageUrl, slug, badges
 
   return (
     <div className="block group cursor-pointer" onClick={handleCardClick}>
-      <div className={`relative overflow-hidden mb-6 ${
+      <div className={`relative overflow-hidden mb-3 md:mb-6 ${
         isWiderCard ? 'aspect-[790/590]' : 'aspect-[544/704]'
       }`}>
         <Image
