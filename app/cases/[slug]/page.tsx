@@ -4081,7 +4081,7 @@ export default function CasePage() {
                     isDarkMode ? 'text-white' : 'text-black'
                   }`}
                 >
-                  What happened in 1969? Who was the greatest artist of the Renaissance? What scientific breakthroughs occurred in your grandmother's birth year? Yester.ai transforms these questions into an immersive journey through time, powered by AI and designed for curious minds.
+                  What happened in 1969? Who was the greatest artist of the Renaissance? What scientific breakthroughs occurred in your grandmother&apos;s birth year? Yester.ai transforms these questions into an immersive journey through time, powered by AI and designed for curious minds.
                 </h2>
               </div>
               {/* Challenge */}
@@ -4168,7 +4168,7 @@ export default function CasePage() {
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   }`}
                 >
-                  A marketing website that captures the magic of time travel. The elegant design and clear messaging communicate the app's unique value proposition and drive downloads.
+                  A marketing website that captures the magic of time travel. The elegant design and clear messaging communicate the app&apos;s unique value proposition and drive downloads.
                 </p>
               </div>
             </div>

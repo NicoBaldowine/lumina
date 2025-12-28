@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 import { ThemeContext } from '../ThemeProvider';
