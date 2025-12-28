@@ -56,12 +56,19 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
               priority
             />
           </div>
+          <h1
+            className={`text-card-title max-w-3xl mb-4 transition-all duration-1000 delay-100 ease-out ${
+              isDarkMode ? 'text-white' : 'text-black'
+            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}
+          >
+            Digital studio that help startups launch and validate world-class MVPs.
+          </h1>
           <p
             className={`text-big-description max-w-2xl transition-all duration-1000 delay-200 ease-out ${
               isDarkMode ? 'text-white/60' : 'text-neutral-500'
             } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}
           >
-            We&apos;re a digital studio helping startups and businesses define who they are and what they build. From brand to product development, we turn vision into reality.
+            From brand and landing pages to product design and development, we build products that founders can use to start selling, onboard users, or raise capital.
           </p>
         </div>
 
@@ -88,11 +95,17 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
               </Link>
               {/* Bottom divider line with hover progress bar effect */}
               <div
-                className={`h-px relative transition-all duration-1000 ease-out ${
-                  isDarkMode ? 'bg-white/20' : 'bg-black/10'
-                } ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
+                className="h-px relative"
                 style={{ transitionDelay: `${400 + index * 150}ms`, transformOrigin: 'left' }}
               >
+                {/* Base line - always at 20% opacity */}
+                <div
+                  className={`absolute inset-0 transition-transform duration-1000 ease-out ${
+                    isDarkMode ? 'bg-white/20' : 'bg-black/10'
+                  } ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}
+                  style={{ transitionDelay: `${400 + index * 150}ms`, transformOrigin: 'left' }}
+                />
+                {/* Hover overlay - fills to 100% on hover */}
                 <div
                   className={`absolute inset-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out ${
                     isDarkMode ? 'bg-white' : 'bg-black'

@@ -2,6 +2,7 @@
 
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { ThemeContext } from '../../components/ThemeProvider';
 
 interface CaseStudy {
@@ -9,6 +10,7 @@ interface CaseStudy {
   subtitle: string;
   description: string;
   imageUrl: string;
+  headerImage: string;
   year: string;
   services: string[];
   client: string;
@@ -21,6 +23,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Outworld',
     description: 'We collaborated to create a tool that connects parents with fun activities for kids. This web app identifies parents\' locations and filters activities to keep their calendars full of exciting options to enjoy with their children.',
     imageUrl: '/project1.png',
+    headerImage: '/cases/Outworld1.png',
     year: '2024',
     services: ['Branding', 'Product Design', 'Mobile Development', 'Web Design'],
     client: 'Outworld',
@@ -31,6 +34,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Aspire',
     description: 'We partnered to create a motivational app that helps users build positive habits or break negative ones through structured 21-day challenges. The app combines psychology-backed methodology with vibrant design to make self-improvement feel achievable.',
     imageUrl: '/project2.png',
+    headerImage: '/cases/Aspire1.png',
     year: '2024',
     services: ['Branding', 'Product Design', 'Landing Page'],
     client: 'Aspire',
@@ -41,6 +45,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Shinkai',
     description: 'We partnered with Shinkai to craft a brand identity and product guidelines for their decentralized AI platform — where users build, run, and monetize autonomous AI agents while maintaining complete control over their data, identity, and payments.',
     imageUrl: '/project3.png',
+    headerImage: '/cases/Shinkai1.png',
     year: '2024',
     services: ['Branding', 'Product Guidelines'],
     client: 'Shinkai',
@@ -51,6 +56,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Zuma',
     description: 'We partnered with Zuma to design a fintech web app that helps young adults take control of their finances. By connecting to bank accounts through Plaid, Zuma lets users create unlimited savings buckets — turning one account into a powerful system for achieving financial goals.',
     imageUrl: '/project4.png',
+    headerImage: '/cases/Zuma1.png',
     year: '2024',
     services: ['Product Design', 'Web Application'],
     client: 'Zuma',
@@ -61,6 +67,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Cinco',
     description: 'We partnered with Cinco to design a complete hotel operations ecosystem — a dashboard for managers, a mobile app for staff, and a guest portal — all working together to transform service quality and earn those five-star reviews.',
     imageUrl: '/project5.png',
+    headerImage: '/cases/Cinco1.png',
     year: '2024',
     services: ['Branding', 'Product Design', 'Web Application', 'Mobile App'],
     client: 'Cinco',
@@ -71,30 +78,33 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: 'Quizland App',
     description: 'We designed and developed Quizland — an AI-powered mobile app that generates custom quizzes on any topic imaginable. From history to pop culture to complex sciences, users simply type a topic and let AI create personalized learning experiences.',
     imageUrl: '/project6.png',
+    headerImage: '/cases/Quizland1.png',
     year: '2024',
     services: ['Product Design', 'Mobile Development', 'Landing Page'],
     client: 'Quizland',
     hasFullCase: true
   },
   'yester-ai': {
-    title: 'Memories, Intelligently Preserved',
+    title: 'An AI-powered way to explore the past',
     subtitle: 'Yester.ai',
-    description: 'Brand identity and product design for an AI-powered platform that helps users capture, organize, and relive their most meaningful memories through intelligent storytelling.',
+    description: 'Travel year by year from today all the way back to year 0. Explore key moments in history, art, science, sports, and more, across regions and countries around the world. A fast, visual, and educational journey through the past.',
     imageUrl: '/project7.png',
+    headerImage: '/cases/Yester1.png',
     year: '2024',
-    services: ['Branding', 'Product Design'],
+    services: ['Product Design', 'Mobile App', 'Landing Page'],
     client: 'Yester.ai',
-    hasFullCase: false
+    hasFullCase: true
   },
   'versus': {
-    title: 'Competition Redefined',
+    title: 'Your Next Pickleball Match, One Tap Away',
     subtitle: 'Versus',
-    description: 'A bold brand identity for a competitive gaming platform that brings players together through head-to-head challenges and community-driven tournaments.',
+    description: 'We designed and developed Versus — a mobile app connecting pickleball players based on location and skill level. Create or join matches, find players near you, and never miss a game. Like Tinder for pickleball — swipe, match, play.',
     imageUrl: '/project8.png',
+    headerImage: '/cases/Versus1.png',
     year: '2024',
-    services: ['Branding', 'Visual Identity'],
+    services: ['Product Design', 'Mobile App', 'Landing Page'],
     client: 'Versus',
-    hasFullCase: false
+    hasFullCase: true
   }
 };
 
@@ -744,6 +754,306 @@ const quizlandContent = {
   }
 };
 
+// Full case study content for Yester.ai
+const yesteraiContent = {
+  intro: {
+    headline: 'History at your fingertips',
+    description: 'What happened in 1969? Who was the greatest artist of the Renaissance? What scientific breakthroughs occurred in your grandmother\'s birth year? Yester.ai transforms these questions into an immersive journey through time, powered by AI and designed for curious minds.'
+  },
+  challenge: {
+    title: 'The Challenge',
+    content: 'History education is often dry, disconnected, and hard to navigate. Traditional resources either overwhelm with academic depth or oversimplify to the point of uselessness. People want to explore the past on their own terms — by year, by topic, by region — but no tool existed that made this both possible and enjoyable.',
+    content2: 'Yester.ai\'s founder envisioned an app where anyone could travel through time, exploring historical events with the same ease as scrolling through a social feed. The challenge was making vast amounts of historical data accessible, accurate, and genuinely engaging.'
+  },
+  approach: {
+    title: 'Our Approach',
+    content: 'We designed Yester.ai as a time machine for the curious. The interface centers around a simple but powerful concept: pick a year, choose a category, select a region, and dive in. AI generates contextual, well-researched content that brings each era to life, while the clean design keeps the focus on discovery.'
+  },
+  stats: [
+    {
+      number: '2024',
+      label: 'Years of history covered'
+    },
+    {
+      number: '6',
+      label: 'Content categories'
+    },
+    {
+      number: '195',
+      label: 'Countries and regions'
+    },
+    {
+      number: '<2s',
+      label: 'Content generation time'
+    }
+  ],
+  categories: {
+    title: 'Explore Every Dimension of the Past',
+    list: [
+      {
+        name: 'History',
+        description: 'Wars, treaties, revolutions, and the events that shaped nations. From ancient civilizations to modern conflicts.'
+      },
+      {
+        name: 'Art',
+        description: 'Masterpieces, movements, and the artists who defined their eras. Renaissance to contemporary, painting to sculpture.'
+      },
+      {
+        name: 'Science',
+        description: 'Discoveries, inventions, and the brilliant minds behind them. The breakthroughs that changed how we understand the world.'
+      },
+      {
+        name: 'Sports',
+        description: 'Champions, records, and unforgettable moments. The athletic achievements that captivated generations.'
+      },
+      {
+        name: 'Politics',
+        description: 'Leaders, elections, and policy shifts. The political landscape of every era, every region.'
+      },
+      {
+        name: 'Culture',
+        description: 'Music, literature, fashion, and social movements. How people lived, what they valued, what defined their time.'
+      }
+    ]
+  },
+  deliverables: [
+    {
+      title: 'Mobile Application',
+      description: 'A native iOS app designed for exploration and discovery. The timeline-based interface makes navigating thousands of years intuitive, while the card-based content layout makes complex history digestible and engaging.'
+    },
+    {
+      title: 'AI Integration',
+      description: 'Deep integration with AI to generate historically accurate, well-contextualized content on demand. The system understands the intersection of time, place, and category to deliver relevant, interesting facts.'
+    },
+    {
+      title: 'Landing Page',
+      description: 'A marketing website that captures the magic of time travel. The elegant design and clear messaging communicate the app\'s unique value proposition and drive downloads.'
+    }
+  ],
+  features: {
+    title: 'Key Features',
+    list: [
+      {
+        name: 'Year Navigator',
+        description: 'Scroll through time from 2024 all the way back to year 0. Jump to any year instantly or explore decade by decade.'
+      },
+      {
+        name: 'Category Filters',
+        description: 'Focus on what interests you — history, art, science, sports, politics, or culture. Mix and match to find surprising connections.'
+      },
+      {
+        name: 'Regional Focus',
+        description: 'Explore events from specific countries or regions. See how world events played out differently across the globe.'
+      },
+      {
+        name: 'AI-Generated Content',
+        description: 'Every fact, every story, generated in real-time by AI trained on historical data. Always fresh, always accurate.'
+      },
+      {
+        name: 'Save & Share',
+        description: 'Bookmark fascinating discoveries and share them with friends. Build your own collection of historical highlights.'
+      },
+      {
+        name: 'Beautiful Design',
+        description: 'An elegant, minimalist interface that lets history speak for itself. Clean typography and thoughtful spacing.'
+      }
+    ]
+  },
+  process: {
+    title: 'The Process',
+    phases: [
+      {
+        name: 'Research & Discovery',
+        description: 'We studied how people naturally explore history — by date, by topic, by connection. The timeline concept emerged as the most intuitive navigation model, mimicking how we mentally organize time.'
+      },
+      {
+        name: 'Information Architecture',
+        description: 'Organizing 2000+ years of world history across multiple categories required careful planning. We created a flexible system that scales infinitely while remaining navigable and coherent.'
+      },
+      {
+        name: 'AI Engineering',
+        description: 'We developed prompts and systems that generate historically accurate content while maintaining engaging, readable prose. The AI needed to be both scholarly and accessible.'
+      },
+      {
+        name: 'Visual Design',
+        description: 'The clean, black-and-white aesthetic pays homage to historical documents while feeling thoroughly modern. Typography-forward design puts content first.'
+      }
+    ]
+  },
+  philosophy: {
+    title: 'The Discovery Philosophy',
+    content: 'Yester.ai believes that understanding the past enriches the present. History isn\'t just names and dates — it\'s the story of humanity\'s journey. By making that story accessible and explorable, we help people connect with the world\'s shared heritage.',
+    principles: [
+      {
+        title: 'Curiosity-Driven Exploration',
+        description: 'Follow your interests wherever they lead. There\'s no curriculum, no tests — just pure discovery at your own pace.'
+      },
+      {
+        title: 'Context Over Isolation',
+        description: 'Events don\'t happen in a vacuum. Yester.ai helps you see connections between art, politics, science, and culture within any era.'
+      },
+      {
+        title: 'Accuracy Matters',
+        description: 'History deserves respect. Our AI is trained to deliver factually accurate content, not speculation or myth.'
+      }
+    ]
+  },
+  results: {
+    title: 'The Impact',
+    content: 'Yester.ai launched to enthusiastic reception from history enthusiasts, students, and curious minds alike. Users love the freedom to explore any era and the serendipitous discoveries that come from browsing through time. Teachers have found it valuable for sparking student interest in historical topics.'
+  },
+  testimonial: {
+    quote: 'Lumina designed an app that makes history feel alive and accessible. They understood our vision of democratizing historical knowledge and created an experience that\'s both educational and genuinely delightful to use.',
+    author: 'Founder, Yester.ai'
+  }
+};
+
+// Full case study content for Versus
+const versusContent = {
+  intro: {
+    headline: 'Pickleball is booming. Finding players shouldn\'t be hard.',
+    description: 'Pickleball is the fastest-growing sport in America — 36.5 million players and counting. Yet most games still happen through group texts, Facebook posts, and hoping someone shows up at the courts. Versus changes that. One app. Endless matches.'
+  },
+  challenge: {
+    title: 'The Challenge',
+    content: 'Pickleball has exploded from a niche backyard game to a mainstream phenomenon. In 2023, participation grew 223% over three years, with courts popping up in parks, gyms, and community centers across the country. But the infrastructure for connecting players hasn\'t kept pace.',
+    content2: 'Players face a fragmented landscape: some rely on local Facebook groups, others use outdated reservation systems, and many simply show up at courts hoping to find a match. For newcomers, finding players at their skill level — or any players at all — feels impossible. Versus saw an opportunity to bring the matchmaking revolution to the courts.'
+  },
+  approach: {
+    title: 'Our Approach',
+    content: 'We designed Versus as "Tinder for pickleball" — but better. The core experience is simple: create or join a match, specify your skill level, and let the app handle the rest. Behind that simplicity, we built a sophisticated matching algorithm that considers location, skill rating, play style preferences, and availability to create the best possible games.'
+  },
+  stats: [
+    {
+      number: '36.5M',
+      label: 'Pickleball players in the US'
+    },
+    {
+      number: '223%',
+      label: 'Growth in 3 years'
+    },
+    {
+      number: '<5mi',
+      label: 'Average match distance'
+    },
+    {
+      number: '4.0+',
+      label: 'Skill levels supported'
+    }
+  ],
+  matchTypes: {
+    title: 'Every Type of Game, One App',
+    list: [
+      {
+        name: 'Singles',
+        description: 'One-on-one matches for players who want focused, competitive play. Perfect for improving your game.'
+      },
+      {
+        name: 'Doubles',
+        description: 'The classic pickleball format. Find a partner or join a team looking for their fourth player.'
+      },
+      {
+        name: 'Open Play',
+        description: 'Casual sessions at local courts. Drop in, rotate, and play with whoever shows up.'
+      },
+      {
+        name: 'Competitive',
+        description: 'Ranked matches for serious players. Track your rating and climb the leaderboard.'
+      }
+    ]
+  },
+  deliverables: [
+    {
+      title: 'Mobile Application',
+      description: 'A native iOS and Android app designed for quick interactions. Players can create a match in under 30 seconds, browse nearby games while commuting, and confirm attendance with a single tap.'
+    },
+    {
+      title: 'Matching Algorithm',
+      description: 'Our proprietary matching system considers skill level (using a standardized rating system), geographic proximity, preferred play times, and historical match quality to suggest the best possible games.'
+    },
+    {
+      title: 'Landing Page',
+      description: 'A marketing website that captures the energy of pickleball culture while clearly communicating the app\'s value proposition. Optimized for app store downloads.'
+    }
+  ],
+  features: {
+    title: 'Key Features',
+    list: [
+      {
+        name: 'Geolocation Matching',
+        description: 'Find players and courts near you. See who\'s looking for a game within walking distance or plan ahead for courts across town.'
+      },
+      {
+        name: 'Skill-Based Pairing',
+        description: 'Rate yourself honestly and get matched with players at your level. From beginners (2.0) to tournament players (5.0+).'
+      },
+      {
+        name: 'Match Creation',
+        description: 'Set up a game in seconds. Choose the court, time, format (singles/doubles), and skill range. The app handles invitations.'
+      },
+      {
+        name: 'Player Profiles',
+        description: 'Build your pickleball identity. Track matches played, win rate, preferred positions, and connect with regular partners.'
+      },
+      {
+        name: 'Court Directory',
+        description: 'Discover new courts in your area. See availability, read reviews, and check if players are looking for games there.'
+      },
+      {
+        name: 'Push Notifications',
+        description: 'Get notified when matches open up near you, when players join your games, or when your regular partners are looking to play.'
+      }
+    ]
+  },
+  process: {
+    title: 'The Process',
+    phases: [
+      {
+        name: 'Player Research',
+        description: 'We spent time at courts talking to players of all levels. The insight: skill mismatch is the biggest friction. Games are either too easy or too hard. The rating system became central to our design.'
+      },
+      {
+        name: 'Matchmaking Design',
+        description: 'We studied dating apps, gaming matchmaking systems, and sports league software. The best experiences minimize decision fatigue while maximizing match quality. We applied these principles to court sports.'
+      },
+      {
+        name: 'Mobile-First UX',
+        description: 'Every interaction was optimized for one-handed use at the courts. Large tap targets, minimal typing, and quick actions. Players should spend time playing, not navigating menus.'
+      },
+      {
+        name: 'Community Building',
+        description: 'Beyond individual matches, we designed features that help local pickleball communities grow. Regular play groups, court ambassadors, and social features that turn strangers into regular partners.'
+      }
+    ]
+  },
+  philosophy: {
+    title: 'The Versus Philosophy',
+    content: 'Great games happen when players are evenly matched, courts are convenient, and showing up is easy. Versus removes every barrier between "I want to play" and "I\'m on the court." We\'re not just an app — we\'re growing the sport.',
+    principles: [
+      {
+        title: 'Skill Matters',
+        description: 'Honest ratings make better games. We encourage accurate self-assessment and use match outcomes to refine ratings over time.'
+      },
+      {
+        title: 'Location is Everything',
+        description: 'The best match in the world means nothing if it\'s an hour away. We prioritize proximity so players actually show up.'
+      },
+      {
+        title: 'Community First',
+        description: 'Pickleball thrives because of its welcoming culture. Versus is designed to maintain that spirit while helping the community grow.'
+      }
+    ]
+  },
+  results: {
+    title: 'The Impact',
+    content: 'Versus launched in select US markets to immediate traction. Players love the simplicity of finding games and the quality of skill-matched play. Courts report higher utilization as players coordinate through the app. Most importantly, we\'re hearing stories of strangers becoming regular playing partners — exactly what pickleball is all about.'
+  },
+  testimonial: {
+    quote: 'Lumina understood that we weren\'t just building an app — we were building a community tool. They captured the spirit of pickleball culture while solving a real problem. The matching system is exactly what the sport needed.',
+    author: 'Founder, Versus'
+  }
+};
+
 export default function CasePage() {
   const { isDarkMode } = useContext(ThemeContext);
   const params = useParams();
@@ -833,17 +1143,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — App Overview</span>
-              </div>
+              <Image
+                src="/cases/Outworld1.png"
+                alt="Outworld App Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -1343,17 +1655,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — App Overview</span>
-              </div>
+              <Image
+                src="/cases/Aspire1.png"
+                alt="Aspire App Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -1796,17 +2110,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — Brand Overview</span>
-              </div>
+              <Image
+                src="/cases/Shinkai1.png"
+                alt="Shinkai Brand Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -2261,17 +2577,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — Dashboard Overview</span>
-              </div>
+              <Image
+                src="/cases/Zuma1.png"
+                alt="Zuma Dashboard Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -2692,13 +3010,21 @@ export default function CasePage() {
               >
                 <div>
                   <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                    Client
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {caseData.client}
+                  </p>
+                </div>
+                <div>
+                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                     Year
                   </p>
                   <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                     {caseData.year}
                   </p>
                 </div>
-                <div>
+                <div className="col-span-2">
                   <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                     Services
                   </p>
@@ -2709,17 +3035,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] rounded-2xl transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — Cinco Platform Overview</span>
-              </div>
+              <Image
+                src="/cases/Cinco1.png"
+                alt="Cinco Platform Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -3240,17 +3568,19 @@ export default function CasePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] rounded-2xl transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Hero Image — Quizland App Overview</span>
-              </div>
+              <Image
+                src="/cases/Quizland1.png"
+                alt="Quizland App Overview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -3654,6 +3984,990 @@ export default function CasePage() {
                 }`}
               >
                 — {quizlandContent.testimonial.author}
+              </cite>
+            </blockquote>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
+  // Render full case study for Yester.ai
+  if (slug === 'yester-ai' && caseData.hasFullCase) {
+    return (
+      <main className="min-h-screen pt-[72px]">
+        {/* Hero Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="max-w-3xl">
+              <p
+                className={`text-small-description mb-4 transition-all duration-700 ${
+                  isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                {caseData.subtitle}
+              </p>
+              <h1
+                className={`text-big-title mb-4 md:mb-6 transition-all duration-700 delay-100 ${
+                  isDarkMode ? 'text-white' : 'text-neutral-800'
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                {caseData.title}
+              </h1>
+              <p
+                className={`text-big-description mb-8 transition-all duration-700 delay-200 ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                {caseData.description}
+              </p>
+              <div
+                className={`grid grid-cols-2 gap-6 transition-all duration-700 delay-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                <div>
+                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                    Client
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {caseData.client}
+                  </p>
+                </div>
+                <div>
+                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                    Year
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {caseData.year}
+                  </p>
+                </div>
+                <div className="col-span-2">
+                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                    Services
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {caseData.services.join(' · ')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Hero Image */}
+            <div
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <Image
+                src="/cases/Yester1.png"
+                alt="Yester.ai App Overview"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {yesteraiContent.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <p className={`text-huge-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {stat.number}
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Intro Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-medium-title max-w-4xl ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.intro.description}
+            </h2>
+          </div>
+        </section>
+
+        {/* Challenge Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div>
+                <h2
+                  className={`text-medium-title mb-6 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  {yesteraiContent.challenge.title}
+                </h2>
+                <p
+                  className={`text-big-description mb-4 ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  {yesteraiContent.challenge.content}
+                </p>
+                <p
+                  className={`text-big-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  {yesteraiContent.challenge.content2}
+                </p>
+              </div>
+              {/* Image Placeholder */}
+              <div
+                className={`aspect-[4/3] rounded-2xl ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className={`w-full h-full flex items-center justify-center ${
+                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                }`}>
+                  <span className="text-small-description">Timeline Navigation Concept</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Approach Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Image Placeholder */}
+              <div
+                className={`aspect-[4/3] rounded-2xl order-2 lg:order-1 ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className={`w-full h-full flex items-center justify-center ${
+                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                }`}>
+                  <span className="text-small-description">App Interface Design</span>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <h2
+                  className={`text-medium-title mb-6 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  {yesteraiContent.approach.title}
+                </h2>
+                <p
+                  className={`text-big-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  {yesteraiContent.approach.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.categories.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {yesteraiContent.categories.list.map((category, index) => (
+                <div key={index}>
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {category.name}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {category.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* App Mockups - Full Width */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div
+              className={`aspect-[21/9] rounded-2xl ${
+                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+              }`}
+            >
+              <div className={`w-full h-full flex items-center justify-center ${
+                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+              }`}>
+                <span className="text-small-description">Full App Experience — Year Navigator & Content Cards</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.features.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {yesteraiContent.features.list.map((feature, index) => (
+                <div key={index}>
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {feature.name}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mobile App Mockups - Three Column */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {['Year Selection Screen', 'Category Filters', 'Historical Event Detail'].map((label, index) => (
+                <div
+                  key={index}
+                  className={`aspect-[9/16] rounded-2xl ${
+                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                  }`}
+                >
+                  <div className={`w-full h-full flex items-center justify-center ${
+                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                  }`}>
+                    <span className="text-small-description text-center px-4">{label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Deliverables Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              What We Delivered
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {yesteraiContent.deliverables.map((deliverable, index) => (
+                <div key={index}>
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {deliverable.title}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {deliverable.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Landing Page Mockup */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Landing Page
+            </h2>
+            <div
+              className={`aspect-[16/9] rounded-2xl ${
+                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+              }`}
+            >
+              <div className={`w-full h-full flex items-center justify-center ${
+                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+              }`}>
+                <span className="text-small-description">Landing Page — Hero & Features</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.process.title}
+            </h2>
+            {yesteraiContent.process.phases.map((phase, index) => (
+              <div key={index} className="mb-12 last:mb-0">
+                <div className="flex items-start gap-6">
+                  <span
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-600' : 'text-neutral-300'
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3
+                      className={`text-medium-title mb-3 ${
+                        isDarkMode ? 'text-white' : 'text-black'
+                      }`}
+                    >
+                      {phase.name}
+                    </h3>
+                    <p
+                      className={`text-big-description ${
+                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                      }`}
+                    >
+                      {phase.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Philosophy Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.philosophy.title}
+            </h2>
+            <p
+              className={`text-big-description mb-12 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              {yesteraiContent.philosophy.content}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {yesteraiContent.philosophy.principles.map((principle, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-xl border ${
+                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
+                  }`}
+                >
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {principle.title}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {principle.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Results & Testimonial Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className={`text-big-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {yesteraiContent.results.title}
+            </h2>
+            <p
+              className={`text-big-description mb-16 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              {yesteraiContent.results.content}
+            </p>
+
+            {/* Testimonial */}
+            <blockquote className={`border-l-2 pl-8 ${
+              isDarkMode ? 'border-white' : 'border-black'
+            }`}>
+              <p
+                className={`text-medium-title mb-6 ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                &ldquo;{yesteraiContent.testimonial.quote}&rdquo;
+              </p>
+              <cite
+                className={`text-small-description not-italic ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                }`}
+              >
+                — {yesteraiContent.testimonial.author}
+              </cite>
+            </blockquote>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
+  // Render full case study for Versus
+  if (slug === 'versus' && caseData.hasFullCase) {
+    return (
+      <main className="min-h-screen pt-[72px]">
+        {/* Hero Section - Wide Container (1420px) */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <div>
+                <p
+                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
+                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.subtitle}
+                </p>
+                <h1
+                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.title}
+                </h1>
+                <p
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.description}
+                </p>
+
+                {/* Project Meta */}
+                <div
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                >
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Client
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.client}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Year
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.year}
+                    </p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Services
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hero Image */}
+            <div
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <Image
+                src="/cases/Versus1.png"
+                alt="Versus App Overview"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Introduction - Stats headline */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-medium-title max-w-4xl ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.intro.description}
+            </h2>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {versusContent.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <p
+                    className={`text-huge-title mb-2 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {stat.number}
+                  </p>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Challenge Section - Wide Container (Text left, Image right) */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div>
+                <h2
+                  className={`text-medium-title mb-6 ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  }`}
+                >
+                  {versusContent.challenge.title}
+                </h2>
+                <p
+                  className={`text-big-description mb-4 ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  {versusContent.challenge.content}
+                </p>
+                <p
+                  className={`text-big-description ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}
+                >
+                  {versusContent.challenge.content2}
+                </p>
+              </div>
+              {/* Image Placeholder */}
+              <div
+                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className={`w-full h-full flex items-center justify-center ${
+                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                }`}>
+                  <span className="text-small-description">Pickleball Growth Chart</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Approach Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className={`text-medium-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.approach.title}
+            </h2>
+            <p
+              className={`text-big-description ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              {versusContent.approach.content}
+            </p>
+          </div>
+        </section>
+
+        {/* Match Types Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.matchTypes.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {versusContent.matchTypes.list.map((type, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-xl border ${
+                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
+                  }`}
+                >
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {type.name}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {type.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Full Width Image */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div
+              className={`aspect-[21/9] rounded-2xl overflow-hidden ${
+                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+              }`}
+            >
+              <div className={`w-full h-full flex items-center justify-center ${
+                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+              }`}>
+                <span className="text-small-description">Match Discovery — App Screens</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Deliverables Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Deliverables
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {versusContent.deliverables.map((item, index) => (
+                <div key={index}>
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* App Screenshots - 3 Column Grid */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[1, 2, 3].map((num) => (
+                <div
+                  key={num}
+                  className={`aspect-[9/16] rounded-2xl overflow-hidden ${
+                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                  }`}
+                >
+                  <div className={`w-full h-full flex items-center justify-center ${
+                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                  }`}>
+                    <span className="text-small-description">App Screen {num}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.features.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {versusContent.features.list.map((feature, index) => (
+                <div key={index}>
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {feature.name}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Two Column Image Layout */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className={`w-full h-full flex items-center justify-center ${
+                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                }`}>
+                  <span className="text-small-description">Match Creation Flow</span>
+                </div>
+              </div>
+              <div
+                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                }`}
+              >
+                <div className={`w-full h-full flex items-center justify-center ${
+                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+                }`}>
+                  <span className="text-small-description">Player Profile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className={`text-big-title mb-12 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.process.title}
+            </h2>
+            {versusContent.process.phases.map((phase, index) => (
+              <div key={index} className="mb-12 last:mb-0">
+                <div className="flex items-start gap-6">
+                  <span
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-600' : 'text-neutral-300'
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3
+                      className={`text-medium-title mb-3 ${
+                        isDarkMode ? 'text-white' : 'text-black'
+                      }`}
+                    >
+                      {phase.name}
+                    </h3>
+                    <p
+                      className={`text-big-description ${
+                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                      }`}
+                    >
+                      {phase.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Philosophy Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-big-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.philosophy.title}
+            </h2>
+            <p
+              className={`text-big-description mb-12 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              {versusContent.philosophy.content}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {versusContent.philosophy.principles.map((principle, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-xl border ${
+                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
+                  }`}
+                >
+                  <h3
+                    className={`text-card-title mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {principle.title}
+                  </h3>
+                  <p
+                    className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {principle.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Landing Page Mockup */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <div
+              className={`aspect-[16/9] rounded-2xl overflow-hidden ${
+                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+              }`}
+            >
+              <div className={`w-full h-full flex items-center justify-center ${
+                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
+              }`}>
+                <span className="text-small-description">Landing Page — Desktop View</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Results & Testimonial Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className={`text-big-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              {versusContent.results.title}
+            </h2>
+            <p
+              className={`text-big-description mb-16 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              {versusContent.results.content}
+            </p>
+
+            {/* Testimonial */}
+            <blockquote className={`border-l-2 pl-8 ${
+              isDarkMode ? 'border-white' : 'border-black'
+            }`}>
+              <p
+                className={`text-medium-title mb-6 ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                &ldquo;{versusContent.testimonial.quote}&rdquo;
+              </p>
+              <cite
+                className={`text-small-description not-italic ${
+                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                }`}
+              >
+                — {versusContent.testimonial.author}
               </cite>
             </blockquote>
           </div>

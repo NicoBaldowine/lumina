@@ -5,28 +5,47 @@ import { ThemeContext } from '../components/ThemeProvider';
 
 const services = [
   {
+    id: 'brand-design',
+    title: 'Brand Design',
+    headline: 'Building clear, credible brand foundations for early-stage startups.',
+    bullets: [
+      'Brand positioning and direction',
+      'Visual identity systems (logo, color, typography)',
+      'Digital-first brand guidelines',
+    ],
+  },
+  {
+    id: 'web-landing',
+    title: 'Web & Landing Pages',
+    headline: 'High-quality landing pages designed to convert and build trust.',
+    bullets: [
+      'Product and startup landing pages',
+      'Messaging structure and content hierarchy',
+      'Conversion-focused layouts',
+      'Visual systems aligned with the brand',
+    ],
+  },
+  {
     id: 'product-design',
     title: 'Product Design',
-    headline: 'Designing digital products that work, scale, and feel intuitive',
-    description: 'In Product Design, we map out complete user journeys using interaction flows, wireframes, and prototypes to ensure clarity and usability. We create scalable design systems that maintain consistency across screens and platforms. Our focus is on building thoughtful interfaces that are both intuitive and ready to ship, supporting teams from early concept to final implementation.',
+    headline: 'Designing usable, web or app products that are ready to ship.',
+    bullets: [
+      'Product definition and MVP scoping',
+      'User flows for web and mobile products',
+      'UX/UI for web and mobile products',
+      'Design systems ready for development and scale',
+    ],
   },
   {
-    id: 'web-design',
-    title: 'Web Design',
-    headline: 'Creating web experiences that engage, convert, and leave a mark',
-    description: 'We design responsive websites that adapt seamlessly across devices while maintaining visual impact and performance. Every layout is crafted with purpose, guiding visitors through content that tells your story and drives action. From landing pages to full marketing sites, we focus on clarity, speed, and modern aesthetics that reflect your brand identity.',
-  },
-  {
-    id: 'branding-design',
-    title: 'Branding Design',
-    headline: 'Building brand identities that connect, resonate, and endure',
-    description: 'We develop comprehensive visual identities that capture the essence of who you are and what you stand for. From logo design to complete brand systems, we create cohesive visual languages that work across every touchpoint. Our branding process digs deep into your values, audience, and market position to deliver identities that feel authentic and memorable.',
-  },
-  {
-    id: 'development',
-    title: 'Development',
-    headline: 'Turning designs into fast, reliable, and scalable code',
-    description: 'We transform designs into production-ready applications using modern frameworks and best practices. Our development process prioritizes clean architecture, performance optimization, and maintainable code. Whether it\'s a marketing site, web app, or custom platform, we build with scalability in mind, ensuring your product grows smoothly as your business evolves.',
+    id: 'mvp-development',
+    title: 'MVP Development',
+    headline: 'Building real, production-ready MVPs, not throwaway demos.',
+    bullets: [
+      'Web and mobile MVP development',
+      'Fast iteration using modern tools and AI-assisted workflows',
+      'Tight collaboration between design and build',
+      'Products ready to sell, test, or pitch',
+    ],
   },
 ];
 
@@ -43,12 +62,12 @@ export default function ServicesPage() {
             <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
-              We&apos;re a digital studio that turns ideas into digital products.
+              We help early-stage startups turn ideas into real products.
             </h1>
             <p className={`text-big-description mb-12 ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
             }`}>
-              We help businesses and startups bring their ideas to life. from first sketches to real, working digital products. At Lumina, we design interfaces, build brands, and code websites and apps that actually ship.
+              We design, brand, and build world-class MVPs that founders can confidently use to validate ideas, attract users, and raise capital.
             </p>
 
             {/* Service list with dividers */}
@@ -75,18 +94,29 @@ export default function ServicesPage() {
 
           {/* Right side - Service details */}
           <div key={activeService.id} className="animate-fade-in">
-            <h2 className={`text-medium-title mb-6 transition-opacity duration-500 ${
+            <h2 className={`text-medium-title mb-8 transition-opacity duration-500 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
               {activeService.headline}
             </h2>
-            <p className={`text-big-description mb-8 transition-opacity duration-500 ${
-              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
-              {activeService.description}
-            </p>
+            <ul className="space-y-6 mb-8">
+              {activeService.bullets.map((bullet, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
+                    isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
+                  }`}>
+                    {index + 1}
+                  </span>
+                  <span className={`text-big-description pt-1 ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}>
+                    {bullet}
+                  </span>
+                </li>
+              ))}
+            </ul>
             <div
-              className={`aspect-[4/3] transition-opacity duration-500 ${
+              className={`aspect-[4/3] rounded-lg transition-opacity duration-500 ${
                 isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
               }`}
             />

@@ -48,15 +48,15 @@ export default function ProjectsGrid() {
       imageUrl: "/project7.png",
       title: "Yester.ai",
       slug: "yester-ai",
-      description: "Brand identity and product design for an AI-powered platform that helps users capture, organize, and relive their most meaningful memories through intelligent storytelling.",
-      badges: ["APP", "LANDING", "DEV"],
+      description: "We designed and developed Yester.ai — an AI-powered app that lets you explore history year by year. Pick any year, choose a topic like art or science, select a region, and discover the key moments that shaped our world.",
+      badges: ["APP", "LANDING"],
     },
     {
       imageUrl: "/project8.png",
       title: "Versus",
       slug: "versus",
-      description: "A bold brand identity for a competitive gaming platform that brings players together through head-to-head challenges and community-driven tournaments.",
-      badges: ["APP", "LANDING", "DEV"],
+      description: "We designed and developed Versus — a mobile app connecting pickleball players based on location and skill level. Create or join matches, find players near you, and never miss a game.",
+      badges: ["APP", "LANDING"],
     }
   ];
 
