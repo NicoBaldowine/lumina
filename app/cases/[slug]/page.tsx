@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { ThemeContext } from '../../components/ThemeProvider';
+import ImageWithLoader from '../../components/ui/ImageWithLoader';
 
 interface CaseStudy {
   title: string;
@@ -1149,11 +1150,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld1.png"
                 alt="Outworld App Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -1270,39 +1269,31 @@ export default function CasePage() {
             </h2>
             {/* Outworld2 - Full width */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld2.png"
                 alt="Outworld Brand Identity"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Outworld3 - Full width */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld3.png"
                 alt="Outworld Brand Elements"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Outworld6_lil and Outworld7_lil - Side by side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/Outworld6_lil.png"
-                  alt="Outworld Brand Detail"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Outworld6_lil.png"
+                alt="Outworld Brand Detail"
+              />
               </div>
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/Outworld7_lil.png"
-                  alt="Outworld Brand Detail"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Outworld7_lil.png"
+                alt="Outworld Brand Detail"
+              />
               </div>
             </div>
           </div>
@@ -1362,20 +1353,16 @@ export default function CasePage() {
             </h2>
             {/* Outworld4 - Full width */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld4.png"
                 alt="Outworld Product Design"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Outworld5 - Full width */}
             <div className="relative aspect-[16/9]">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld5.png"
                 alt="Outworld App Screens"
-                fill
-                className="object-cover"
               />
             </div>
           </div>
@@ -1433,29 +1420,23 @@ export default function CasePage() {
             </h2>
             {/* Outworld8 */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld8.png"
                 alt="Outworld Public Site"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Outworld9 */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld9.png"
                 alt="Outworld Public Site"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Outworld10 */}
             <div className="relative aspect-[16/9]">
-              <Image
+              <ImageWithLoader
                 src="/cases/Outworld10.png"
                 alt="Outworld Public Site"
-                fill
-                className="object-cover"
               />
             </div>
           </div>
@@ -1568,11 +1549,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Aspire1.png"
                 alt="Aspire App Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -2023,11 +2002,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Shinkai1.png"
                 alt="Shinkai Brand Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -2490,11 +2467,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Zuma1.png"
                 alt="Zuma Dashboard Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -2554,57 +2529,45 @@ export default function CasePage() {
             {/* Zuma2 and Zuma3 - Side by side small */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/zuma2_lil.png"
-                  alt="Zuma Brand Identity"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma2_lil.png"
+                alt="Zuma Brand Identity"
+              />
               </div>
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/zuma3_lil.png"
-                  alt="Zuma Brand Elements"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma3_lil.png"
+                alt="Zuma Brand Elements"
+              />
               </div>
             </div>
             {/* Zuma4 - Full width */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/zuma4.png"
                 alt="Zuma Brand Design"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Zuma5 - Full width */}
             <div className="relative aspect-[16/9] mb-3">
-              <Image
+              <ImageWithLoader
                 src="/cases/zuma5.png"
                 alt="Zuma Product Design"
-                fill
-                className="object-cover"
               />
             </div>
             {/* Zuma6 and Zuma7 - Side by side, taller */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="relative aspect-[3/4]">
-                <Image
-                  src="/cases/zuma6_lil.png"
-                  alt="Zuma Detail"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma6_lil.png"
+                alt="Zuma Detail"
+              />
               </div>
               <div className="relative aspect-[3/4]">
-                <Image
-                  src="/cases/zuma7_lil.png"
-                  alt="Zuma Detail"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma7_lil.png"
+                alt="Zuma Detail"
+              />
               </div>
             </div>
           </div>
@@ -2724,77 +2687,61 @@ export default function CasePage() {
             {/* Zuma8 and Zuma9 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/zuma8.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma8.png"
+                alt="Zuma Product Design"
+              />
               </div>
               <div className="relative aspect-[4/3]">
-                <Image
-                  src="/cases/zuma9.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma9.png"
+                alt="Zuma Product Design"
+              />
               </div>
             </div>
             {/* Zuma10 and Zuma11 - taller */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma10.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma10.png"
+                alt="Zuma Product Design"
+              />
               </div>
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma11.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma11.png"
+                alt="Zuma Product Design"
+              />
               </div>
             </div>
             {/* Zuma12 and Zuma13 - taller */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma12.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma12.png"
+                alt="Zuma Product Design"
+              />
               </div>
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma13.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma13.png"
+                alt="Zuma Product Design"
+              />
               </div>
             </div>
             {/* Zuma14 and Zuma15 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma14.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma14.png"
+                alt="Zuma Product Design"
+              />
               </div>
               <div className="relative aspect-[1/1]">
-                <Image
-                  src="/cases/zuma15.png"
-                  alt="Zuma Product Design"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/zuma15.png"
+                alt="Zuma Product Design"
+              />
               </div>
             </div>
           </div>
@@ -2993,11 +2940,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Cinco1.png"
                 alt="Cinco Platform Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -3534,11 +3479,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Quizland1.png"
                 alt="Quizland App Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -3549,11 +3492,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Quizland2.png"
                 alt="Quizland App Screens"
-                fill
-                className="object-cover"
               />
             </div>
           </div>
@@ -3607,39 +3548,31 @@ export default function CasePage() {
               {/* Row with 2 images */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="aspect-[4/3] relative overflow-hidden">
-                  <Image
-                    src="/cases/Quizland3_lil.png"
-                    alt="Quizland App Screen"
-                    fill
-                    className="object-cover"
-                  />
+                  <ImageWithLoader
+                src="/cases/Quizland3_lil.png"
+                alt="Quizland App Screen"
+              />
                 </div>
                 <div className="aspect-[4/3] relative overflow-hidden">
-                  <Image
-                    src="/cases/Quizland4_lil.png"
-                    alt="Quizland App Screen"
-                    fill
-                    className="object-cover"
-                  />
+                  <ImageWithLoader
+                src="/cases/Quizland4_lil.png"
+                alt="Quizland App Screen"
+              />
                 </div>
               </div>
               {/* Quizland 5 */}
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Quizland5.png"
-                  alt="Quizland App Full Screen"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Quizland5.png"
+                alt="Quizland App Full Screen"
+              />
               </div>
               {/* Quizland 6 */}
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Quizland6.png"
-                  alt="Quizland Landing Page"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Quizland6.png"
+                alt="Quizland Landing Page"
+              />
               </div>
             </div>
           </div>
@@ -3932,11 +3865,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Yester1.png"
                 alt="Yester.ai App Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
@@ -4088,46 +4019,36 @@ export default function CasePage() {
               {/* Two small images side by side */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src="/cases/Yester5_lil.png"
-                    alt="Yester.ai App Icon"
-                    fill
-                    className="object-cover"
-                  />
+                  <ImageWithLoader
+                src="/cases/Yester5_lil.png"
+                alt="Yester.ai App Icon"
+              />
                 </div>
                 <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src="/cases/Yester6_lil.png"
-                    alt="Yester.ai App on iPhone"
-                    fill
-                    className="object-cover"
-                  />
+                  <ImageWithLoader
+                src="/cases/Yester6_lil.png"
+                alt="Yester.ai App on iPhone"
+              />
                 </div>
               </div>
               {/* Full width images */}
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester2.png"
-                  alt="Yester.ai App Screen"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester2.png"
+                alt="Yester.ai App Screen"
+              />
               </div>
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester3.png"
-                  alt="Yester.ai App Screen"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester3.png"
+                alt="Yester.ai App Screen"
+              />
               </div>
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester4.png"
-                  alt="Yester.ai App Screen"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester4.png"
+                alt="Yester.ai App Screen"
+              />
               </div>
             </div>
           </div>
@@ -4178,28 +4099,22 @@ export default function CasePage() {
             </h2>
             <div className="flex flex-col gap-3">
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester7.png"
-                  alt="Yester.ai Landing Page"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester7.png"
+                alt="Yester.ai Landing Page"
+              />
               </div>
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester8.png"
-                  alt="Yester.ai Landing Page"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester8.png"
+                alt="Yester.ai Landing Page"
+              />
               </div>
               <div className="aspect-[16/9] relative overflow-hidden">
-                <Image
-                  src="/cases/Yester9.png"
-                  alt="Yester.ai Landing Page"
-                  fill
-                  className="object-cover"
-                />
+                <ImageWithLoader
+                src="/cases/Yester9.png"
+                alt="Yester.ai Landing Page"
+              />
               </div>
             </div>
           </div>
@@ -4406,11 +4321,9 @@ export default function CasePage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/cases/Versus1.png"
                 alt="Versus App Overview"
-                fill
-                className="object-cover"
                 priority
               />
             </div>
