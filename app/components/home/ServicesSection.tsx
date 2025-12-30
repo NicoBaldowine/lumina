@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
+import ActionButton from '../ui/ActionButton';
 
 export default function ServicesSection() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -40,16 +40,9 @@ export default function ServicesSection() {
           }`}>
             Services
           </h2>
-          <Link
-            href="/services"
-            className={`px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
-              isDarkMode
-                ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
-                : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
-            }`}
-          >
+          <ActionButton href="/services">
             All Services
-          </Link>
+          </ActionButton>
         </div>
         {/* Mobile layout - horizontal list items */}
         <div className="flex flex-col gap-6 md:hidden">

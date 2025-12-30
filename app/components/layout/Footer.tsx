@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
+import ActionButton from '../ui/ActionButton';
 
 export default function Footer() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -21,16 +21,9 @@ export default function Footer() {
             © 2025 Lumina Digital Studio LLC
           </span>
 
-          <Link
-            href="/contact"
-            className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 text-center ${
-              isDarkMode
-                ? 'text-[#999999] border border-white/20 hover:bg-white hover:text-[#070606]'
-                : 'text-[#666666] border border-black/20 hover:bg-black hover:text-white'
-            }`}
-          >
+          <ActionButton href="/contact">
             Contact us
-          </Link>
+          </ActionButton>
         </div>
       </nav>
     </footer>

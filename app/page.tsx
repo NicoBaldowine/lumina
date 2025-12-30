@@ -6,7 +6,7 @@ import { ThemeContext } from './components/ThemeProvider';
 import LandingFold from './components/home/LandingFold';
 import ProjectsGrid from './components/home/ProjectsGrid';
 import ServicesSection from './components/home/ServicesSection';
-import BlogSection from './components/home/BlogSection';
+import StartupStageSection from './components/home/StartupStageSection';
 
 export default function Home() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -64,7 +64,7 @@ export default function Home() {
         }`}
       >
         <ServicesSection />
-        <BlogSection />
+        <StartupStageSection />
       </div>
     </div>
   );

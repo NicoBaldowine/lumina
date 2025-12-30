@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useContext, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { ThemeContext } from '../ThemeProvider';
+import ActionButton from '../ui/ActionButton';
 
 export default function Header() {
   const pathname = usePathname();
@@ -207,18 +208,9 @@ export default function Header() {
                   </svg>
                 )}
               </button>
-              <Link
-                href="/contact"
-                className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
-                  isActive('/contact')
-                    ? (isDarkMode ? 'bg-white text-[#070606]' : 'bg-black text-white')
-                    : isDarkMode
-                      ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
-                      : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
-                }`}
-              >
+              <ActionButton href="/contact" isActive={isActive('/contact')}>
                 Let&apos;s talk
-              </Link>
+              </ActionButton>
             </div>
 
             <button

@@ -1160,23 +1160,19 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Introduction - Stats headline */}
+        {/* Introduction & Challenge Section - Stats left, Challenge right */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {outworldContent.intro.description}
-            </h2>
-          </div>
-        </section>
-
-        {/* Challenge Section - Wide Container (Text left, Image right) */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Stats headline - Left */}
+              <h2
+                className={`text-medium-title ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                {outworldContent.intro.description}
+              </h2>
+              {/* Challenge - Right */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -1198,55 +1194,6 @@ export default function CasePage() {
                   }`}
                 >
                   {outworldContent.challenge.content2}
-                </p>
-              </div>
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Research & Discovery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Approach Section - Wide Container (Image left, Text right) */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Image Placeholder - Now on the left */}
-              <div
-                className={`aspect-[4/3] order-2 lg:order-1 ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">User Research Insights</span>
-                </div>
-              </div>
-              {/* Text - Now on the right */}
-              <div className="order-1 lg:order-2">
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {outworldContent.approach.title}
-                </h2>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {outworldContent.approach.content}
                 </p>
               </div>
             </div>
@@ -1321,41 +1268,41 @@ export default function CasePage() {
             >
               Brand Identity
             </h2>
-            {/* Full width image */}
-            <div
-              className={`aspect-[21/9] mb-8 ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Brand Overview — Logo & Colors</span>
-              </div>
+            {/* Outworld2 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/Outworld2.png"
+                alt="Outworld Brand Identity"
+                fill
+                className="object-cover"
+              />
             </div>
-            {/* Two column images */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Logo Variations</span>
-                </div>
+            {/* Outworld3 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/Outworld3.png"
+                alt="Outworld Brand Elements"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Outworld6_lil and Outworld7_lil - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/Outworld6_lil.png"
+                  alt="Outworld Brand Detail"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Color Palette & Typography</span>
-                </div>
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/Outworld7_lil.png"
+                  alt="Outworld Brand Detail"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -1413,53 +1360,23 @@ export default function CasePage() {
             >
               Product Design
             </h2>
-            {/* Full width image */}
-            <div
-              className={`aspect-[21/9] mb-8 ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">App Screens Overview</span>
-              </div>
+            {/* Outworld4 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/Outworld4.png"
+                alt="Outworld Product Design"
+                fill
+                className="object-cover"
+              />
             </div>
-            {/* Three column images */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Home Screen</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Activity Detail</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Search & Filters</span>
-                </div>
-              </div>
+            {/* Outworld5 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/cases/Outworld5.png"
+                alt="Outworld App Screens"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
@@ -1504,45 +1421,42 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* More Product Images - Wide Container */}
+        {/* Public Site Section - Wide Container */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            {/* Two column layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Map View</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Collections View</span>
-                </div>
-              </div>
-            </div>
-            {/* Full width image */}
-            <div
-              className={`aspect-[21/9] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Landing Page Design</span>
-              </div>
+              Public Site
+            </h2>
+            {/* Outworld8 */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/Outworld8.png"
+                alt="Outworld Public Site"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Outworld9 */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/Outworld9.png"
+                alt="Outworld Public Site"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Outworld10 */}
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/cases/Outworld10.png"
+                alt="Outworld Public Site"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
@@ -1570,19 +1484,12 @@ export default function CasePage() {
               isDarkMode ? 'border-white' : 'border-black'
             }`}>
               <p
-                className={`text-medium-title mb-6 ${
+                className={`text-medium-title ${
                   isDarkMode ? 'text-white' : 'text-black'
                 }`}
               >
                 &ldquo;{outworldContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {outworldContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -2594,56 +2501,19 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Introduction & Challenge Section - Headline left, Challenge right */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {zumaContent.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p
-                    className={`text-big-title mb-2 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {stat.number}
-                  </p>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Problem Statement */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {zumaContent.intro.headline}
-            </h2>
-            <p
-              className={`text-big-description max-w-3xl mt-6 ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}
-            >
-              {zumaContent.intro.description}
-            </p>
-          </div>
-        </section>
-
-        {/* The Challenge */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Headline - Left */}
+              <h2
+                className={`text-medium-title ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                {zumaContent.intro.headline}
+              </h2>
+              {/* Challenge - Right */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -2667,77 +2537,74 @@ export default function CasePage() {
                   {zumaContent.challenge.content2}
                 </p>
               </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">The Debt Cycle Visualization</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Our Approach */}
+        {/* Brand Identity Section */}
         <section className="py-12 md:py-20">
-          <div className="max-w-[920px] mx-auto px-6">
+          <div className="max-w-[1420px] mx-auto px-6">
             <h2
-              className={`text-medium-title mb-6 ${
+              className={`text-medium-title mb-8 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              {zumaContent.approach.title}
+              Brand Identity
             </h2>
-            <p
-              className={`text-big-description ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}
-            >
-              {zumaContent.approach.content}
-            </p>
-          </div>
-        </section>
-
-        {/* Product Screenshots */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div
-                className={`aspect-[16/10] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Bucket Overview</span>
-                </div>
+            {/* Zuma2 and Zuma3 - Side by side small */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/zuma2_lil.png"
+                  alt="Zuma Brand Identity"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div
-                className={`aspect-[16/10] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Goal Progress</span>
-                </div>
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/zuma3_lil.png"
+                  alt="Zuma Brand Elements"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
-            <div
-              className={`aspect-[21/9] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Full Dashboard View</span>
+            {/* Zuma4 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/zuma4.png"
+                alt="Zuma Brand Design"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Zuma5 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <Image
+                src="/cases/zuma5.png"
+                alt="Zuma Product Design"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Zuma6 and Zuma7 - Side by side, taller */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/cases/zuma6_lil.png"
+                  alt="Zuma Detail"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/cases/zuma7_lil.png"
+                  alt="Zuma Detail"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -2819,6 +2686,120 @@ export default function CasePage() {
           </div>
         </section>
 
+        {/* Product Design Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Product Design
+            </h2>
+            {/* Zuma Videos */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[1/1]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/cases/zuma1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="relative aspect-[1/1]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/cases/zuma2.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+            {/* Zuma8 and Zuma9 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/zuma8.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/cases/zuma9.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            {/* Zuma10 and Zuma11 - taller */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma10.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma11.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            {/* Zuma12 and Zuma13 - taller */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma12.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma13.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            {/* Zuma14 and Zuma15 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma14.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="/cases/zuma15.png"
+                  alt="Zuma Product Design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Process */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
@@ -2853,28 +2834,6 @@ export default function CasePage() {
                   >
                     {phase.description}
                   </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* More Screenshots */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {['Create Bucket Flow', 'Allocation Rules', 'Progress Tracking'].map((label, i) => (
-                <div
-                  key={i}
-                  className={`aspect-[4/3] ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description">{label}</span>
-                  </div>
                 </div>
               ))}
             </div>
@@ -2954,19 +2913,12 @@ export default function CasePage() {
               isDarkMode ? 'border-white' : 'border-black'
             }`}>
               <p
-                className={`text-medium-title mb-6 ${
+                className={`text-medium-title ${
                   isDarkMode ? 'text-white' : 'text-black'
                 }`}
               >
                 &ldquo;{zumaContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {zumaContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -3545,7 +3497,7 @@ export default function CasePage() {
                 {caseData.description}
               </p>
               <div
-                className={`grid grid-cols-2 gap-6 transition-all duration-700 delay-300 ${
+                className={`grid grid-cols-3 gap-6 transition-all duration-700 delay-300 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
@@ -3555,6 +3507,14 @@ export default function CasePage() {
                   </p>
                   <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                     {caseData.year}
+                  </p>
+                </div>
+                <div>
+                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                    Client
+                  </p>
+                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                    {caseData.client}
                   </p>
                 </div>
                 <div>
@@ -3570,7 +3530,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -3582,44 +3542,36 @@ export default function CasePage() {
                 priority
               />
             </div>
-          </div>
-        </section>
 
-        {/* Stats Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {quizlandContent.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p className={`text-huge-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {stat.number}
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
+            {/* Second Image */}
+            <div
+              className={`mt-8 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              {quizlandContent.intro.description}
-            </h2>
+              <Image
+                src="/cases/Quizland2.png"
+                alt="Quizland App Screens"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
 
         {/* Challenge Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Text - Left */}
+              <h2
+                className={`text-medium-title ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                Traditional learning apps force you into their curriculum. Quizland flips the script: you choose the topic, AI creates the quiz, and you learn exactly what you want to know. From ancient history to modern memes, no subject is off-limits.
+              </h2>
+              {/* Challenge - Right */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -3643,84 +3595,52 @@ export default function CasePage() {
                   {quizlandContent.challenge.content2}
                 </p>
               </div>
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Traditional Learning Apps Comparison</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Approach Section */}
+        {/* App Screenshots */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl order-2 lg:order-1 ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">OpenAI Integration Flow</span>
+            {/* Images */}
+            <div className="flex flex-col gap-3">
+              {/* Row with 2 images */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <Image
+                    src="/cases/Quizland3_lil.png"
+                    alt="Quizland App Screen"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <Image
+                    src="/cases/Quizland4_lil.png"
+                    alt="Quizland App Screen"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
-              {/* Text */}
-              <div className="order-1 lg:order-2">
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {quizlandContent.approach.title}
-                </h2>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {quizlandContent.approach.content}
-                </p>
+              {/* Quizland 5 */}
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Quizland5.png"
+                  alt="Quizland App Full Screen"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* App Screens - Mobile Mockups */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title mb-8 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              The App Experience
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              {['Topic Input', 'Quiz Generation', 'Question Screen', 'Results & Feedback'].map((label, index) => (
-                <div
-                  key={index}
-                  className={`aspect-[9/16] rounded-2xl ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description text-center px-2">{label}</span>
-                  </div>
-                </div>
-              ))}
+              {/* Quizland 6 */}
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <Image
+                  src="/cases/Quizland6.png"
+                  alt="Quizland Landing Page"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -3758,23 +3678,6 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Full Width App Mockup */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[16/9] rounded-2xl ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Quiz Interface — Full Screen Experience</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Features Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
@@ -3804,36 +3707,6 @@ export default function CasePage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Feature Detail Mockups */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Difficulty Selection</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Topic Discovery</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -3891,7 +3764,7 @@ export default function CasePage() {
               Landing Page
             </h2>
             <div
-              className={`aspect-[16/10] rounded-2xl ${
+              className={`aspect-[16/10] ${
                 isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
               }`}
             >

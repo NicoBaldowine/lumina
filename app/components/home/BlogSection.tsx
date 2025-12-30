@@ -1,9 +1,9 @@
 'use client';
 
 import BlogCard from './BlogCard';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
+import ActionButton from '../ui/ActionButton';
 
 export default function BlogSection() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -38,16 +38,9 @@ export default function BlogSection() {
           }`}>
             Latest Posts
           </h2>
-          <Link
-            href="/blog"
-            className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
-              isDarkMode
-                ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
-                : 'text-neutral-500 border border-black/20 hover:bg-black hover:text-white'
-            }`}
-          >
+          <ActionButton href="/blog">
             All Posts
-          </Link>
+          </ActionButton>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {posts.map((post, index) => (

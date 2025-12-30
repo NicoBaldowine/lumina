@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
+import ActionButton from '../ui/ActionButton';
 
 export default function Hero() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -30,26 +30,12 @@ export default function Hero() {
           optimizing for better engagement and conversion rates.
         </p>
         <div className="flex gap-4">
-          <Link
-            href="/contact"
-            className={`inline-flex px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
-              isDarkMode
-                ? 'text-white bg-[#333333] hover:bg-[#444444]'
-                : 'text-white bg-[#070606] hover:bg-[#333333]'
-            }`}
-          >
+          <ActionButton href="/contact" variant="filled">
             Contact us
-          </Link>
-          <Link
-            href="/services"
-            className={`inline-flex px-4 py-2 rounded-full text-sm leading-relaxed tracking-[-0.01em] transition-all duration-300 ${
-              isDarkMode
-                ? 'text-neutral-400 border border-white/20 hover:bg-white hover:text-[#070606]'
-                : 'text-neutral-500 border border-[#070606]/20 hover:bg-[#070606] hover:text-white'
-            }`}
-          >
+          </ActionButton>
+          <ActionButton href="/services">
             Services
-          </Link>
+          </ActionButton>
         </div>
       </div>
     </section>
