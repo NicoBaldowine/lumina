@@ -2,7 +2,6 @@
 
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import { ThemeContext } from '../../components/ThemeProvider';
 import ImageWithLoader from '../../components/ui/ImageWithLoader';
 
@@ -289,7 +288,7 @@ const shinkaiContent = {
   },
   testimonial: {
     quote: 'The brand needed to communicate something radical: that AI can be powerful AND private. This identity makes that vision tangible.',
-    author: 'Founder, Shinkai'
+    author: 'Shinkai'
   }
 };
 
@@ -1088,22 +1087,15 @@ export default function CasePage() {
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
-                <p
-                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
-                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                >
-                  {caseData.subtitle}
-                </p>
                 <h1
-                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
                     isDarkMode ? 'text-white' : 'text-black'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
                   {caseData.title}
                 </h1>
                 <p
-                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
@@ -1112,7 +1104,7 @@ export default function CasePage() {
 
                 {/* Project Meta */}
                 <div
-                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -1132,12 +1124,20 @@ export default function CasePage() {
                       {caseData.year}
                     </p>
                   </div>
-                  <div className="col-span-2">
+                  <div>
                     <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                       Services
                     </p>
                     <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      React Native · Next.js · Custom Scraper
                     </p>
                   </div>
                 </div>
@@ -1146,7 +1146,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -1274,8 +1274,8 @@ export default function CasePage() {
                 alt="Outworld Brand Identity"
               />
             </div>
-            {/* Outworld3 - Full width */}
-            <div className="relative aspect-[16/9] mb-3">
+            {/* Outworld3 - Full width, taller */}
+            <div className="relative aspect-[4/3] mb-3">
               <ImageWithLoader
                 src="/cases/Outworld3.png"
                 alt="Outworld Brand Elements"
@@ -1351,12 +1351,42 @@ export default function CasePage() {
             >
               Product Design
             </h2>
-            {/* Outworld4 - Full width */}
-            <div className="relative aspect-[16/9] mb-3">
+            {/* Outworld4 - Full width, taller */}
+            <div className="relative aspect-[4/3] mb-3">
               <ImageWithLoader
                 src="/cases/Outworld4.png"
                 alt="Outworld Product Design"
               />
+            </div>
+            {/* Outworld4.1 and Outworld4.2-1 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Outworld4.1.png"
+                  alt="Outworld Product Design Detail"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Outworld4.2-1.png"
+                  alt="Outworld Product Design Detail"
+                />
+              </div>
+            </div>
+            {/* Outworld4.2 and Outworld4.3 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Outworld4.2.png"
+                  alt="Outworld Product Design Detail"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Outworld4.3.png"
+                  alt="Outworld Product Design Detail"
+                />
+              </div>
             </div>
             {/* Outworld5 - Full width */}
             <div className="relative aspect-[16/9]">
@@ -1482,27 +1512,20 @@ export default function CasePage() {
   if (slug === 'aspire-app' && caseData.hasFullCase) {
     return (
       <main className="min-h-screen pt-[72px]">
-        {/* Hero Section - Wide Container (1420px) - Same as Outworld */}
+        {/* Hero Section - Wide Container (1420px) */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
-                <p
-                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
-                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                >
-                  {caseData.subtitle}
-                </p>
                 <h1
-                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
                     isDarkMode ? 'text-white' : 'text-black'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
                   {caseData.title}
                 </h1>
                 <p
-                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
@@ -1511,7 +1534,7 @@ export default function CasePage() {
 
                 {/* Project Meta */}
                 <div
-                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -1531,12 +1554,20 @@ export default function CasePage() {
                       {caseData.year}
                     </p>
                   </div>
-                  <div className="col-span-2">
+                  <div>
                     <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                       Services
                     </p>
                     <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      React Native · Supabase
                     </p>
                   </div>
                 </div>
@@ -1545,7 +1576,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -1586,89 +1617,6 @@ export default function CasePage() {
                 >
                   {aspireContent.challenge.content}
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* App Showcase - 3 Phone Screens */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Onboarding Flow</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Challenge Dashboard</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[9/16] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Daily Check-in</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Solution - Text + Image side by side */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div>
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {aspireContent.approach.title}
-                </h2>
-                <p
-                  className={`text-big-description mb-6 ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {aspireContent.approach.content}
-                </p>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {aspireContent.challenge.content2}
-                </p>
-              </div>
-              <div
-                className={`aspect-square ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Design Process</span>
-                </div>
               </div>
             </div>
           </div>
@@ -1725,7 +1673,7 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Brand & Iconography - Visual Grid */}
+        {/* Visual Identity */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
@@ -1735,157 +1683,96 @@ export default function CasePage() {
             >
               Visual Identity
             </h2>
-            {/* Asymmetric grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div
-                className={`md:col-span-2 aspect-[16/9] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Logo & Wordmark</span>
-                </div>
+            {/* Aspire2 and Aspire3 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Aspire2.png"
+                  alt="Aspire Brand Identity"
+                />
               </div>
-              <div
-                className={`aspect-[4/3] md:aspect-auto ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Icon System</span>
-                </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Aspire3.png"
+                  alt="Aspire Brand Elements"
+                />
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {['Color 1', 'Color 2', 'Color 3', 'Color 4'].map((label, i) => (
-                <div
-                  key={i}
-                  className={`aspect-square ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description">{label}</span>
-                  </div>
+            {/* Aspire7 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Aspire7.png"
+                alt="Aspire Visual System"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Core Features - Text Only */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[920px] mx-auto px-6">
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Core Features
+            </h2>
+            <div className="space-y-8">
+              {aspireContent.features.list.map((feature, index) => (
+                <div key={index} className={`pl-8 border-l-2 ${
+                  isDarkMode ? 'border-white/20' : 'border-black/20'
+                }`}>
+                  <h3
+                    className={`text-card-title mb-2 ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {feature.name}
+                  </h3>
+                  <p
+                    className={`text-big-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Key Features - Two Column Layout */}
+        {/* Product Design */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-              <div>
-                <h2
-                  className={`text-medium-title mb-8 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  Core Features
-                </h2>
-                <div className="space-y-6">
-                  {aspireContent.features.list.slice(0, 3).map((feature, index) => (
-                    <div key={index}>
-                      <h3
-                        className={`text-card-title mb-2 ${
-                          isDarkMode ? 'text-white' : 'text-black'
-                        }`}
-                      >
-                        {feature.name}
-                      </h3>
-                      <p
-                        className={`text-small-description ${
-                          isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                        }`}
-                      >
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <div
-                  className={`aspect-[4/5] mb-8 ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description">Feature Highlight</span>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  {aspireContent.features.list.slice(3).map((feature, index) => (
-                    <div key={index}>
-                      <h3
-                        className={`text-card-title mb-2 ${
-                          isDarkMode ? 'text-white' : 'text-black'
-                        }`}
-                      >
-                        {feature.name}
-                      </h3>
-                      <p
-                        className={`text-small-description ${
-                          isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                        }`}
-                      >
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* More App Screens */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">21-Day Progress Grid</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Completion Celebration</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`aspect-[21/9] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Landing Page — Desktop View</span>
-              </div>
+              Product Design
+            </h2>
+            {/* Aspire4 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Aspire4.png"
+                alt="Aspire Product Design"
+              />
+            </div>
+            {/* Aspire5 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Aspire5.png"
+                alt="Aspire App Interface"
+              />
+            </div>
+            {/* Aspire6 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Aspire6.png"
+                alt="Aspire App Screens"
+              />
             </div>
           </div>
         </section>
@@ -1935,27 +1822,20 @@ export default function CasePage() {
   if (slug === 'shinkai-branding' && caseData.hasFullCase) {
     return (
       <main className="min-h-screen pt-[72px]">
-        {/* Hero Section - Wide Container (1420px) - Same intro pattern */}
+        {/* Hero Section - Wide Container (1420px) */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
-                <p
-                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
-                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                >
-                  {caseData.subtitle}
-                </p>
                 <h1
-                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
                     isDarkMode ? 'text-white' : 'text-black'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
                   {caseData.title}
                 </h1>
                 <p
-                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
@@ -1964,7 +1844,7 @@ export default function CasePage() {
 
                 {/* Project Meta */}
                 <div
-                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -1984,12 +1864,20 @@ export default function CasePage() {
                       {caseData.year}
                     </p>
                   </div>
-                  <div className="col-span-2">
+                  <div>
                     <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                       Services
                     </p>
                     <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      V0 Prototyping
                     </p>
                   </div>
                 </div>
@@ -1998,7 +1886,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -2011,23 +1899,19 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Philosophy Statement - Full Width */}
+        {/* Philosophy & Challenge Section - Text left, Challenge right */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {shinkaiContent.intro.description}
-            </h2>
-          </div>
-        </section>
-
-        {/* The Challenge - Text + Image */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Philosophy - Left */}
+              <h2
+                className={`text-medium-title ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                {shinkaiContent.intro.description}
+              </h2>
+              {/* Challenge - Right */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -2050,17 +1934,6 @@ export default function CasePage() {
                 >
                   {shinkaiContent.challenge.content2}
                 </p>
-              </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Brand Discovery</span>
-                </div>
               </div>
             </div>
           </div>
@@ -2109,63 +1982,93 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Logo Showcase - Full Width Image */}
+        {/* Brand Identity Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[21/9] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Logo & Wordmark System</span>
+              Brand Identity
+            </h2>
+            {/* Shinkai2 and Shinkai3 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Shinkai2.png"
+                  alt="Shinkai Brand Identity"
+                />
               </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Shinkai3.png"
+                  alt="Shinkai Brand Elements"
+                />
+              </div>
+            </div>
+            {/* Shinkai4 and Shinkai5 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Shinkai4.png"
+                  alt="Shinkai Brand Design"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Shinkai5.png"
+                  alt="Shinkai Brand Design"
+                />
+              </div>
+            </div>
+            {/* Shinkai6 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Shinkai6.png"
+                alt="Shinkai Brand Overview"
+              />
             </div>
           </div>
         </section>
 
-        {/* Visual System - Grid Layout */}
+        {/* Design System Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
-              className={`text-medium-title mb-12 ${
+              className={`text-medium-title mb-6 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              {shinkaiContent.visualSystem.title}
+              Design System
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {shinkaiContent.visualSystem.elements.map((element, index) => (
-                <div key={index}>
-                  <div
-                    className={`aspect-[16/10] mb-6 ${
-                      isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                    }`}
-                  >
-                    <div className={`w-full h-full flex items-center justify-center ${
-                      isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                    }`}>
-                      <span className="text-small-description">{element.name}</span>
-                    </div>
-                  </div>
-                  <h3
-                    className={`text-card-title mb-2 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {element.name}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {element.description}
-                  </p>
-                </div>
-              ))}
+            <p
+              className={`text-big-description max-w-3xl mb-12 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              A solid design system is the foundation of scalable product design. By defining reusable components, patterns, and visual guidelines upfront, we create a toolkit that ensures consistency across every interface. When brand identity and product design work in harmony, the result is a cohesive experience where every element reinforces the brand&apos;s story.
+            </p>
+            {/* Shinkai7 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Shinkai7.png"
+                alt="Shinkai Design System"
+              />
+            </div>
+            {/* Shinkai8 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Shinkai8.png"
+                alt="Shinkai Design System Components"
+              />
+            </div>
+            {/* Shinkai9 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Shinkai9.png"
+                alt="Shinkai Design System Patterns"
+              />
             </div>
           </div>
         </section>
@@ -2208,54 +2111,43 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Product Guidelines Images */}
+        {/* Product Design Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Component Library</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Agent UI Patterns</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Dark Mode System</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`aspect-[21/9] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+            <h2
+              className={`text-medium-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Product Interface Guidelines</span>
-              </div>
+              Product Design
+            </h2>
+            <p
+              className={`text-big-description max-w-3xl mb-12 ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              }`}
+            >
+              This is where the design system comes to life. With the brand identity established and the structure in place, the pieces finally take shape. Any designer can now pick this up and scale it further—the foundation is set to deliver an ideal experience.
+            </p>
+            {/* Shinkai10 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Shinkai10.png"
+                alt="Shinkai Product Design"
+              />
+            </div>
+            {/* Shinkai11 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Shinkai11.png"
+                alt="Shinkai Product Interface"
+              />
+            </div>
+            {/* Shinkai12 - Full width, taller aspect ratio */}
+            <div className="relative aspect-[4/3]">
+              <ImageWithLoader
+                src="/cases/Shinkai12.png"
+                alt="Shinkai Product Overview"
+              />
             </div>
           </div>
         </section>
@@ -2296,59 +2188,6 @@ export default function CasePage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Brand Applications */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title mb-8 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              Brand in Action
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-              {['Business Card', 'Social Media', 'Documentation', 'Merchandise'].map((label, i) => (
-                <div
-                  key={i}
-                  className={`aspect-square ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description">{label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div
-                className={`aspect-[16/10] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Desktop App Interface</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[16/10] ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Web Application Interface</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -2405,22 +2244,15 @@ export default function CasePage() {
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
-                <p
-                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
-                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                >
-                  {caseData.subtitle}
-                </p>
                 <h1
-                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
                     isDarkMode ? 'text-white' : 'text-black'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
                   {caseData.title}
                 </h1>
                 <p
-                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
@@ -2429,7 +2261,7 @@ export default function CasePage() {
 
                 {/* Project Meta */}
                 <div
-                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -2449,12 +2281,20 @@ export default function CasePage() {
                       {caseData.year}
                     </p>
                   </div>
-                  <div className="col-span-2">
+                  <div>
                     <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                       Services
                     </p>
                     <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      Next.js · Supabase · Plaid
                     </p>
                   </div>
                 </div>
@@ -2463,7 +2303,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -2880,63 +2720,68 @@ export default function CasePage() {
         {/* Hero Section - Wide Container (1420px) */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="max-w-3xl">
-              <p
-                className={`text-small-description mb-4 transition-all duration-700 ${
-                  isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.subtitle}
-              </p>
-              <h1
-                className={`text-big-title mb-4 md:mb-6 transition-all duration-700 delay-100 ${
-                  isDarkMode ? 'text-white' : 'text-neutral-800'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.title}
-              </h1>
-              <p
-                className={`text-big-description mb-8 transition-all duration-700 delay-200 ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.description}
-              </p>
-              <div
-                className={`grid grid-cols-2 gap-6 transition-all duration-700 delay-300 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div>
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Client
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.client}
-                  </p>
-                </div>
-                <div>
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Year
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.year}
-                  </p>
-                </div>
-                <div className="col-span-2">
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Services
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.services.join(' · ')}
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <div>
+                <h1
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.title}
+                </h1>
+                <p
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.description}
+                </p>
+
+                {/* Project Meta */}
+                <div
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                >
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Client
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.client}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Year
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.year}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Services
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      Next.js · React Native · Supabase · Resend
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -2949,41 +2794,19 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Intro & Challenge Section - Text left, Challenge right */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {cincoContent.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p className={`text-huge-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {stat.number}
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title max-w-4xl ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {cincoContent.intro.description}
-            </h2>
-          </div>
-        </section>
-
-        {/* Challenge Section - Wide Container (Text left, Image right) */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Intro Text - Left */}
+              <h2
+                className={`text-medium-title ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}
+              >
+                {cincoContent.intro.description}
+              </h2>
+              {/* Challenge - Right */}
               <div>
                 <h2
                   className={`text-medium-title mb-6 ${
@@ -3007,54 +2830,48 @@ export default function CasePage() {
                   {cincoContent.challenge.content2}
                 </p>
               </div>
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Hotel Operations Pain Points</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Approach Section - Wide Container (Image left, Text right) */}
+        {/* Brand Identity Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Image Placeholder - Now on the left */}
-              <div
-                className={`aspect-[4/3] rounded-2xl order-2 lg:order-1 ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Ecosystem Architecture Diagram</span>
-                </div>
+            <h2
+              className={`text-medium-title mb-8 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Brand Identity
+            </h2>
+            {/* Cinco2 and Cinco3 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco2.png"
+                  alt="Cinco Brand Identity"
+                />
               </div>
-              {/* Text - Now on the right */}
-              <div className="order-1 lg:order-2">
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {cincoContent.approach.title}
-                </h2>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {cincoContent.approach.content}
-                </p>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco3.png"
+                  alt="Cinco Brand Elements"
+                />
+              </div>
+            </div>
+            {/* Cinco4 and Cinco5 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco4.png"
+                  alt="Cinco Brand Design"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco5.png"
+                  alt="Cinco Brand Design"
+                />
               </div>
             </div>
           </div>
@@ -3064,104 +2881,35 @@ export default function CasePage() {
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
-              className={`text-big-title mb-12 ${
+              className={`text-medium-title mb-12 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
               {cincoContent.ecosystem.title}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {cincoContent.ecosystem.products.map((product, index) => {
-                const mockupLabels = [
-                  'Manager Dashboard — Room Status View',
-                  'Staff App — Task List Screen',
-                  'Guest Portal — Service Request'
-                ];
-                return (
-                  <div key={index}>
-                    {/* Product Mockup Placeholder */}
-                    <div
-                      className={`aspect-[3/4] rounded-2xl mb-6 ${
-                        isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                      }`}
-                    >
-                      <div className={`w-full h-full flex items-center justify-center ${
-                        isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                      }`}>
-                        <span className="text-small-description text-center px-4">{mockupLabels[index]}</span>
-                      </div>
-                    </div>
-                    <p
-                      className={`text-small-description mb-2 ${
-                        isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                      }`}
-                    >
-                      {product.platform}
-                    </p>
-                    <h3
-                      className={`text-medium-title mb-4 ${
-                        isDarkMode ? 'text-white' : 'text-black'
-                      }`}
-                    >
-                      {product.name}
-                    </h3>
-                    <p
-                      className={`text-small-description ${
-                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                      }`}
-                    >
-                      {product.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Full Width Dashboard Mockup */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[16/9] rounded-2xl ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Manager Dashboard — Full Interface Overview</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section - Wide Container */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-big-title mb-12 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {cincoContent.features.title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {cincoContent.features.list.map((feature, index) => (
+              {cincoContent.ecosystem.products.map((product, index) => (
                 <div key={index}>
+                  <p
+                    className={`text-small-description mb-2 ${
+                      isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
+                    }`}
+                  >
+                    {product.platform}
+                  </p>
                   <h3
-                    className={`text-card-title mb-3 ${
+                    className={`text-card-title mb-4 ${
                       isDarkMode ? 'text-white' : 'text-black'
                     }`}
                   >
-                    {feature.name}
+                    {product.name}
                   </h3>
                   <p
                     className={`text-small-description ${
                       isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                     }`}
                   >
-                    {feature.description}
+                    {product.description}
                   </p>
                 </div>
               ))}
@@ -3169,79 +2917,7 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Feature Detail Mockups - Two Column */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Real-Time Room Status Grid</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Staff Performance Analytics</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section - Narrow Container */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[920px] mx-auto px-6">
-            <h2
-              className={`text-big-title mb-12 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {cincoContent.process.title}
-            </h2>
-            {cincoContent.process.phases.map((phase, index) => (
-              <div key={index} className="mb-12 last:mb-0">
-                <div className="flex items-start gap-6">
-                  <span
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-600' : 'text-neutral-300'
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3
-                      className={`text-medium-title mb-3 ${
-                        isDarkMode ? 'text-white' : 'text-black'
-                      }`}
-                    >
-                      {phase.name}
-                    </h3>
-                    <p
-                      className={`text-big-description ${
-                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                      }`}
-                    >
-                      {phase.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Staff App Mockups - Mobile Screens */}
+        {/* Staff App Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
@@ -3249,122 +2925,147 @@ export default function CasePage() {
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              Staff App Experience
+              Staff App
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              {['Task Dashboard', 'Shift Clock-In', 'Incident Report', 'Room Status Update'].map((label, index) => (
-                <div
-                  key={index}
-                  className={`aspect-[9/16] rounded-2xl ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description text-center px-2">{label}</span>
-                  </div>
-                </div>
-              ))}
+            {/* Cinco6 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Cinco6.png"
+                alt="Cinco Staff App Overview"
+              />
+            </div>
+            {/* Cinco7 and Cinco8 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco7.png"
+                  alt="Cinco Staff App Screen"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco8.png"
+                  alt="Cinco Staff App Screen"
+                />
+              </div>
+            </div>
+            {/* Cinco9 and Cinco10 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco9.png"
+                  alt="Cinco Staff App Screen"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Cinco10.png"
+                  alt="Cinco Staff App Screen"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Five-Star Philosophy Section */}
+        {/* Staff App Key Features */}
         <section className="py-12 md:py-20">
           <div className="max-w-[920px] mx-auto px-6">
             <h2
-              className={`text-big-title mb-6 ${
+              className={`text-medium-title mb-8 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              {cincoContent.philosophy.title}
+              Key Features
+            </h2>
+            <div className="space-y-6">
+              <div className={`pl-8 border-l-2 ${isDarkMode ? 'border-white/20' : 'border-black/20'}`}>
+                <h3 className={`text-card-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                  Check-in & Check-out
+                </h3>
+                <p className={`text-big-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                  Staff can clock in and out with a single tap, making time tracking seamless and accurate.
+                </p>
+              </div>
+              <div className={`pl-8 border-l-2 ${isDarkMode ? 'border-white/20' : 'border-black/20'}`}>
+                <h3 className={`text-card-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                  Incident Reporting
+                </h3>
+                <p className={`text-big-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                  Quickly declare and document incidents with photos and descriptions, keeping management informed in real-time.
+                </p>
+              </div>
+              <div className={`pl-8 border-l-2 ${isDarkMode ? 'border-white/20' : 'border-black/20'}`}>
+                <h3 className={`text-card-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                  Task Time Tracking
+                </h3>
+                <p className={`text-big-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                  Track how long each task takes, helping optimize workflows and identify bottlenecks.
+                </p>
+              </div>
+              <div className={`pl-8 border-l-2 ${isDarkMode ? 'border-white/20' : 'border-black/20'}`}>
+                <h3 className={`text-card-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                  Smart Task Prioritization
+                </h3>
+                <p className={`text-big-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                  Tasks are automatically ordered by priority, ensuring staff always know what needs attention first.
+                </p>
+              </div>
+              <div className={`pl-8 border-l-2 ${isDarkMode ? 'border-white/20' : 'border-black/20'}`}>
+                <h3 className={`text-card-title mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                  Multi-language Support
+                </h3>
+                <p className={`text-big-description ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                  Built-in language options for diverse staff teams, removing language barriers from daily operations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Landing and Hotel Admin Section */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-[1420px] mx-auto px-6">
+            <h2
+              className={`text-medium-title mb-6 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}
+            >
+              Landing and Hotel Admin
             </h2>
             <p
-              className={`text-big-description mb-12 ${
+              className={`text-big-description max-w-3xl mb-12 ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               }`}
             >
-              {cincoContent.philosophy.content}
+              A responsive dashboard built with React and Next.js that runs smoothly on any device. Fast, modern, and intuitive—hotel managers can monitor operations, track performance, and manage staff from anywhere.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {cincoContent.philosophy.principles.map((principle, index) => (
-                <div
-                  key={index}
-                  className={`p-6 rounded-xl border ${
-                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
-                  }`}
-                >
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {principle.title}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {principle.description}
-                  </p>
-                </div>
-              ))}
+            {/* Cinco11 - Taller aspect ratio */}
+            <div className="relative aspect-[4/3] mb-3">
+              <ImageWithLoader
+                src="/cases/Cinco11.png"
+                alt="Cinco Landing Page"
+              />
             </div>
-          </div>
-        </section>
-
-        {/* Guest Portal Mockups */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-medium-title mb-8 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              Guest Portal
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Room Service Request Flow</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] rounded-2xl ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Hotel Information & Amenities</span>
-                </div>
-              </div>
+            {/* Cinco12 - Taller aspect ratio */}
+            <div className="relative aspect-[4/3] mb-3">
+              <ImageWithLoader
+                src="/cases/Cinco12.png"
+                alt="Cinco Hotel Admin"
+              />
             </div>
-          </div>
-        </section>
-
-        {/* Bilingual Support Visual */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[21/9] rounded-2xl ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Bilingual Interface — English & Spanish</span>
-              </div>
+            {/* Cinco13 - Full width */}
+            <div className="relative aspect-[16/9] mb-3">
+              <ImageWithLoader
+                src="/cases/Cinco13.png"
+                alt="Cinco Admin Dashboard"
+              />
+            </div>
+            {/* Cinco14 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Cinco14.png"
+                alt="Cinco Admin Interface"
+              />
             </div>
           </div>
         </section>
@@ -3419,63 +3120,68 @@ export default function CasePage() {
         {/* Hero Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="max-w-3xl">
-              <p
-                className={`text-small-description mb-4 transition-all duration-700 ${
-                  isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.subtitle}
-              </p>
-              <h1
-                className={`text-big-title mb-4 md:mb-6 transition-all duration-700 delay-100 ${
-                  isDarkMode ? 'text-white' : 'text-neutral-800'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.title}
-              </h1>
-              <p
-                className={`text-big-description mb-8 transition-all duration-700 delay-200 ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {caseData.description}
-              </p>
-              <div
-                className={`grid grid-cols-3 gap-6 transition-all duration-700 delay-300 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div>
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Year
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.year}
-                  </p>
-                </div>
-                <div>
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Client
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.client}
-                  </p>
-                </div>
-                <div>
-                  <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                    Services
-                  </p>
-                  <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {caseData.services.join(' · ')}
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <div>
+                <h1
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
+                    isDarkMode ? 'text-white' : 'text-black'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.title}
+                </h1>
+                <p
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                >
+                  {caseData.description}
+                </p>
+
+                {/* Project Meta */}
+                <div
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                >
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Client
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.client}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Year
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.year}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Services
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      React Native · Supabase · OpenAI API
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -4259,22 +3965,15 @@ export default function CasePage() {
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
-                <p
-                  className={`text-small-description mb-4 transition-all duration-1000 ease-out ${
-                    isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                >
-                  {caseData.subtitle}
-                </p>
                 <h1
-                  className={`text-big-title mb-6 transition-all duration-1000 delay-100 ease-out ${
+                  className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
                     isDarkMode ? 'text-white' : 'text-black'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
                   {caseData.title}
                 </h1>
                 <p
-                  className={`text-big-description mb-8 transition-all duration-1000 delay-200 ease-out ${
+                  className={`text-big-description mb-8 transition-all duration-1000 delay-100 ease-out ${
                     isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
@@ -4283,7 +3982,7 @@ export default function CasePage() {
 
                 {/* Project Meta */}
                 <div
-                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-300 ease-out ${
+                  className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-200 ease-out ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -4303,12 +4002,20 @@ export default function CasePage() {
                       {caseData.year}
                     </p>
                   </div>
-                  <div className="col-span-2">
+                  <div>
                     <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
                       Services
                     </p>
                     <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {caseData.services.join(' · ')}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`text-small-description mb-1 ${isDarkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                      Technology
+                    </p>
+                    <p className={`text-small-description ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                      React Native · Supabase
                     </p>
                   </div>
                 </div>
@@ -4317,7 +4024,7 @@ export default function CasePage() {
 
             {/* Hero Image */}
             <div
-              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden rounded-2xl transition-all duration-1000 delay-400 ease-out ${
+              className={`mt-12 md:mt-16 aspect-[16/9] relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -4343,7 +4050,7 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats Section - 4 Columns */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -4369,351 +4076,59 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Challenge Section - Wide Container (Text left, Image right) */}
+        {/* Product Definition */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div>
-                <h2
-                  className={`text-medium-title mb-6 ${
-                    isDarkMode ? 'text-white' : 'text-black'
-                  }`}
-                >
-                  {versusContent.challenge.title}
-                </h2>
-                <p
-                  className={`text-big-description mb-4 ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {versusContent.challenge.content}
-                </p>
-                <p
-                  className={`text-big-description ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}
-                >
-                  {versusContent.challenge.content2}
-                </p>
-              </div>
-              {/* Image Placeholder */}
-              <div
-                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Pickleball Growth Chart</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Approach Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2
-              className={`text-medium-title mb-6 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {versusContent.approach.title}
-            </h2>
             <p
-              className={`text-big-description ${
+              className={`text-big-description max-w-3xl mb-12 ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               }`}
             >
-              {versusContent.approach.content}
+              A mobile app designed to connect pickleball players of all skill levels. Find nearby courts, schedule matches, track your stats, and build your local pickleball community—all in one place.
             </p>
           </div>
         </section>
 
-        {/* Match Types Section */}
+        {/* Versus App Section */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
-              className={`text-big-title mb-12 ${
+              className={`text-medium-title mb-8 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
-              {versusContent.matchTypes.title}
+              Versus App
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {versusContent.matchTypes.list.map((type, index) => (
-                <div
-                  key={index}
-                  className={`p-6 rounded-xl border ${
-                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
-                  }`}
-                >
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {type.name}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {type.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Full Width Image */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[21/9] rounded-2xl overflow-hidden ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Match Discovery — App Screens</span>
+            {/* Versus2 and Versus3 - Side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Versus2.png"
+                  alt="Versus App Screen"
+                />
+              </div>
+              <div className="relative aspect-[4/3]">
+                <ImageWithLoader
+                  src="/cases/Versus3.png"
+                  alt="Versus App Screen"
+                />
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Deliverables Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-big-title mb-12 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              Deliverables
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {versusContent.deliverables.map((item, index) => (
-                <div key={index}>
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* App Screenshots - 3 Column Grid */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={num}
-                  className={`aspect-[9/16] rounded-2xl overflow-hidden ${
-                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                  }`}
-                >
-                  <div className={`w-full h-full flex items-center justify-center ${
-                    isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                  }`}>
-                    <span className="text-small-description">App Screen {num}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-big-title mb-12 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {versusContent.features.title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {versusContent.features.list.map((feature, index) => (
-                <div key={index}>
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {feature.name}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Two Column Image Layout */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div
-                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Match Creation Flow</span>
-                </div>
-              </div>
-              <div
-                className={`aspect-[4/3] rounded-2xl overflow-hidden ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-                }`}
-              >
-                <div className={`w-full h-full flex items-center justify-center ${
-                  isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-                }`}>
-                  <span className="text-small-description">Player Profile</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2
-              className={`text-big-title mb-12 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {versusContent.process.title}
-            </h2>
-            {versusContent.process.phases.map((phase, index) => (
-              <div key={index} className="mb-12 last:mb-0">
-                <div className="flex items-start gap-6">
-                  <span
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-600' : 'text-neutral-300'
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3
-                      className={`text-medium-title mb-3 ${
-                        isDarkMode ? 'text-white' : 'text-black'
-                      }`}
-                    >
-                      {phase.name}
-                    </h3>
-                    <p
-                      className={`text-big-description ${
-                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                      }`}
-                    >
-                      {phase.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Philosophy Section */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <h2
-              className={`text-big-title mb-6 ${
-                isDarkMode ? 'text-white' : 'text-black'
-              }`}
-            >
-              {versusContent.philosophy.title}
-            </h2>
-            <p
-              className={`text-big-description mb-12 ${
-                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-              }`}
-            >
-              {versusContent.philosophy.content}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {versusContent.philosophy.principles.map((principle, index) => (
-                <div
-                  key={index}
-                  className={`p-6 rounded-xl border ${
-                    isDarkMode ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'
-                  }`}
-                >
-                  <h3
-                    className={`text-card-title mb-3 ${
-                      isDarkMode ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {principle.title}
-                  </h3>
-                  <p
-                    className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}
-                  >
-                    {principle.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Landing Page Mockup */}
-        <section className="py-12 md:py-20">
-          <div className="max-w-[1420px] mx-auto px-6">
-            <div
-              className={`aspect-[16/9] rounded-2xl overflow-hidden ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">Landing Page — Desktop View</span>
-              </div>
+            {/* Versus4 - Full width */}
+            <div className="relative aspect-[16/9]">
+              <ImageWithLoader
+                src="/cases/Versus4.png"
+                alt="Versus App Overview"
+              />
             </div>
           </div>
         </section>
 
         {/* Results & Testimonial Section */}
         <section className="py-12 md:py-20">
-          <div className="max-w-3xl mx-auto px-6">
+          <div className="max-w-[920px] mx-auto px-6">
             <h2
-              className={`text-big-title mb-6 ${
+              className={`text-medium-title mb-6 ${
                 isDarkMode ? 'text-white' : 'text-black'
               }`}
             >
