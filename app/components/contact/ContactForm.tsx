@@ -6,6 +6,8 @@ import { ThemeContext } from '../ThemeProvider';
 export default function ContactForm() {
   const { isDarkMode } = useContext(ThemeContext);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,9 +27,31 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses = `w-full px-4 py-3 text-big-description transition-colors ${
@@ -99,6 +123,7 @@ export default function ContactForm() {
             placeholder="Enter name"
             value={formData.name}
             onChange={handleChange}
+            required
             className={inputClasses}
           />
         </div>
@@ -118,6 +143,7 @@ export default function ContactForm() {
             placeholder="Enter Email"
             value={formData.email}
             onChange={handleChange}
+            required
             className={inputClasses}
           />
         </div>
@@ -156,9 +182,27 @@ export default function ContactForm() {
             rows={5}
             value={formData.message}
             onChange={handleChange}
+            required
             className={`${inputClasses} resize-none`}
           />
         </div>
+
+        {/* Status messages */}
+        {submitStatus === 'success' && (
+          <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+            <p className="text-green-500 text-small-description">
+              Thank you! Your message has been sent. We&apos;ll get back to you soon.
+            </p>
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+            <p className="text-red-500 text-small-description">
+              Something went wrong. Please try again or email us directly.
+            </p>
+          </div>
+        )}
 
         <div
           className={`flex justify-end transition-all duration-1000 delay-500 ease-out ${
@@ -167,13 +211,14 @@ export default function ContactForm() {
         >
           <button
             type="submit"
+            disabled={isSubmitting}
             className={`px-6 py-3 rounded-full text-small-description transition-all duration-300 ${
               isDarkMode
-                ? 'bg-white text-black hover:bg-neutral-200'
-                : 'bg-black text-white hover:bg-neutral-800'
-            }`}
+                ? 'bg-white text-black hover:bg-neutral-200 disabled:bg-neutral-600'
+                : 'bg-black text-white hover:bg-neutral-800 disabled:bg-neutral-400'
+            } disabled:cursor-not-allowed`}
           >
-            Submit
+            {isSubmitting ? 'Sending...' : 'Submit'}
           </button>
         </div>
       </form>
