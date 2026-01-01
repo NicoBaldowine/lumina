@@ -1804,13 +1804,6 @@ export default function CasePage() {
               >
                 &ldquo;{aspireContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {aspireContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -2221,13 +2214,6 @@ export default function CasePage() {
               >
                 &ldquo;{shinkaiContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {shinkaiContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -2507,6 +2493,8 @@ export default function CasePage() {
                   loop
                   muted
                   playsInline
+                  webkit-playsinline="true"
+                  preload="auto"
                   className="w-full h-full object-cover"
                 >
                   <source src="/cases/zuma1.mp4" type="video/mp4" />
@@ -2518,6 +2506,8 @@ export default function CasePage() {
                   loop
                   muted
                   playsInline
+                  webkit-playsinline="true"
+                  preload="auto"
                   className="w-full h-full object-cover"
                 >
                   <source src="/cases/zuma2.mp4" type="video/mp4" />
@@ -3099,13 +3089,6 @@ export default function CasePage() {
               >
                 &ldquo;{cincoContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {cincoContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -3490,13 +3473,6 @@ export default function CasePage() {
               >
                 &ldquo;{quizlandContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {quizlandContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -3750,12 +3726,6 @@ export default function CasePage() {
                 alt="Yester.ai App Screen"
               />
               </div>
-              <div className="aspect-[16/9] relative overflow-hidden">
-                <ImageWithLoader
-                src="/cases/Yester4.png"
-                alt="Yester.ai App Screen"
-              />
-              </div>
             </div>
           </div>
         </section>
@@ -3942,13 +3912,6 @@ export default function CasePage() {
               >
                 &ldquo;{yesteraiContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {yesteraiContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>
@@ -4153,13 +4116,6 @@ export default function CasePage() {
               >
                 &ldquo;{versusContent.testimonial.quote}&rdquo;
               </p>
-              <cite
-                className={`text-small-description not-italic ${
-                  isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                }`}
-              >
-                — {versusContent.testimonial.author}
-              </cite>
             </blockquote>
           </div>
         </section>

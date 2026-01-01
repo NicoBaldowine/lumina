@@ -41,10 +41,10 @@ export default function Header() {
   };
 
   const navLinks = [
-    { href: '/', label: 'Home' },
+    { href: '/#cases', label: 'Cases' },
     { href: '/about-us', label: 'About us' },
     { href: '/services', label: 'Services' },
-    { href: '/blog', label: 'Blog' },
+    { href: '/blog', label: 'Stories' },
   ];
 
   // Mobile menu component to be rendered via portal

@@ -1,6 +1,7 @@
 'use client';
 
 import { useContext, useEffect, useState } from 'react';
+import Image from 'next/image';
 import { ThemeContext } from '../components/ThemeProvider';
 
 export default function AboutUsPage() {
@@ -33,12 +34,19 @@ export default function AboutUsPage() {
               We partner with early-stage founders to design, brand, and build products that are ready to launch. Not just prototypes, but real MVPs that can attract users, close sales, and raise capital.
             </p>
 
-            {/* Placeholder image */}
+            {/* About Us Image */}
             <div
-              className={`aspect-[4/3] transition-all duration-1000 delay-400 ease-out ${
-                isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            />
+              className={`relative aspect-[4/3] overflow-hidden transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <Image
+                src="/aboutus.png"
+                alt="Lumina Digital Studio"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Right side */}

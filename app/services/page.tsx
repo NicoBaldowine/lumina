@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useContext } from 'react';
+import Image from 'next/image';
 import { ThemeContext } from '../components/ThemeProvider';
 
 const services = [
@@ -13,6 +14,7 @@ const services = [
       'Visual identity systems (logo, color, typography)',
       'Digital-first brand guidelines',
     ],
+    image: '/brand_services.png',
   },
   {
     id: 'web-landing',
@@ -24,6 +26,7 @@ const services = [
       'Conversion-focused layouts',
       'Visual systems aligned with the brand',
     ],
+    image: '/web_services.png',
   },
   {
     id: 'product-design',
@@ -35,6 +38,7 @@ const services = [
       'UX/UI for web and mobile products',
       'Design systems ready for development and scale',
     ],
+    image: '/app_services.png',
   },
   {
     id: 'mvp-development',
@@ -46,6 +50,7 @@ const services = [
       'Tight collaboration between design and build',
       'Products ready to sell, test, or pitch',
     ],
+    image: '/tech_services.png',
   },
 ];
 
@@ -115,11 +120,14 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
-            <div
-              className={`aspect-[4/3] rounded-lg transition-opacity duration-500 ${
-                isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
-              }`}
-            />
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={activeService.image}
+                alt={activeService.title}
+                fill
+                className="object-cover transition-opacity duration-500"
+              />
+            </div>
           </div>
         </div>
       </div>

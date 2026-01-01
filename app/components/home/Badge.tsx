@@ -18,7 +18,7 @@ export default function Badge({ label }: BadgeProps) {
       className={`inline-block px-[6px] py-[4px] rounded-[4px] transition-colors ${
         isDarkMode
           ? 'bg-white/10 text-white hover:bg-white/20'
-          : 'bg-black/10 text-black hover:bg-black/20'
+          : 'bg-neutral-100 text-black hover:bg-neutral-200'
       }`}
       style={{
         fontSize: '10px',

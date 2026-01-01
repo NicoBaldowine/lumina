@@ -50,7 +50,7 @@ export default function ServicesSection() {
             <div key={index} className="flex items-start gap-4">
               <div
                 className={`w-[70px] h-[70px] flex-shrink-0 flex items-center justify-center ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-100'
                 }`}
               >
                 <div className="w-[50px] h-[50px] relative">
@@ -84,7 +84,7 @@ export default function ServicesSection() {
             <div key={index}>
               <div
                 className={`aspect-[16/9] mb-4 flex items-center justify-center ${
-                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
+                  isDarkMode ? 'bg-neutral-800' : 'bg-neutral-100'
                 }`}
               >
                 <div className="w-[113px] h-[113px] relative">

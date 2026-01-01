@@ -21,9 +21,11 @@ export default function Footer() {
             © 2025 Lumina Digital Studio LLC
           </span>
 
-          <ActionButton href="/contact">
-            Contact us
-          </ActionButton>
+          <div className="flex justify-end">
+            <ActionButton href="/contact">
+              Contact us
+            </ActionButton>
+          </div>
         </div>
       </nav>
     </footer>
