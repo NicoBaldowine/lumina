@@ -45,7 +45,6 @@ const services = [
     title: 'Research',
     headline: 'Understanding users to build products that actually matter.',
     bullets: [
-      'Market research and niche validation',
       'Business model and idea validation with real users',
       'Interface testing with high-fidelity prototypes',
       'User interviews to prioritize features and roadmap',
