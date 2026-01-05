@@ -47,6 +47,7 @@ export default function Header() {
     { href: '/about-us', label: 'About us' },
     { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Stories' },
+    { href: '/#stage', label: 'For Founders' },
   ];
 
   // Mobile menu component to be rendered via portal

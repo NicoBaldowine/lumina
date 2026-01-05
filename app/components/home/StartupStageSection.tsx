@@ -94,12 +94,6 @@ const stageOptions: StageOption[] = [
       { title: 'UI & Design System', description: 'Apply your new brand to product', icon: 'ui' },
       { title: 'Landing Page', description: 'Tell your brand story', icon: 'landing' }
     ]
-  },
-  {
-    id: 'other',
-    label: 'Other',
-    steps: [],
-    isOther: true
   }
 ];
 
@@ -111,208 +105,84 @@ const ArrowIcon = ({ isDarkMode }: { isDarkMode: boolean }) => (
     viewBox="0 0 24 24"
     strokeWidth={2}
     stroke="currentColor"
-    className={`w-6 h-6 flex-shrink-0 ${isDarkMode ? 'text-white/30' : 'text-black/30'}`}
+    className={`w-5 h-5 flex-shrink-0 ${isDarkMode ? 'text-white/30' : 'text-black/30'}`}
   >
     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
   </svg>
 );
 
-// Down arrow for mobile
-const DownArrowIcon = ({ isDarkMode }: { isDarkMode: boolean }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    stroke="currentColor"
-    className={`w-5 h-5 ${isDarkMode ? 'text-white/30' : 'text-black/30'}`}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-  </svg>
-);
-
 export default function StartupStageSection() {
   const { isDarkMode } = useContext(ThemeContext);
-  const [selectedStage, setSelectedStage] = useState<StageOption | null>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const handleSelectStage = (stage: StageOption) => {
-    setSelectedStage(stage);
-    setIsDropdownOpen(false);
-  };
+  const [selectedStage, setSelectedStage] = useState<StageOption>(stageOptions[0]);
 
   return (
-    <section className={`py-16 md:py-32 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
+    <section id="stage" className={`py-16 md:py-32 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
       <div className="container mx-auto px-6">
         {/* Header */}
-        <h2 className={`text-medium-title text-center mb-4 ${
+        <h2 className={`text-medium-title mb-4 ${
           isDarkMode ? 'text-white/90' : 'text-neutral-800'
         }`}>
           What stage is your startup at?
         </h2>
-        <p className={`text-small-description text-center mb-8 md:mb-12 max-w-2xl mx-auto ${
+        <p className={`text-small-description mb-8 md:mb-12 max-w-xl ${
           isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
         }`}>
           Select your current situation and we&apos;ll show you the path forward
         </p>
 
-        {/* Dropdown - centered with max width */}
-        <div className="relative mb-12 max-w-md mx-auto">
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={`w-full px-6 py-4 rounded-2xl text-left flex items-center justify-between transition-all duration-300 ${
-              isDarkMode
-                ? 'bg-[#333333] text-white border border-white/10 hover:border-white/20'
-                : 'bg-neutral-100 text-neutral-800 border border-black/10 hover:border-black/20'
-            }`}
-          >
-            <span className={`text-small-description ${
-              selectedStage
-                ? (isDarkMode ? 'text-white' : 'text-neutral-800')
-                : (isDarkMode ? 'text-neutral-400' : 'text-neutral-500')
-            }`}>
-              {selectedStage ? selectedStage.label : 'Select an option...'}
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className={`w-5 h-5 transition-transform duration-300 ${
-                isDropdownOpen ? 'rotate-180' : ''
-              } ${isDarkMode ? 'text-neutral-400' : 'text-neutral-500'}`}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
-          </button>
-
-          {/* Dropdown Menu */}
-          {isDropdownOpen && (
-            <div className={`absolute z-20 w-full mt-2 rounded-2xl overflow-hidden shadow-xl ${
-              isDarkMode
-                ? 'bg-[#333333] border border-white/10'
-                : 'bg-white border border-black/10'
-            }`}>
-              {stageOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => handleSelectStage(option)}
-                  className={`w-full px-6 py-4 text-left text-small-description transition-colors ${
-                    isDarkMode
-                      ? 'text-neutral-300 hover:bg-white/5'
-                      : 'text-neutral-600 hover:bg-neutral-50'
-                  } ${selectedStage?.id === option.id ? (isDarkMode ? 'bg-white/10' : 'bg-neutral-100') : ''}`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Process Steps or Other Message - Full Width */}
-        {selectedStage && !selectedStage.isOther && (
-          <div>
-            {/* Process Steps - Full Width */}
-            <div>
-              {/* Desktop - Horizontal with Arrows */}
-              <div className="hidden lg:block">
-                <div className="flex items-start justify-center gap-4">
-                  {selectedStage.steps.map((step, index) => (
-                    <div key={step.title} className="flex items-start">
-                      <div className="flex flex-col items-center text-center w-[180px]">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                          isDarkMode
-                            ? 'bg-neutral-500'
-                            : 'bg-neutral-200'
-                        }`}>
-                          <StepIcon icon={step.icon} isDarkMode={isDarkMode} />
-                        </div>
-                        <h3 className={`text-small-description font-medium mb-2 ${
-                          isDarkMode ? 'text-white' : 'text-neutral-800'
-                        }`}>
-                          {step.title}
-                        </h3>
-                        <p className={`text-small-description leading-relaxed ${
-                          isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                        }`}>
-                          {step.description}
-                        </p>
-                      </div>
-                      {index < selectedStage.steps.length - 1 && (
-                        <div className="flex items-center justify-center pt-4 px-2">
-                          <ArrowIcon isDarkMode={isDarkMode} />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tablet - 3 columns grid */}
-              <div className="hidden md:block lg:hidden">
-                <div className="grid grid-cols-3 gap-6">
-                  {selectedStage.steps.map((step) => (
-                    <div key={step.title} className="flex flex-col items-center text-center">
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                        isDarkMode
-                          ? 'bg-neutral-500'
-                          : 'bg-neutral-200'
-                      }`}>
-                        <StepIcon icon={step.icon} isDarkMode={isDarkMode} />
-                      </div>
-                      <h3 className={`text-small-description font-medium mb-2 ${
-                        isDarkMode ? 'text-white' : 'text-neutral-800'
-                      }`}>
-                        {step.title}
-                      </h3>
-                      <p className={`text-small-description leading-relaxed ${
-                        isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                      }`}>
-                        {step.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile - Vertical with Down Arrows */}
-              <div className="md:hidden">
-                <div className="flex flex-col items-center">
-                  {selectedStage.steps.map((step, index) => (
-                    <div key={step.title} className="flex flex-col items-center">
-                      <div className="flex flex-col items-center text-center">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${
-                          isDarkMode
-                            ? 'bg-neutral-500'
-                            : 'bg-neutral-200'
-                        }`}>
-                          <StepIcon icon={step.icon} isDarkMode={isDarkMode} />
-                        </div>
-                        <h3 className={`text-small-description font-medium mb-1 ${
-                          isDarkMode ? 'text-white' : 'text-neutral-800'
-                        }`}>
-                          {step.title}
-                        </h3>
-                        <p className={`text-small-description leading-relaxed max-w-[280px] ${
-                          isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                        }`}>
-                          {step.description}
-                        </p>
-                      </div>
-                      {index < selectedStage.steps.length - 1 && (
-                        <div className="py-4">
-                          <DownArrowIcon isDarkMode={isDarkMode} />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* Two column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          {/* Left side - Stage badges */}
+          <div className="flex flex-wrap gap-3">
+            {stageOptions.map((option) => (
+              <button
+                key={option.id}
+                onClick={() => setSelectedStage(option)}
+                className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
+                  selectedStage.id === option.id
+                    ? isDarkMode
+                      ? 'bg-white text-black'
+                      : 'bg-black text-white'
+                    : isDarkMode
+                      ? 'bg-transparent border border-white/20 text-neutral-400 hover:border-white/40 hover:text-white'
+                      : 'bg-transparent border border-black/20 text-neutral-500 hover:border-black/40 hover:text-black'
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
-        )}
+
+          {/* Right side - Steps */}
+          <div className="space-y-6">
+            {selectedStage.steps.map((step, index) => (
+              <div key={step.title} className="flex items-start gap-4">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
+                  isDarkMode ? 'bg-neutral-700' : 'bg-neutral-200'
+                }`}>
+                  <StepIcon icon={step.icon} isDarkMode={isDarkMode} />
+                </div>
+                <div className="flex-1 flex items-center gap-4">
+                  <div className="flex-1">
+                    <h3 className={`text-small-description font-medium mb-1 ${
+                      isDarkMode ? 'text-white' : 'text-neutral-800'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    <p className={`text-small-description ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}>
+                      {step.description}
+                    </p>
+                  </div>
+                  {index < selectedStage.steps.length - 1 && (
+                    <ArrowIcon isDarkMode={isDarkMode} />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
