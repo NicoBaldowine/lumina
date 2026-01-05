@@ -78,12 +78,12 @@ export default function ServicesPage() {
             <h1 className={`text-big-title mb-6 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
-              We help early-stage startups turn ideas into real products.
+              Your design partner from zero to launch.
             </h1>
             <p className={`text-big-description mb-12 ${
               isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
             }`}>
-              We design, brand, and build world-class MVPs that founders can confidently use to validate ideas, attract users, and raise capital.
+              We design, brand, and build products that founders can confidently use to validate ideas, attract users, and raise capital.
             </p>
 
             {/* Service list with dividers */}

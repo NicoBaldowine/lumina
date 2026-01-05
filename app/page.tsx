@@ -38,6 +38,25 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // Handle hash navigation on page load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Force show cases immediately when navigating via hash
+      setShowCases(true);
+
+      // Small delay to let the page render before scrolling
+      const timer = setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Landing Fold - First screen */}

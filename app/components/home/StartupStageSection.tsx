@@ -12,6 +12,7 @@ type Step = {
 type StageOption = {
   id: string;
   label: string;
+  context: string;
   steps: Step[];
   isOther?: boolean;
 };
@@ -60,6 +61,7 @@ const stageOptions: StageOption[] = [
   {
     id: 'idea',
     label: 'I have an idea but need execution',
+    context: 'Best for founders preparing for their first users, demo day, or early fundraising.',
     steps: [
       { title: 'Brand Definition', description: 'Create your visual identity and brand strategy', icon: 'brand' },
       { title: 'UX Workflow', description: 'Map user journeys and define core features', icon: 'ux' },
@@ -71,6 +73,7 @@ const stageOptions: StageOption[] = [
   {
     id: 'mvp',
     label: 'I have an MVP but it needs polish',
+    context: 'Common before demo day, pilots, or investor conversations.',
     steps: [
       { title: 'UX Workflow', description: 'Optimize user flows and interactions', icon: 'ux' },
       { title: 'UI & Design System', description: 'Elevate visuals and systematize components', icon: 'ui' },
@@ -80,6 +83,7 @@ const stageOptions: StageOption[] = [
   {
     id: 'brand-no-product',
     label: 'I have a brand but no product',
+    context: 'Ideal when your identity is clear but you need to bring it to life digitally.',
     steps: [
       { title: 'UX Workflow', description: 'Define your product experience', icon: 'ux' },
       { title: 'UI & Design System', description: 'Bring your brand to life digitally', icon: 'ui' },
@@ -89,6 +93,7 @@ const stageOptions: StageOption[] = [
   {
     id: 'product-no-brand',
     label: 'I have a product but no identity',
+    context: 'Seen often when traction starts but the product feels inconsistent.',
     steps: [
       { title: 'Brand Definition', description: 'Craft your unique identity', icon: 'brand' },
       { title: 'UI & Design System', description: 'Apply your new brand to product', icon: 'ui' },
@@ -115,72 +120,71 @@ export default function StartupStageSection() {
   const { isDarkMode } = useContext(ThemeContext);
   const [selectedStage, setSelectedStage] = useState<StageOption>(stageOptions[0]);
 
-  return (
-    <section id="stage" className={`py-16 md:py-32 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <h2 className={`text-medium-title mb-4 ${
-          isDarkMode ? 'text-white/90' : 'text-neutral-800'
-        }`}>
-          What stage is your startup at?
-        </h2>
-        <p className={`text-small-description mb-8 md:mb-12 max-w-xl ${
-          isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-        }`}>
-          Select your current situation and we&apos;ll show you the path forward
-        </p>
+  // Get the max number of steps across all options for fixed height
+  const maxSteps = Math.max(...stageOptions.map(opt => opt.steps.length));
 
-        {/* Two column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Left side - Stage badges */}
-          <div className="flex flex-wrap gap-3">
-            {stageOptions.map((option) => (
-              <button
-                key={option.id}
-                onClick={() => setSelectedStage(option)}
-                className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
-                  selectedStage.id === option.id
-                    ? isDarkMode
-                      ? 'bg-white text-black'
-                      : 'bg-black text-white'
-                    : isDarkMode
-                      ? 'bg-transparent border border-white/20 text-neutral-400 hover:border-white/40 hover:text-white'
-                      : 'bg-transparent border border-black/20 text-neutral-500 hover:border-black/40 hover:text-black'
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
+  return (
+    <section id="stage" className={`py-24 md:py-40 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Left side - Title, description and badges */}
+          <div>
+            <h2 className={`text-big-title mb-6 ${
+              isDarkMode ? 'text-white' : 'text-black'
+            }`}>
+              What stage is your startup at?
+            </h2>
+            <p className={`text-big-description mb-12 ${
+              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+            }`}>
+              Select your current situation and we&apos;ll show you the path forward.
+            </p>
+
+            {/* Stage badges */}
+            <div className="flex flex-wrap gap-3">
+              {stageOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => setSelectedStage(option)}
+                  className={`px-4 py-2 rounded-full text-big-description transition-all duration-300 ${
+                    selectedStage.id === option.id
+                      ? isDarkMode
+                        ? 'bg-white text-black'
+                        : 'bg-black text-white'
+                      : isDarkMode
+                        ? 'bg-transparent border border-white/20 text-neutral-400 hover:border-white/40 hover:text-white'
+                        : 'bg-transparent border border-black/20 text-neutral-500 hover:border-black/40 hover:text-black'
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Right side - Steps */}
-          <div className="space-y-6">
-            {selectedStage.steps.map((step, index) => (
-              <div key={step.title} className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  isDarkMode ? 'bg-neutral-700' : 'bg-neutral-200'
-                }`}>
-                  <StepIcon icon={step.icon} isDarkMode={isDarkMode} />
-                </div>
-                <div className="flex-1 flex items-center gap-4">
-                  <div className="flex-1">
-                    <h3 className={`text-small-description font-medium mb-1 ${
-                      isDarkMode ? 'text-white' : 'text-neutral-800'
-                    }`}>
-                      {step.title}
-                    </h3>
-                    <p className={`text-small-description ${
-                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                    }`}>
-                      {step.description}
-                    </p>
-                  </div>
-                  {index < selectedStage.steps.length - 1 && (
-                    <ArrowIcon isDarkMode={isDarkMode} />
-                  )}
-                </div>
-              </div>
-            ))}
+          {/* Right side - Context + Steps */}
+          <div>
+            <h3 className={`text-medium-title mb-8 transition-all duration-300 ${
+              isDarkMode ? 'text-white' : 'text-black'
+            }`}>
+              {selectedStage.context}
+            </h3>
+            <ul className="space-y-6" style={{ minHeight: `${maxSteps * 56}px` }}>
+              {selectedStage.steps.map((step, index) => (
+                <li key={step.title} className="flex items-start gap-4">
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
+                    isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
+                  }`}>
+                    {index + 1}
+                  </span>
+                  <span className={`text-big-description pt-1 ${
+                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                  }`}>
+                    {step.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

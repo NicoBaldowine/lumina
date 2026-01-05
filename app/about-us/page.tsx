@@ -24,14 +24,14 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-white' : 'text-black'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              Lumina is a digital studio focused on building world-class MVPs.
+              We help startups build products with identity, not just features.
             </h1>
             <p
               className={`text-big-description mb-12 transition-all duration-1000 delay-200 ease-out ${
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We partner with early-stage founders to design, brand, and build products that are ready to launch. Not just prototypes, but real MVPs that can attract users, close sales, and raise capital.
+              We&apos;re a digital design studio that supports startups from idea to early launch, helping them build a strong brand and a production-ready MVP.
             </p>
 
             {/* About Us Image */}
@@ -45,6 +45,15 @@ export default function AboutUsPage() {
                 alt="Lumina Digital Studio"
               />
             </div>
+
+            {/* Lumina name origin */}
+            <p
+              className={`text-small-description mt-6 transition-all duration-1000 delay-500 ease-out ${
+                isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Lumina — from the Latin word for light. Like the aurora borealis that illuminates the darkest skies, we bring clarity and direction to startups finding their way.
+            </p>
           </div>
 
           {/* Right side */}
@@ -54,7 +63,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-white' : 'text-black'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We don&apos;t just design ideas. We help founders turn them into real products.
+              In a landscape full of generic products, standing out matters more than ever.
             </h2>
 
             <p
@@ -62,7 +71,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              Most studios hand off designs and wish you luck. We stay with you from the first sketch to the shipped product. Our team works side by side with founders, defining what to build, how it should look, and making sure it actually works in the hands of real users.
+              Early startups often struggle to make a strong first impression. We focus on aligning brand and product so customers and investors perceive a solid and trustworthy company from the start.
             </p>
 
             <h2
@@ -70,7 +79,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-white' : 'text-black'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              Built as one system, not disconnected pieces.
+              Professional and cohesive, when it matters most.
             </h2>
 
             <p
@@ -78,7 +87,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              When brand, product, and development live in separate silos, things break. Details get lost. The result feels fragmented. At Lumina, we own the entire process: from visual identity to user flows to production code. Everything connects. Your brand speaks through every screen, every interaction, every line of code. One team, one vision, one cohesive product.
+              Most studios hand off designs and wish you luck. We stay with you from the first sketch to the shipped product. Our team works side by side with startups, defining what to build, how it should look, and making sure it actually works in the hands of real users. One team, one vision, one cohesive product.
             </p>
           </div>
         </div>

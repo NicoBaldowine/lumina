@@ -43,12 +43,27 @@ export default function Header() {
   };
 
   const navLinks = [
-    { href: '/#cases', label: 'Cases' },
-    { href: '/about-us', label: 'About us' },
-    { href: '/services', label: 'Services' },
-    { href: '/blog', label: 'Stories' },
-    { href: '/#stage', label: 'For Founders' },
+    { href: '/#cases', label: 'Cases', isAnchor: true },
+    { href: '/about-us', label: 'About us', isAnchor: false },
+    { href: '/services', label: 'Services', isAnchor: false },
+    { href: '/blog', label: 'Stories', isAnchor: false },
+    { href: '/#stage', label: 'For Founders', isAnchor: true },
   ];
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const hash = href.split('#')[1];
+    if (pathname === '/') {
+      // Already on home page, just scroll to anchor
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with hash
+      router.push(href);
+    }
+  };
 
   // Mobile menu component to be rendered via portal
   const MobileMenu = () => (
@@ -93,22 +108,38 @@ export default function Header() {
           </button>
         </div>
         <nav className="flex flex-col space-y-1">
-          {[...navLinks, { href: '/contact', label: 'Contact' }].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-medium-title-mobile py-3 transition-colors ${
-                isActive(link.href)
-                  ? (isDarkMode ? 'text-white' : 'text-black')
-                  : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
+          {[...navLinks, { href: '/contact', label: 'Contact', isAnchor: false }].map((link) => (
+            link.isAnchor ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`text-medium-title-mobile py-3 transition-colors cursor-pointer ${
+                  isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black'
+                }`}
+                onClick={(e) => {
+                  handleAnchorClick(e, link.href);
+                  setIsMenuOpen(false);
+                }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-medium-title-mobile py-3 transition-colors ${
+                  isActive(link.href)
+                    ? (isDarkMode ? 'text-white' : 'text-black')
+                    : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
-        <div className="mt-auto pt-8 flex items-center justify-between">
+        <div className="mt-auto pt-8">
           <button
             onClick={() => { toggleTheme(); }}
             aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -128,11 +159,6 @@ export default function Header() {
               </svg>
             )}
           </button>
-          <span className={`text-small-description ${
-            isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
-          }`}>
-            © 2024 Lumina Studio
-          </span>
         </div>
       </div>
     </div>
@@ -177,17 +203,30 @@ export default function Header() {
 
             <div className="hidden md:flex items-center justify-end flex-1 space-x-16 mr-16">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-small-description transition-colors ${
-                    isActive(link.href)
-                      ? (isDarkMode ? 'text-white' : 'text-black')
-                      : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                link.isAnchor ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleAnchorClick(e, link.href)}
+                    className={`text-small-description transition-colors cursor-pointer ${
+                      isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-small-description transition-colors ${
+                      isActive(link.href)
+                        ? (isDarkMode ? 'text-white' : 'text-black')
+                        : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
 
