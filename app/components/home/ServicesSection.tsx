@@ -20,8 +20,8 @@ export default function ServicesSection() {
       image: "/Web.png",
     },
     {
-      title: "Product Design",
-      description: "Designing usable, web or app products that are ready to ship.",
+      title: "Product Design & Research",
+      description: "Designing usable products validated with real users before you build.",
       image: "/Product.png",
     },
     {
