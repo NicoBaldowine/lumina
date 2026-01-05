@@ -41,6 +41,18 @@ const services = [
     image: '/app_services.png',
   },
   {
+    id: 'research',
+    title: 'Research',
+    headline: 'Understanding users to build products that actually matter.',
+    bullets: [
+      'Market research and niche validation',
+      'Business model and idea validation with real users',
+      'Interface testing with high-fidelity prototypes',
+      'User interviews to prioritize features and roadmap',
+    ],
+    image: '/research_services.png',
+  },
+  {
     id: 'mvp-development',
     title: 'MVP Development',
     headline: 'Building real, production-ready MVPs, not throwaway demos.',
