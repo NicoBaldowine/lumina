@@ -66,7 +66,7 @@ export default function Home() {
       <section
         ref={casesRef}
         id="cases"
-        className={`py-24 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}
+        className={`pt-8 pb-24 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}
       >
         <div
           className={`transition-all duration-1000 ease-out ${

@@ -14,15 +14,37 @@ export default function Header() {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showBackground, setShowBackground] = useState(pathname !== '/');
 
   // Check if we're on a case study page or blog post detail page
   const isCasePage = pathname.startsWith('/cases/');
   const isBlogPostPage = pathname.startsWith('/blog/') && pathname !== '/blog';
   const showBackButton = isCasePage || isBlogPostPage;
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Listen for fold visibility changes on home page
+  useEffect(() => {
+    if (!isHomePage) {
+      setShowBackground(true);
+      return;
+    }
+
+    setShowBackground(false);
+
+    const handleFoldVisibility = (event: CustomEvent<{ isPastFold: boolean }>) => {
+      setShowBackground(event.detail.isPastFold);
+    };
+
+    window.addEventListener('foldVisibility', handleFoldVisibility as EventListener);
+
+    return () => {
+      window.removeEventListener('foldVisibility', handleFoldVisibility as EventListener);
+    };
+  }, [isHomePage]);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -47,7 +69,7 @@ export default function Header() {
     { href: '/about-us', label: 'About us', isAnchor: false },
     { href: '/services', label: 'Services', isAnchor: false },
     { href: '/blog', label: 'Stories', isAnchor: false },
-    { href: '/#stage', label: 'For Founders', isAnchor: true },
+    { href: '/#stage', label: 'How we work', isAnchor: true },
   ];
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -166,8 +188,10 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed w-full top-0 z-50 backdrop-blur-xl transition-colors duration-300 ${
-        isDarkMode ? 'bg-[#222222]/60' : 'bg-white/60'
+      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        showBackground
+          ? `backdrop-blur-xl ${isDarkMode ? 'bg-[#222222]/60' : 'bg-white/60'}`
+          : 'bg-transparent'
       }`}>
         <nav className="w-full px-6 py-4">
           <div className="flex items-center">
@@ -209,7 +233,9 @@ export default function Header() {
                     href={link.href}
                     onClick={(e) => handleAnchorClick(e, link.href)}
                     className={`text-small-description transition-colors cursor-pointer ${
-                      isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black'
+                      !showBackground
+                        ? (isDarkMode ? 'text-white/70 hover:text-white' : 'text-neutral-500 hover:text-black')
+                        : isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black'
                     }`}
                   >
                     {link.label}
@@ -219,9 +245,13 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     className={`text-small-description transition-colors ${
-                      isActive(link.href)
-                        ? (isDarkMode ? 'text-white' : 'text-black')
-                        : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
+                      !showBackground
+                        ? (isDarkMode
+                            ? (isActive(link.href) ? 'text-white' : 'text-white/70 hover:text-white')
+                            : (isActive(link.href) ? 'text-black' : 'text-neutral-500 hover:text-black'))
+                        : isActive(link.href)
+                          ? (isDarkMode ? 'text-white' : 'text-black')
+                          : (isDarkMode ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-black')
                     }`}
                   >
                     {link.label}
@@ -235,9 +265,11 @@ export default function Header() {
                 onClick={toggleTheme}
                 aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
                 className={`p-2 rounded-full border transition-colors ${
-                  isDarkMode
-                    ? 'border-white/20 hover:bg-white/10'
-                    : 'border-black/20 hover:bg-black/10'
+                  !showBackground
+                    ? (isDarkMode ? 'border-white/20 hover:bg-white/10 text-white' : 'border-black/20 hover:bg-black/10 text-black')
+                    : isDarkMode
+                      ? 'border-white/20 hover:bg-white/10'
+                      : 'border-black/20 hover:bg-black/10'
                 }`}
               >
                 {isDarkMode ? (
@@ -250,7 +282,7 @@ export default function Header() {
                   </svg>
                 )}
               </button>
-              <ActionButton href="/contact" isActive={isActive('/contact')}>
+              <ActionButton href="/contact" isActive={isActive('/contact')} variant={!showBackground && isDarkMode ? 'hero' : 'default'}>
                 Let&apos;s talk
               </ActionButton>
             </div>

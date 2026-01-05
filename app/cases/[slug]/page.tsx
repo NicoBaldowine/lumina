@@ -201,16 +201,16 @@ const outworldContent = {
 const shinkaiContent = {
   intro: {
     headline: 'AI should work for you, not the other way around',
-    description: 'In a world where AI tools demand your data in exchange for intelligence, Shinkai takes a different approach. The identity embodies this philosophy: powerful AI that respects your privacy, autonomy, and ownership.'
+    description: 'The founders had a radical vision: a decentralized AI platform where users own their data, identity, and payments. But explaining "decentralized AI agents with blockchain micropayments" to investors was a nightmare. They needed a brand that made the complex feel inevitable.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'Shinkai is building something fundamentally different: a decentralized AI platform where users maintain control over their data, identity, and payments. The technology is groundbreaking: interconnected AI agents, local model execution, and blockchain-based micropayments.',
-    content2: 'The challenge was translating this technical complexity into a brand that feels approachable yet sophisticated. How to visually represent decentralization? Privacy? Agent autonomy? The solution needed to communicate trust and innovation in equal measure.'
+    content: 'Shinkai\'s founders were preparing for their seed round with a technically brilliant product but no visual identity. Investors were confused by the pitch: "So it\'s like ChatGPT but... decentralized?" The technology was groundbreaking, but without a cohesive brand, it felt abstract and hard to trust.',
+    content2: 'The challenge was twofold: create a brand that makes complex technology feel approachable, and give the founders the visual credibility they needed to close their round. How do you visually represent decentralization? Privacy? Agent autonomy? The solution needed to communicate trust and innovation in equal measure.'
   },
   approach: {
     title: 'The Approach',
-    content: 'The process started by understanding the core philosophy: AI on your terms. This became the north star. Every design decision was filtered through this lens: does it feel like the user is in control? Does it communicate empowerment over dependency? The result is a brand that feels both cutting-edge and human-centered.'
+    content: 'The process started by understanding not just the technology, but what the founders needed to communicate in investor meetings. The core philosophy became the north star: AI on your terms. Every design decision was filtered through this lens: does it feel like the user is in control? Does it communicate empowerment over dependency? The result is a brand that feels both cutting-edge and human-centered, one that founders can confidently present in any room.'
   },
   brandPillars: [
     {
@@ -284,11 +284,11 @@ const shinkaiContent = {
   },
   results: {
     title: 'The Impact',
-    content: 'The new brand identity has given Shinkai a distinct presence in the AI space. The visual system successfully communicates the platform\'s unique value proposition: powerful AI that respects user autonomy. The product guidelines ensure consistency as the platform grows, while allowing flexibility for future features.'
+    content: 'The founders closed their seed round within weeks of launching the new brand. Investors finally "got it." The visual identity transformed pitch meetings from confused explanations to confident presentations. The brand gave Shinkai the credibility to stand alongside established AI players, while the product guidelines ensure the experience stays cohesive as they scale.'
   },
   testimonial: {
-    quote: 'The brand needed to communicate something radical: that AI can be powerful AND private. This identity makes that vision tangible.',
-    author: 'Shinkai'
+    quote: 'Before the rebrand, we spent half of every investor meeting explaining what we weren\'t. Now the brand does that work for us. Investors see it and immediately understand we\'re different.',
+    author: 'Shinkai Founders'
   }
 };
 
@@ -380,17 +380,17 @@ const aspireContent = {
 // Full case study content for Zuma
 const zumaContent = {
   intro: {
-    headline: 'Credit card debt is the silent killer of financial dreams',
-    description: 'The average American under 35 carries $3,700 in credit card debt. 45% of Gen Z has already accumulated credit card debt before age 25. Zuma users save 3x more than traditional banking users by making every dollar intentional: no debt, no overdrafts, just progress toward real goals.'
+    headline: 'Gen Z doesn\'t want another credit card. They want control.',
+    description: 'Gen Z is the most financially conscious generation in decades. They watched their parents struggle with debt and decided: not us. But traditional banks don\'t speak their language. Zuma is a brand built for a generation that wants to own their future, not owe it.'
   },
   challenge: {
     title: 'The Challenge',
-    content: 'Young adults are entering the financial world with a dangerous default: credit cards. Banks push credit as the answer to everything, from coffee to emergencies, creating a cycle of debt that can take decades to escape. The average credit card APR is now over 20%, turning small purchases into long-term burdens.',
-    content2: 'Zuma\'s founders saw a different path. What if instead of borrowing against your future, you could allocate your present? The product needed to make intentional saving as easy as swiping a credit card, and more rewarding than the instant gratification of debt.'
+    content: 'Gen Z thinks differently about money. They\'re skeptical of credit, anxious about debt, and hungry for financial control. But every banking app looks like it was designed for their parents. The founders needed a brand that would resonate with young people who care deeply about their financial future but feel alienated by traditional finance.',
+    content2: 'The challenge was twofold: create a brand identity that speaks authentically to Gen Z\'s values around money consciousness and debt avoidance, and design a product that makes intentional saving feel modern, achievable, and even exciting.'
   },
   approach: {
     title: 'The Approach',
-    content: 'The challenge was approached by understanding the psychology of young savers. Through user research, it became clear that the problem wasn\'t motivation: young people want to save. The problem was visibility. Traditional bank accounts show one number. That number hides everything: rent money, emergency funds, vacation savings, and spending money all look the same. Zuma makes the invisible visible.'
+    content: 'The process started with understanding Gen Z\'s relationship with money. Through user research, a clear picture emerged: this generation doesn\'t lack motivation, they lack tools that match their values. They want transparency, progress they can see, and brands that don\'t talk down to them. Every brand and product decision was filtered through this lens: does it feel honest? Does it feel empowering? Does it feel like us?'
   },
   stats: [
     {
@@ -412,16 +412,16 @@ const zumaContent = {
   ],
   deliverables: [
     {
+      title: 'Brand Identity',
+      description: 'A complete brand system designed to resonate with Gen Z\'s values: transparent, optimistic, and unapologetically anti-debt. The visual identity uses bold, friendly colors and straightforward language that feels more like a trusted friend than a bank.'
+    },
+    {
       title: 'Product Strategy',
       description: 'The core product vision: your bank account, but organized. Zuma connects via Plaid to mirror your existing checking or savings account, then lets you create unlimited "buckets," virtual allocations that give every dollar a purpose without moving money between accounts.'
     },
     {
       title: 'Web Application Design',
       description: 'A responsive web app that makes bucket management intuitive. Users can create buckets for any goal, from "New iPhone" to "Emergency Fund" to "House Down Payment," set targets, and watch their progress in real-time. The interface prioritizes clarity and motivation.'
-    },
-    {
-      title: 'Banking Integration',
-      description: 'Through Plaid integration, Zuma securely connects to users\' existing bank accounts. The app acts as a smart mirror: it doesn\'t hold money, it organizes it. This approach removes friction (no new accounts needed) while providing powerful visibility.'
     }
   ],
   features: {
@@ -453,20 +453,20 @@ const zumaContent = {
     title: 'The Process',
     phases: [
       {
-        name: 'User Research',
-        description: 'Interviews with young adults about their relationship with money. The patterns were clear: they felt out of control, overwhelmed by complexity, and pressured into credit. They wanted simplicity and progress they could see.'
+        name: 'Gen Z Research',
+        description: 'Deep interviews with young adults about their relationship with money. The patterns were clear: they\'re more financially aware than any previous generation, skeptical of credit culture, and eager for tools that match their values.'
       },
       {
-        name: 'Product Architecture',
-        description: 'The bucket system was designed to be infinitely flexible. Whether someone wants 3 buckets or 30, the interface scales elegantly. The most common actions were prioritized: checking progress, adding money, and creating new goals.'
+        name: 'Brand Strategy',
+        description: 'The brand needed to feel like it was built by Gen Z, for Gen Z. No corporate speak, no condescending financial advice. Just honest, empowering tools presented with a visual identity that feels fresh and trustworthy.'
       },
       {
-        name: 'Visual Design',
-        description: 'The interface uses color-coding and progress visualization to make abstract numbers feel concrete. Each bucket has its own personality, making saving feel like collecting achievements rather than restricting spending.'
+        name: 'Product Design',
+        description: 'The bucket system was designed around how Gen Z actually thinks about money: in goals, not balances. Each bucket has its own personality, making saving feel like collecting achievements rather than restricting spending.'
       },
       {
-        name: 'Technical Integration',
-        description: 'The Plaid integration flow was designed to be trustworthy and transparent. Users understand exactly what Zuma can and can\'t do with their bank connection, building confidence in the security model.'
+        name: 'Visual Identity',
+        description: 'Bold colors, clean typography, and a tone of voice that\'s confident without being preachy. The brand stands out in a sea of bland fintech by being unapologetically optimistic about financial freedom.'
       }
     ]
   },
@@ -490,11 +490,11 @@ const zumaContent = {
   },
   results: {
     title: 'The Impact',
-    content: 'Zuma launched as a tool for financial clarity in a world of financial confusion. Early users report feeling "in control of money for the first time" and "actually excited to check their savings." The bucket system has proven especially powerful for goal-oriented saving, with users achieving purchase goals 3x faster than with traditional savings accounts.'
+    content: 'Zuma launched with a brand that Gen Z immediately recognized as theirs. Early users describe it as "the first financial app that doesn\'t make me feel like a kid" and "finally, something that gets how I think about money." The combination of authentic branding and intuitive product design created something rare: a fintech that young people actually want to use and recommend.'
   },
   testimonial: {
-    quote: 'This wasn\'t just designing an app. It was designing a new relationship with money. The product feels like it understands how young people actually think about finances.',
-    author: 'Founder, Zuma'
+    quote: 'We knew we needed a brand that would resonate with our generation. What we got was an identity that perfectly captures why we built this: to give young people the financial tools they deserve, without the debt trap.',
+    author: 'Zuma Founders'
   }
 };
 

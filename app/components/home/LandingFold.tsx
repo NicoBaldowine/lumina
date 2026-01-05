@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext, useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ThemeContext } from '../ThemeProvider';
+import { GradientBackground } from '../ui/GradientBackground';
 
 interface LandingFoldProps {
   onScrollPast: (isPast: boolean) => void;
@@ -30,93 +30,65 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
     };
   }, [onScrollPast]);
 
-  const menuItems = [
-    { label: 'Studio cases', href: '#cases' },
-    { label: 'Services', href: '/services' },
-    { label: 'About us', href: '/about-us' },
-    { label: "Let's talk", href: '/contact' },
-  ];
-
   return (
-    <section className={`min-h-screen relative ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
-      <div className="container mx-auto px-6 py-8 md:py-16 min-h-screen flex flex-col justify-between">
-        {/* Logo and Description */}
-        <div>
+    <GradientBackground
+      variant={isDarkMode ? 'dark' : 'light'}
+      interactive={true}
+    >
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-[1400px] mx-auto px-6 pt-[72px] pb-32 flex flex-col items-center justify-center text-center">
+          {/* Hero Title */}
+          <h1
+            className={`text-superbig-title max-w-4xl mb-6 transition-all duration-500 ease-out ${
+              isDarkMode ? 'text-white' : 'text-black'
+            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            We help startups build products with identity, not just features.
+          </h1>
+
+          {/* Description */}
+          <p
+            className={`text-big-description max-w-2xl mb-10 transition-all duration-500 delay-75 ease-out ${
+              isDarkMode ? 'text-white/80' : 'text-neutral-500'
+            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            From brand and product design to MVP development, we build what founders need to show their work to users and investors from day one.
+          </p>
+
+          {/* CTA Buttons */}
           <div
-            className={`transition-all duration-1000 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
+            className={`flex flex-row gap-3 transition-all duration-500 delay-150 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <Image
-              src={isDarkMode ? "/luminalogo.svg" : "/luminalogo-dark.svg"}
-              alt="LUMINA"
-              width={140}
-              height={35}
-              className="h-9 w-auto mb-6"
-              priority
-            />
+            <button
+              onClick={() => {
+                const element = document.getElementById('cases');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className={`px-6 py-3 rounded-full text-small-description transition-colors ${
+                isDarkMode
+                  ? 'bg-white text-[#070606] hover:bg-neutral-200'
+                  : 'bg-black text-white hover:bg-neutral-800'
+              }`}
+            >
+              See cases
+            </button>
+            <Link
+              href="/services"
+              className={`px-6 py-3 rounded-full text-small-description border transition-colors ${
+                isDarkMode
+                  ? 'border-white/20 text-white/70 hover:bg-white/10'
+                  : 'border-black/20 text-neutral-500 hover:bg-black/5'
+              }`}
+            >
+              Our services
+            </Link>
           </div>
-          <h1
-            className={`text-card-title max-w-3xl mb-4 transition-all duration-1000 delay-100 ease-out ${
-              isDarkMode ? 'text-white' : 'text-black'
-            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}
-          >
-            Digital studio that help startups launch and validate world-class MVPs.
-          </h1>
-          <p
-            className={`text-big-description max-w-2xl transition-all duration-1000 delay-200 ease-out ${
-              isDarkMode ? 'text-white/60' : 'text-neutral-500'
-            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}
-          >
-            From brand and landing pages to product design and development, we build products that founders can use to start selling, onboard users, or raise capital.
-          </p>
         </div>
-
-        {/* Navigation Menu */}
-        <nav className="flex-1 flex flex-col justify-center py-4 md:py-12">
-          {menuItems.map((item, index) => (
-            <div key={item.label} className="group">
-              <Link
-                href={item.href}
-                className={`block py-2 md:py-4 transition-all duration-1000 ease-out ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
-                }`}
-                style={{ transitionDelay: `${500 + index * 150}ms` }}
-              >
-                <span
-                  className={`text-huge-title transition-all duration-300 ${
-                    isDarkMode
-                      ? 'text-white/60 group-hover:text-white'
-                      : 'text-neutral-400 group-hover:text-[#070606]'
-                  }`}
-                >
-                  {item.label}
-                </span>
-              </Link>
-              {/* Bottom divider line with hover progress bar effect */}
-              <div
-                className="h-px relative"
-                style={{ transitionDelay: `${400 + index * 150}ms`, transformOrigin: 'left' }}
-              >
-                {/* Base line - always at 20% opacity */}
-                <div
-                  className={`absolute inset-0 transition-transform duration-1000 ease-out ${
-                    isDarkMode ? 'bg-white/20' : 'bg-black/10'
-                  } ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}
-                  style={{ transitionDelay: `${400 + index * 150}ms`, transformOrigin: 'left' }}
-                />
-                {/* Hover overlay - fills to 100% on hover */}
-                <div
-                  className={`absolute inset-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out ${
-                    isDarkMode ? 'bg-white' : 'bg-black'
-                  }`}
-                />
-              </div>
-            </div>
-          ))}
-        </nav>
-
       </div>
-    </section>
+    </GradientBackground>
   );
 }

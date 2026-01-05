@@ -12,16 +12,16 @@ interface LayoutWrapperProps {
 export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  const [showHeaderFooter, setShowHeaderFooter] = useState(!isHomePage);
+  const [showFooter, setShowFooter] = useState(!isHomePage);
 
   useEffect(() => {
     if (!isHomePage) {
-      setShowHeaderFooter(true);
+      setShowFooter(true);
       return;
     }
 
     const handleFoldVisibility = (event: CustomEvent<{ isPastFold: boolean }>) => {
-      setShowHeaderFooter(event.detail.isPastFold);
+      setShowFooter(event.detail.isPastFold);
     };
 
     window.addEventListener('foldVisibility', handleFoldVisibility as EventListener);
@@ -33,21 +33,13 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
 
   return (
     <>
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
-          showHeaderFooter
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-full pointer-events-none'
-        }`}
-      >
-        <Header />
-      </div>
+      <Header />
 
       <main>{children}</main>
 
       <div
         className={`transition-all duration-500 ease-out ${
-          showHeaderFooter
+          showFooter
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-full pointer-events-none'
         }`}

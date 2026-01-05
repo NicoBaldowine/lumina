@@ -1,7 +1,161 @@
 'use client';
 
 import { useState, useContext } from 'react';
+import Link from 'next/link';
 import { ThemeContext } from '../ThemeProvider';
+
+// Contact form for "Other" option
+const OtherContactForm = ({ isDarkMode }: { isDarkMode: boolean }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const inputClasses = `w-full px-4 py-3 text-big-description transition-colors ${
+    isDarkMode
+      ? 'bg-[#1a1a1a] text-white placeholder-neutral-500 border border-neutral-700 focus:border-neutral-500'
+      : 'bg-neutral-100 text-black placeholder-neutral-400 border border-neutral-200 focus:border-neutral-400'
+  } outline-none`;
+
+  const labelClasses = `block mb-2 text-small-description ${
+    isDarkMode ? 'text-white' : 'text-black'
+  }`;
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label htmlFor="stage-name" className={labelClasses}>
+          Name
+        </label>
+        <input
+          type="text"
+          id="stage-name"
+          name="name"
+          placeholder="Enter name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className={inputClasses}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="stage-email" className={labelClasses}>
+          Email
+        </label>
+        <input
+          type="email"
+          id="stage-email"
+          name="email"
+          placeholder="Enter Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className={inputClasses}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="stage-company" className={labelClasses}>
+          Company or Project
+        </label>
+        <input
+          type="text"
+          id="stage-company"
+          name="company"
+          placeholder="Enter company or project's name"
+          value={formData.company}
+          onChange={handleChange}
+          className={inputClasses}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="stage-message" className={labelClasses}>
+          What do you need help with?
+        </label>
+        <textarea
+          id="stage-message"
+          name="message"
+          placeholder="Tell us about your project"
+          rows={5}
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className={`${inputClasses} resize-none`}
+        />
+      </div>
+
+      {submitStatus === 'success' && (
+        <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+          <p className="text-green-500 text-small-description">
+            Thank you! Your message has been sent. We&apos;ll get back to you soon.
+          </p>
+        </div>
+      )}
+
+      {submitStatus === 'error' && (
+        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+          <p className="text-red-500 text-small-description">
+            Something went wrong. Please try again or email us directly.
+          </p>
+        </div>
+      )}
+
+      <div className="flex justify-end">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={`px-6 py-3 rounded-full text-small-description transition-all duration-300 ${
+            isDarkMode
+              ? 'bg-white text-black hover:bg-neutral-200 disabled:bg-neutral-600'
+              : 'bg-black text-white hover:bg-neutral-800 disabled:bg-neutral-400'
+          } disabled:cursor-not-allowed`}
+        >
+          {isSubmitting ? 'Sending...' : 'Submit'}
+        </button>
+      </div>
+    </form>
+  );
+};
 
 type Step = {
   title: string;
@@ -61,44 +215,57 @@ const stageOptions: StageOption[] = [
   {
     id: 'idea',
     label: 'I have an idea but need execution',
-    context: 'Best for founders preparing for their first users, demo day, or early fundraising.',
+    context: 'Best for startups preparing to turn an idea into a clear and credible product.',
     steps: [
-      { title: 'Brand Definition', description: 'Create your visual identity and brand strategy', icon: 'brand' },
-      { title: 'UX Workflow', description: 'Map user journeys and define core features', icon: 'ux' },
-      { title: 'UI & Design System', description: 'Design interfaces and build component libraries', icon: 'ui' },
-      { title: 'MVP Development', description: 'Build your minimum viable product', icon: 'mvp' },
-      { title: 'Landing Page', description: 'Launch your market presence', icon: 'landing' }
+      { title: 'Understanding the idea and the people behind it', description: 'We clarify what matters early on to avoid unnecessary complexity.', icon: 'ux' },
+      { title: 'Building a brand founders can stand behind', description: 'We shape a brand that feels intentional, clear, and trustworthy from day one.', icon: 'brand' },
+      { title: 'Designing the product before building it', description: 'We design core flows and a lightweight design system for speed and consistency.', icon: 'ui' },
+      { title: 'Validating early assumptions', description: 'We test key ideas with real users before committing to development.', icon: 'ux' },
+      { title: 'Building something real, not a demo', description: 'We build a stable, production-ready MVP that\'s ready to evolve.', icon: 'mvp' },
+      { title: 'Explaining the product clearly to the world', description: 'We create a landing page that drives traction and fundraising conversations.', icon: 'landing' }
     ]
   },
   {
     id: 'mvp',
-    label: 'I have an MVP but it needs polish',
-    context: 'Common before demo day, pilots, or investor conversations.',
+    label: 'I have an MVP, but it doesn\'t feel ready yet',
+    context: 'Best for startups looking to elevate how their product is perceived.',
     steps: [
-      { title: 'UX Workflow', description: 'Optimize user flows and interactions', icon: 'ux' },
-      { title: 'UI & Design System', description: 'Elevate visuals and systematize components', icon: 'ui' },
-      { title: 'Landing Page', description: 'Improve your conversion', icon: 'landing' }
+      { title: 'Auditing what you have', description: 'We review your current product to identify UX gaps and visual inconsistencies.', icon: 'ux' },
+      { title: 'Refining the user experience', description: 'We improve key flows so the product feels intuitive and polished.', icon: 'ux' },
+      { title: 'Elevating the visual design', description: 'We upgrade the UI to look credible and consistent across the product.', icon: 'ui' },
+      { title: 'Building a design system', description: 'We create reusable components so the product scales without losing coherence.', icon: 'ui' },
+      { title: 'Improving the landing page', description: 'We refine messaging and design to convert visitors into users or investors.', icon: 'landing' }
     ]
   },
   {
     id: 'brand-no-product',
     label: 'I have a brand but no product',
-    context: 'Ideal when your identity is clear but you need to bring it to life digitally.',
+    context: 'Best for startups translating a brand into a product experience.',
     steps: [
-      { title: 'UX Workflow', description: 'Define your product experience', icon: 'ux' },
-      { title: 'UI & Design System', description: 'Bring your brand to life digitally', icon: 'ui' },
-      { title: 'MVP Development', description: 'Build your first product', icon: 'mvp' }
+      { title: 'Understanding your brand and vision', description: 'We learn your brand, your goals, and the experience you want to create.', icon: 'brand' },
+      { title: 'Designing the product experience', description: 'We translate your brand into intuitive flows and a cohesive interface.', icon: 'ui' },
+      { title: 'Validating with real users', description: 'We test key ideas early to reduce risk before committing to development.', icon: 'ux' },
+      { title: 'Building the MVP', description: 'We develop a production-ready product with a landing page that communicates its value.', icon: 'mvp' }
     ]
   },
   {
     id: 'product-no-brand',
     label: 'I have a product but no identity',
-    context: 'Seen often when traction starts but the product feels inconsistent.',
+    context: 'Best for startups shaping a product identity users can recognize and trust.',
     steps: [
-      { title: 'Brand Definition', description: 'Craft your unique identity', icon: 'brand' },
-      { title: 'UI & Design System', description: 'Apply your new brand to product', icon: 'ui' },
-      { title: 'Landing Page', description: 'Tell your brand story', icon: 'landing' }
+      { title: 'Understanding your product and market', description: 'We learn what makes your product unique and who you\'re building for.', icon: 'ux' },
+      { title: 'Defining your brand identity', description: 'We craft a clear, credible brand that reflects your product\'s value.', icon: 'brand' },
+      { title: 'Applying the brand to your product', description: 'We redesign the UI so the product feels intentional and cohesive.', icon: 'ui' },
+      { title: 'Validating your new product experience', description: 'We test the updated experience with real users to ensure it resonates.', icon: 'ux' },
+      { title: 'Communicating your value proposition', description: 'We create a landing page that clearly explains what you do and why it matters.', icon: 'landing' }
     ]
+  },
+  {
+    id: 'other',
+    label: 'Other',
+    context: 'Tell us about your situation and we\'ll find the best way to help.',
+    steps: [],
+    isOther: true
   }
 ];
 
@@ -129,16 +296,11 @@ export default function StartupStageSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Left side - Title, description and badges */}
           <div>
-            <h2 className={`text-big-title mb-6 ${
+            <h2 className={`text-big-title mb-12 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
-              What stage is your startup at?
+              What stage is your<br />startup at?
             </h2>
-            <p className={`text-big-description mb-12 ${
-              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
-              Select your current situation and we&apos;ll show you the path forward.
-            </p>
 
             {/* Stage badges */}
             <div className="flex flex-wrap gap-3">
@@ -162,29 +324,56 @@ export default function StartupStageSection() {
             </div>
           </div>
 
-          {/* Right side - Context + Steps */}
+          {/* Right side - Context + Steps or Form */}
           <div>
             <h3 className={`text-medium-title mb-8 transition-all duration-300 ${
               isDarkMode ? 'text-white' : 'text-black'
             }`}>
               {selectedStage.context}
             </h3>
-            <ul className="space-y-6" style={{ minHeight: `${maxSteps * 56}px` }}>
-              {selectedStage.steps.map((step, index) => (
-                <li key={step.title} className="flex items-start gap-4">
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
-                    isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
-                  }`}>
-                    {index + 1}
-                  </span>
-                  <span className={`text-big-description pt-1 ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}>
-                    {step.title}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {selectedStage.isOther ? (
+              <OtherContactForm isDarkMode={isDarkMode} />
+            ) : (
+              <>
+                <ul className="space-y-6">
+                  {selectedStage.steps.map((step, index) => (
+                    <li key={step.title} className="flex items-start gap-4">
+                      <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
+                        isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
+                      }`}>
+                        {index + 1}
+                      </span>
+                      <div className="pt-1">
+                        <span className={`text-big-description ${
+                          isDarkMode ? 'text-white' : 'text-black'
+                        }`}>
+                          {step.title}
+                        </span>
+                        {step.description && (
+                          <p className={`text-small-description mt-1 ${
+                            isDarkMode ? 'text-neutral-500' : 'text-neutral-400'
+                          }`}>
+                            {step.description}
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex justify-end mt-6">
+                  <Link
+                    href="/contact"
+                    className={`inline-block px-6 py-3 rounded-full text-small-description transition-all duration-300 border ${
+                      isDarkMode
+                        ? 'border-white/20 text-white hover:border-white hover:bg-white hover:text-black'
+                        : 'border-black/20 text-black hover:border-black hover:bg-black hover:text-white'
+                    }`}
+                  >
+                    I&apos;m interested
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
