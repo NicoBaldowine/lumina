@@ -15,8 +15,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Check if we're on a case study page
+  // Check if we're on a case study page or blog post detail page
   const isCasePage = pathname.startsWith('/cases/');
+  const isBlogPostPage = pathname.startsWith('/blog/') && pathname !== '/blog';
+  const showBackButton = isCasePage || isBlogPostPage;
 
   useEffect(() => {
     setMounted(true);
@@ -144,7 +146,7 @@ export default function Header() {
           <div className="flex items-center">
             {/* Left element - fixed width container to prevent layout shift */}
             <div className="w-[140px] flex items-center">
-              {isCasePage ? (
+              {showBackButton ? (
                 <button
                   onClick={handleBack}
                   aria-label="Go back"

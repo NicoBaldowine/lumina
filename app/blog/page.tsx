@@ -6,36 +6,21 @@ import BlogCard from '../components/home/BlogCard';
 const posts = [
   {
     imageUrl: "/post1.png",
-    title: "The Future of Web Design",
-    description: "Exploring emerging trends and technologies shaping the future of web design and user experiences.",
-    slug: "the-future-of-web-design"
+    title: "The Future of End-to-End Design",
+    description: "Why cohesive design across brand, product, and development is more critical than ever in the age of AI.",
+    slug: "the-future-of-end-to-end-design"
   },
   {
     imageUrl: "/post2.png",
-    title: "Mastering Design Systems",
-    description: "A comprehensive guide to creating and maintaining scalable design systems for modern applications.",
+    title: "Design Systems: The Bridge Between Vision and Code",
+    description: "How systematic design connects brand identity, product experience, and development into one scalable foundation.",
     slug: "mastering-design-systems"
   },
   {
     imageUrl: "/post3.png",
-    title: "UX Research Methods",
-    description: "Essential research methods and techniques for understanding user needs and behaviors.",
+    title: "Research: The Key to Differentiation",
+    description: "Why startups that talk to users win, and how research separates products that scale from products that fail.",
     slug: "ux-research-methods"
-  },
-  {
-    title: "Building Accessible Interfaces",
-    description: "How to create inclusive digital experiences that work for everyone, regardless of ability.",
-    slug: "building-accessible-interfaces"
-  },
-  {
-    title: "The Psychology of Color in Design",
-    description: "Understanding how color choices impact user perception and behavior in digital products.",
-    slug: "psychology-of-color-in-design"
-  },
-  {
-    title: "Mobile-First Design Principles",
-    description: "Why starting with mobile leads to better experiences across all devices and screen sizes.",
-    slug: "mobile-first-design-principles"
   }
 ];
 
@@ -49,7 +34,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen pt-[72px]">
-      <section className="py-12 md:py-32">
+      <section className="py-8 md:py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {posts.map((post, index) => (

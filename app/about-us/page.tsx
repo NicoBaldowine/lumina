@@ -1,8 +1,8 @@
 'use client';
 
 import { useContext, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { ThemeContext } from '../components/ThemeProvider';
+import ImageWithLoader from '../components/ui/ImageWithLoader';
 
 export default function AboutUsPage() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -40,11 +40,9 @@ export default function AboutUsPage() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <Image
+              <ImageWithLoader
                 src="/aboutus.png"
                 alt="Lumina Digital Studio"
-                fill
-                className="object-cover"
               />
             </div>
           </div>

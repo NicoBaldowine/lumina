@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useContext } from 'react';
-import Image from 'next/image';
 import { ThemeContext } from '../components/ThemeProvider';
+import ImageWithLoader from '../components/ui/ImageWithLoader';
 
 const services = [
   {
@@ -121,11 +121,9 @@ export default function ServicesPage() {
               ))}
             </ul>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
+              <ImageWithLoader
                 src={activeService.image}
                 alt={activeService.title}
-                fill
-                className="object-cover transition-opacity duration-500"
               />
             </div>
           </div>
