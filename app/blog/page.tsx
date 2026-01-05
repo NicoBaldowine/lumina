@@ -20,7 +20,7 @@ const posts = [
     imageUrl: "/post3.png",
     title: "Research: The Key to Differentiation",
     description: "Why startups that talk to users win, and how research separates products that scale from products that fail.",
-    slug: "ux-research-methods"
+    slug: "research-key-to-differentiation"
   }
 ];
 

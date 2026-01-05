@@ -22,7 +22,7 @@ const postsData: Record<string, PostData> = {
     description: 'How systematic design connects brand identity, product experience, and development into one scalable foundation.',
     imageUrl: '/post2.png',
   },
-  'ux-research-methods': {
+  'research-key-to-differentiation': {
     title: 'Research: The Key to Differentiation',
     description: 'Why startups that talk to users win, and how research separates products that scale from products that fail.',
     imageUrl: '/post3.png',
@@ -687,7 +687,7 @@ export default function BlogPostPage() {
   }
 
   // Render the research post
-  if (slug === 'ux-research-methods') {
+  if (slug === 'research-key-to-differentiation') {
     return (
       <main className="min-h-screen pt-[72px]">
         {/* Hero Section */}
