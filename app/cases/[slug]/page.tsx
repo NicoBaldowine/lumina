@@ -2516,13 +2516,13 @@ export default function CasePage() {
             </div>
             {/* Zuma8 and Zuma9 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[5/4]">
                 <ImageWithLoader
                 src="/cases/zuma8.png"
                 alt="Zuma Product Design"
               />
               </div>
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[5/4]">
                 <ImageWithLoader
                 src="/cases/zuma9.png"
                 alt="Zuma Product Design"
@@ -3256,12 +3256,35 @@ export default function CasePage() {
                 alt="Quizland App Full Screen"
               />
               </div>
-              {/* Quizland 6 */}
-              <div className="aspect-[16/9] relative overflow-hidden">
-                <ImageWithLoader
-                src="/cases/Quizland6.png"
-                alt="Quizland Landing Page"
-              />
+              {/* Quizland 5.1 & 5.2 - Side by side */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-[6/5] relative overflow-hidden">
+                  <ImageWithLoader
+                    src="/cases/Quizland5.1.png"
+                    alt="Quizland App Screen"
+                  />
+                </div>
+                <div className="aspect-[6/5] relative overflow-hidden">
+                  <ImageWithLoader
+                    src="/cases/Quizland5.2.png"
+                    alt="Quizland App Screen"
+                  />
+                </div>
+              </div>
+              {/* Quizland 5.3 & 5.4 - Side by side */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-[6/5] relative overflow-hidden">
+                  <ImageWithLoader
+                    src="/cases/Quizland5.3.png"
+                    alt="Quizland App Screen"
+                  />
+                </div>
+                <div className="aspect-[6/5] relative overflow-hidden">
+                  <ImageWithLoader
+                    src="/cases/Quizland5.4.png"
+                    alt="Quizland App Screen"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -3375,7 +3398,7 @@ export default function CasePage() {
           </div>
         </section>
 
-        {/* Landing Page Mockup */}
+        {/* Landing Page Video */}
         <section className="py-12 md:py-20">
           <div className="max-w-[1420px] mx-auto px-6">
             <h2
@@ -3385,16 +3408,17 @@ export default function CasePage() {
             >
               Landing Page
             </h2>
-            <div
-              className={`aspect-[16/10] ${
-                isDarkMode ? 'bg-neutral-800' : 'bg-neutral-200'
-              }`}
-            >
-              <div className={`w-full h-full flex items-center justify-center ${
-                isDarkMode ? 'text-neutral-600' : 'text-neutral-400'
-              }`}>
-                <span className="text-small-description">quizland.app — Marketing Website</span>
-              </div>
+            <div className="relative aspect-[16/11] overflow-hidden">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                webkit-playsinline="true"
+                className="w-full h-full object-cover"
+              >
+                <source src="/cases/quizlandvideo.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </section>
@@ -3713,16 +3737,10 @@ export default function CasePage() {
               />
                 </div>
               </div>
-              {/* Full width images */}
-              <div className="aspect-[16/9] relative overflow-hidden">
+              {/* Full width image */}
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <ImageWithLoader
-                src="/cases/Yester2.png"
-                alt="Yester.ai App Screen"
-              />
-              </div>
-              <div className="aspect-[16/9] relative overflow-hidden">
-                <ImageWithLoader
-                src="/cases/Yester3.png"
+                src="/cases/Yester13.png"
                 alt="Yester.ai App Screen"
               />
               </div>
@@ -3789,6 +3807,12 @@ export default function CasePage() {
               <div className="aspect-[16/9] relative overflow-hidden">
                 <ImageWithLoader
                 src="/cases/Yester9.png"
+                alt="Yester.ai Landing Page"
+              />
+              </div>
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <ImageWithLoader
+                src="/cases/Yester10.png"
                 alt="Yester.ai Landing Page"
               />
               </div>

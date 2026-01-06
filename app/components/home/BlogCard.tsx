@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
+import ImageWithLoader from '../ui/ImageWithLoader';
 
 interface BlogCardProps {
   imageUrl?: string;
@@ -19,12 +19,9 @@ export default function BlogCard({ imageUrl, title, description, slug }: BlogCar
     <Link href={`/blog/${slug}`} className="block group">
       <div className="relative aspect-[16/9] mb-4 overflow-hidden">
         {imageUrl ? (
-          <Image
+          <ImageWithLoader
             src={imageUrl}
             alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
           <div className={`w-full h-full ${isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'}`} />

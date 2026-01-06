@@ -144,7 +144,7 @@ const OtherContactForm = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`px-6 py-3 rounded-full text-small-description transition-all duration-300 ${
+          className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
             isDarkMode
               ? 'bg-white text-black hover:bg-neutral-200 disabled:bg-neutral-600'
               : 'bg-black text-white hover:bg-neutral-800 disabled:bg-neutral-400'
@@ -308,14 +308,14 @@ export default function StartupStageSection() {
                 <button
                   key={option.id}
                   onClick={() => setSelectedStage(option)}
-                  className={`px-4 py-2 rounded-full text-big-description transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
                     selectedStage.id === option.id
                       ? isDarkMode
-                        ? 'bg-white text-black'
+                        ? 'bg-white text-[#070606]'
                         : 'bg-black text-white'
                       : isDarkMode
-                        ? 'bg-transparent border border-white/20 text-neutral-400 hover:border-white/40 hover:text-white'
-                        : 'bg-transparent border border-black/20 text-neutral-500 hover:border-black/40 hover:text-black'
+                        ? 'bg-transparent border border-white/20 text-neutral-400 hover:bg-white hover:text-[#070606]'
+                        : 'bg-transparent border border-black/20 text-neutral-500 hover:bg-black hover:text-white'
                   }`}
                 >
                   {option.label}
@@ -363,10 +363,10 @@ export default function StartupStageSection() {
                 <div className="flex justify-end mt-6">
                   <Link
                     href="/contact"
-                    className={`inline-block px-6 py-3 rounded-full text-small-description transition-all duration-300 border ${
+                    className={`inline-block px-4 py-2 rounded-full text-small-description transition-all duration-300 border ${
                       isDarkMode
-                        ? 'border-white/20 text-white hover:border-white hover:bg-white hover:text-black'
-                        : 'border-black/20 text-black hover:border-black hover:bg-black hover:text-white'
+                        ? 'border-white/20 text-neutral-400 hover:bg-white hover:text-[#070606]'
+                        : 'border-black/20 text-neutral-500 hover:bg-black hover:text-white'
                     }`}
                   >
                     I&apos;m interested

@@ -68,7 +68,7 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className={`px-6 py-3 rounded-full text-small-description transition-colors ${
+              className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
                 isDarkMode
                   ? 'bg-white text-[#070606] hover:bg-neutral-200'
                   : 'bg-black text-white hover:bg-neutral-800'
@@ -78,10 +78,10 @@ export default function LandingFold({ onScrollPast }: LandingFoldProps) {
             </button>
             <Link
               href="/services"
-              className={`px-6 py-3 rounded-full text-small-description border transition-colors ${
+              className={`px-4 py-2 rounded-full text-small-description border transition-all duration-300 ${
                 isDarkMode
-                  ? 'border-white/20 text-white/70 hover:bg-white/10'
-                  : 'border-black/20 text-neutral-500 hover:bg-black/5'
+                  ? 'border-white/20 text-white hover:bg-white hover:text-[#070606]'
+                  : 'border-black/20 text-neutral-500 hover:bg-black hover:text-white'
               }`}
             >
               Our services

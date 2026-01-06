@@ -111,10 +111,10 @@ export function GradientBackground({
         </defs>
       </svg>
 
-      {/* Gradient Container */}
+      {/* Gradient Container - Hidden on mobile for better performance */}
       <div
         className={cn(
-          'gradients-container absolute inset-0 h-full w-full blur-lg',
+          'gradients-container absolute inset-0 h-full w-full blur-lg hidden md:block',
           isDark ? 'opacity-80' : 'opacity-50'
         )}
         style={{

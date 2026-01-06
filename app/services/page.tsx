@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../components/ThemeProvider';
 import ImageWithLoader from '../components/ui/ImageWithLoader';
 
@@ -49,7 +49,7 @@ const services = [
       'Interface testing with high-fidelity prototypes',
       'User interviews to prioritize features and roadmap',
     ],
-    image: '/research_services.png',
+    image: '/Research.png',
   },
   {
     id: 'mvp-development',
@@ -68,6 +68,12 @@ const services = [
 export default function ServicesPage() {
   const { isDarkMode } = useContext(ThemeContext);
   const [activeService, setActiveService] = useState(services[0]);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen pt-[72px]">
@@ -75,19 +81,27 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Left side - Title, description and service selector */}
           <div>
-            <h1 className={`text-big-title mb-6 ${
-              isDarkMode ? 'text-white' : 'text-black'
-            }`}>
+            <h1
+              className={`text-big-title mb-6 transition-all duration-1000 ease-out ${
+                isDarkMode ? 'text-white' : 'text-black'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               Your design partner from zero to launch.
             </h1>
-            <p className={`text-big-description mb-12 ${
-              isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
+            <p
+              className={`text-big-description mb-12 transition-all duration-1000 delay-200 ease-out ${
+                isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               We design, brand, and build products that founders can confidently use to validate ideas, attract users, and raise capital.
             </p>
 
             {/* Service list with dividers */}
-            <div>
+            <div
+              className={`transition-all duration-1000 delay-300 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               {services.map((service, index) => (
                 <div key={service.id}>
                   <button
@@ -109,33 +123,39 @@ export default function ServicesPage() {
           </div>
 
           {/* Right side - Service details */}
-          <div key={activeService.id} className="animate-fade-in">
-            <h2 className={`text-medium-title mb-8 transition-opacity duration-500 ${
-              isDarkMode ? 'text-white' : 'text-black'
-            }`}>
-              {activeService.headline}
-            </h2>
-            <ul className="space-y-6 mb-8">
-              {activeService.bullets.map((bullet, index) => (
-                <li key={index} className="flex items-start gap-4">
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
-                    isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
-                  }`}>
-                    {index + 1}
-                  </span>
-                  <span className={`text-big-description pt-1 ${
-                    isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
-                  }`}>
-                    {bullet}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <ImageWithLoader
-                src={activeService.image}
-                alt={activeService.title}
-              />
+          <div
+            className={`transition-all duration-1000 delay-400 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <div key={activeService.id} className="animate-fade-in">
+              <h2 className={`text-medium-title mb-8 transition-opacity duration-500 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}>
+                {activeService.headline}
+              </h2>
+              <ul className="space-y-6 mb-8">
+                {activeService.bullets.map((bullet, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-small-description ${
+                      isDarkMode ? 'bg-neutral-700 text-neutral-400' : 'bg-neutral-200 text-neutral-500'
+                    }`}>
+                      {index + 1}
+                    </span>
+                    <span className={`text-big-description pt-1 ${
+                      isDarkMode ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}>
+                      {bullet}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <ImageWithLoader
+                  src={activeService.image}
+                  alt={activeService.title}
+                />
+              </div>
             </div>
           </div>
         </div>
