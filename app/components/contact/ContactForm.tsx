@@ -14,21 +14,48 @@ export default function ContactForm() {
     company: '',
     message: ''
   });
+  const [emailError, setEmailError] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [name]: value
     }));
+
+    // Clear email error when user starts typing again
+    if (name === 'email' && emailError) {
+      setEmailError('');
+    }
   };
+
+  const handleEmailBlur = () => {
+    if (formData.email && !validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+    }
+  };
+
+  const isFormValid = formData.name && formData.email && formData.message && validateEmail(formData.email);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate email before submitting
+    if (!validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -94,15 +121,6 @@ export default function ContactForm() {
           >
             hi@islumina.com
           </a>
-          {' '}or follow us on{' '}
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline`}
-          >
-            instagram
-          </a>
         </p>
       </div>
 
@@ -143,9 +161,13 @@ export default function ContactForm() {
             placeholder="Enter Email"
             value={formData.email}
             onChange={handleChange}
+            onBlur={handleEmailBlur}
             required
-            className={inputClasses}
+            className={`${inputClasses} ${emailError ? 'border-red-500' : ''}`}
           />
+          {emailError && (
+            <p className="mt-2 text-red-500 text-small-description">{emailError}</p>
+          )}
         </div>
 
         <div
@@ -211,11 +233,11 @@ export default function ContactForm() {
         >
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !isFormValid}
             className={`px-4 py-2 rounded-full text-small-description transition-all duration-300 ${
               isDarkMode
-                ? 'bg-white text-black hover:bg-neutral-200 disabled:bg-neutral-600'
-                : 'bg-black text-white hover:bg-neutral-800 disabled:bg-neutral-400'
+                ? 'bg-white text-black hover:bg-neutral-200 disabled:bg-neutral-600 disabled:text-neutral-400'
+                : 'bg-black text-white hover:bg-neutral-800 disabled:bg-neutral-300 disabled:text-neutral-500'
             } disabled:cursor-not-allowed`}
           >
             {isSubmitting ? 'Sending...' : 'Submit'}
