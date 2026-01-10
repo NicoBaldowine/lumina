@@ -24,7 +24,7 @@ export default function AboutUsPage() {
                 isDarkMode ? 'text-white' : 'text-black'
               } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              We help startups build products with identity, not just features.
+              A design studio to partner with, from idea to released product.
             </h1>
             <p
               className={`text-big-description mb-12 transition-all duration-1000 delay-200 ease-out ${

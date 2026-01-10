@@ -116,10 +116,10 @@ export default function ContactForm() {
         >
           Write us at{' '}
           <a
-            href="mailto:hi@islumina.com"
+            href="mailto:hello@islumina.com"
             className={`${isDarkMode ? 'text-white' : 'text-black'} hover:underline`}
           >
-            hi@islumina.com
+            hello@islumina.com
           </a>
         </p>
       </div>
